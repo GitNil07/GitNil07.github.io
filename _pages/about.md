@@ -1,9 +1,4 @@
-----
-layout: page
-title: About
-permalink: /about/
-image: /images/about.jpg
----
+
 
 Hi, I’m **Nilormi Das**.
 
@@ -31,3 +26,4 @@ I believe in building thoughtfully, learning deeply, and creating work that comp
 - LinkedIn: https://www.linkedin.com/in/nilormidasdigitaldreams/
 - X: https://x.com/digitaldreams08
 - GitHub: https://github.com/GitNil07
+
