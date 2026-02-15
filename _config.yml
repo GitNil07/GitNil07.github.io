@@ -6,13 +6,14 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title:       Dapper DevOps
+title:       Nil’s Quantum Dreams
 email:       ''
-description: 'My take on DevOps and modern Software Engineering, done elegantly.'
+description: 'Nil’s Quantum Dreams — my work at the intersection of intelligence, elegance, art, systems, and ambition.'
 baseurl:     '' # The subpath of your site, e.g. /blog
-url:         'https://mattvsts.github.io/' # The base hostname & protocol for your site
-twitter:     'https://twitter.com/MattVSTS'
-github:      'https://github.com/MattVSTS'
+url:         'https://gitnil07.github.io' # The base hostname & protocol for your site
+twitter:     'digitaldreams08'
+github:     'https://github.com/GitNil07'
+linkedin: 'https://www.linkedin.com/in/nilormidasdigitaldreams/'
 
 markdown:  kramdown
 permalink: pretty
@@ -48,6 +49,4 @@ defaults:
 
 plugins:
   - jekyll-feed
-title: Dapper DevOps
-description: Matteo's blog
-author: Matteo Emili
+
