@@ -1,12 +1,33 @@
----
+----
 layout: page
 title: About
-image: '/images/pages/about.jpeg'
+permalink: /about/
+image: /images/about.jpg
 ---
-Welcome, this is my technical blog. I work in the technology industry, and my focus has always been on Application Lifecycle Management, DevOps and modern Software Engineering practices. 
 
-Here you won’t find much code on its own, but a rather different approach based on certain features of the tools I know and deal with on a daily basis. I am a solution-focused enthusiast, technology on its own just bores me. What really makes me tick is when a good crafted technology solution design meets a well executed business process, providing value at an order of magniture larger than the effort.
+Hi, I’m **Nilormi Das**.
 
-I hold a [Professional Scrum Master 1](https://www.scrum.org/user/168055) certification, but I am more of a pragmatist - processes should bring value, not just the inhevitable disruption followed by change. I believe we should always do what makes sense in an organisation.
+I build at the intersection of **Artificial Intelligence, system design, and long-term digital strategy**.
 
-Since 2010 Microsoft awarded me a [Most Valuable Professional Award](https://mvp.microsoft.com/en-us/PublicProfile/4027206?fullName=Matteo Emili) for my contributions to the community, an effort I do on my own time and which I really care about. I am also a founder of several technical communities in different countries, where I contribute by running the regular community meetings, organising conferences or facilitating networking, and a regular speaker at European meetups and conferences.
+Nil’s Quantum Dreams is my digital lab — a place where I document experiments, ideas, and projects that explore how AI can create meaningful, scalable impact.
+
+### What I focus on
+
+- Applied AI & intelligent automation  
+- Product-oriented engineering  
+- Systems thinking & long-term value creation  
+- Building a personal AI brand through consistent execution  
+
+### Philosophy
+
+Technology should not just be impressive — it should be purposeful.
+
+I believe in building thoughtfully, learning deeply, and creating work that compounds over time.
+
+---
+
+### Connect
+
+- LinkedIn: https://www.linkedin.com/in/nilormidasdigitaldreams/
+- X: https://x.com/digitaldreams08
+- GitHub: https://github.com/GitNil07
