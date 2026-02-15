@@ -1,1 +1,21 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200.44 841.17"><polygon points="108.96 191.7 200.44 100.22 100.22 0 0 100.22 91.48 191.7 52.43 609.83 52.43 609.83 100.22 841.17 148.01 609.83 148.01 609.83 108.96 191.7"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Q ring -->
+  <circle cx="100" cy="100" r="70"
+          fill="none"
+          stroke="black"
+          stroke-width="10"/>
+
+  <!-- Q tail -->
+  <line x1="128" y1="128" x2="165" y2="165"
+        stroke="black"
+        stroke-width="10"
+        stroke-linecap="round"/>
+
+  <!-- N (inside Q) -->
+  <path d="M70 140 V60 L130 140 V60"
+        fill="none"
+        stroke="black"
+        stroke-width="12"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+</svg>
