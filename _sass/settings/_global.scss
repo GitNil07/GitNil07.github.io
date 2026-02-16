@@ -2,4 +2,37 @@
 //  Settings > Global
 // *----------------------------------*/
 
+
 $global-transition: .4s;
+
+/* ===== Nil's Premium AI Studio Theme ===== */
+
+:root {
+  --bg: #ffffff;
+  --text: #0b1020;
+  --muted: #5b6275;
+  --accent: #5a7cff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #070A12;
+    --text: #EAF0FF;
+    --muted: #A7B0C7;
+    --accent: #7AA2FF;
+  }
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color .3s ease, color .3s ease;
+}
+
+a {
+  color: var(--accent);
+}
+
+p {
+  color: var(--muted);
+}
