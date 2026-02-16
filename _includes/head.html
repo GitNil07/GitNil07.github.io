@@ -13,6 +13,38 @@
     {% endcapture %}
 
     {{ inlineCSS | scssify }}
+       /* ===== Nil Premium AI Studio Overrides ===== */
+
+:root {
+  --bg: #ffffff;
+  --text: #0b1020;
+  --muted: #5b6275;
+  --accent: #5a7cff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #070a12;
+    --text: #eaf0ff;
+    --muted: #a7b0c7;
+    --accent: #7aa2ff;
+  }
+}
+
+body {
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
+  transition: background-color .3s ease, color .3s ease;
+}
+
+p {
+  color: var(--muted) !important;
+}
+
+a {
+  color: var(--accent) !important;
+}
+
   </style>
   <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/feed.xml">
@@ -35,4 +67,5 @@
     }
   })});
   </script>
+
 </head>
