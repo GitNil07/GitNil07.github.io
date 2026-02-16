@@ -1,0 +1,451 @@
+---
+layout: page
+title: Enterprise AI Value & Risk Orchestrator (FS & CMT)
+permalink: /enterprise-ai-orchestrator/
+---
+
+<section style="max-width: 980px; margin: 60px auto; padding: 0 18px;">
+  <div style="padding: 28px; border-radius: 14px; background: #0b1220; color: #fff;">
+    <h1 style="margin: 0 0 10px 0; font-size: 32px; line-height: 1.2;">
+      Enterprise AI Value & Risk Orchestrator
+    </h1>
+    <p style="margin: 0; opacity: 0.9; font-size: 15px; max-width: 820px;">
+      Simulation of an AI presales agent for FS & CMT that orchestrates value, risk, readiness, and roadmap –
+      designed for executive conversations in Financial Services and Communications/Media/Technology.
+    </p>
+
+    <div style="margin-top: 18px; display: flex; gap: 10px; flex-wrap: wrap;">
+      <span style="display:inline-block; padding: 7px 10px; border:1px solid rgba(255,255,255,.18); border-radius: 999px; font-size: 13px;">
+        De-risking AI
+      </span>
+      <span style="display:inline-block; padding: 7px 10px; border:1px solid rgba(255,255,255,.18); border-radius: 999px; font-size: 13px;">
+        Quantifying value
+      </span>
+      <span style="display:inline-block; padding: 7px 10px; border:1px solid rgba(255,255,255,.18); border-radius: 999px; font-size: 13px;">
+        Governance maturity
+      </span>
+      <span style="display:inline-block; padding: 7px 10px; border:1px solid rgba(255,255,255,.18); border-radius: 999px; font-size: 13px;">
+        Executive-ready narrative
+      </span>
+    </div>
+  </div>
+
+  <div style="margin-top: 22px; display: grid; grid-template-columns: 1fr; gap: 14px;">
+    <div class="card">
+      <h2 style="margin:0 0 10px 0;">Configure the Scenario</h2>
+      <p style="margin:0 0 12px 0; color:#475569;">
+        This is a <strong>simulation</strong> of how an AI presales agent might frame value, risk, and roadmap for FS & CMT clients.
+        No live backend or client data – it’s purely for storytelling and demo purposes.
+      </p>
+
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom: 8px;">
+        <label style="font-weight:600;">Sector:</label>
+        <select id="sector" style="padding:10px; border-radius:10px; border:1px solid #e2e8f0;">
+          <option value="fs">Financial Services (FS)</option>
+          <option value="cmt">Communications, Media & Technology (CMT)</option>
+        </select>
+
+        <label style="font-weight:600; margin-left:6px;">AI ambition:</label>
+        <select id="ambition" style="padding:10px; border-radius:10px; border:1px solid #e2e8f0;">
+          <option value="conservative">Conservative (risk-first)</option>
+          <option value="balanced" selected>Balanced</option>
+          <option value="aggressive">Aggressive (growth-first)</option>
+        </select>
+      </div>
+
+      <div style="margin-top: 6px; font-size:13px; color:#64748b;">
+        Tip: in a client meeting, you can say “Let’s assume we’re a <strong><span id='sectorLabel'>global bank</span></strong> with a
+        <strong><span id='ambitionLabel'>balanced</span></strong> AI ambition – what would a presales AI agent recommend?”
+      </div>
+
+      <div style="margin-top: 14px; display:flex; gap:10px; flex-wrap:wrap;">
+        <button class="pill" data-scenario="readiness">Readiness & Risk Snapshot</button>
+        <button class="pill" data-scenario="value">Value Hypothesis & Use Cases</button>
+        <button class="pill" data-scenario="roadmap">Roadmap & Architecture View</button>
+        <button class="pill" data-scenario="board">Board / ExCo Narrative</button>
+      </div>
+
+      <div style="margin-top: 14px;">
+        <label style="font-weight:600;">Scenario prompt (editable):</label>
+        <textarea id="prompt" rows="3" style="width:100%; margin-top: 8px; padding:12px; border-radius: 12px; border:1px solid #e2e8f0; resize: vertical;">
+</textarea>
+
+        <div style="margin-top: 12px; display:flex; gap:10px; flex-wrap: wrap;">
+          <button id="run" class="primary">Generate simulated output</button>
+          <button id="copy" class="secondary">Copy output</button>
+          <button id="reset" class="secondary">Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;">
+        <h2 style="margin:0;">Simulated Presales Output</h2>
+        <span id="meta" style="font-size: 13px; color:#64748b;"></span>
+      </div>
+
+      <div id="output" style="margin-top: 12px; white-space: pre-wrap; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; font-size: 13.5px; line-height: 1.5; background:#0b1220; color:#e5e7eb; padding: 16px; border-radius: 12px; overflow:auto; min-height: 220px;">
+        Select a scenario to generate a structured value & risk view.
+      </div>
+
+      <p style="margin: 12px 0 0 0; color:#64748b; font-size: 13px;">
+        Note: This is a portfolio simulation to showcase framing, not a live client solution. In a real deployment, the agent
+        would be grounded in client data, FS/CMT policies, and enterprise governance controls.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 10px 0;">Enterprise AI Value & Risk Lens (FS & CMT)</h2>
+      <ul style="margin:0; color:#475569; line-height: 1.8;">
+        <li><strong>De-risking AI:</strong> data privacy, regulatory exposure, model risk, operational resilience.</li>
+        <li><strong>Quantifying value:</strong> cost-to-serve, churn, throughput, revenue uplift, capital efficiency.</li>
+        <li><strong>Governance:</strong> AI policy, model risk management, human-in-the-loop, auditability.</li>
+        <li><strong>Delivery readiness:</strong> platform, data, operating model, talent, partner ecosystem.</li>
+      </ul>
+    </div>
+
+    <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+      <a href="/" class="linkbtn">← Back to Home</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .card{
+    background:#ffffff;
+    border:1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 6px 20px rgba(2,6,23,.04);
+  }
+  .pill{
+    padding: 10px 12px;
+    border-radius: 999px;
+    border: 1px solid #cbd5e1;
+    background: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    color: #0f172a;
+  }
+  .pill:hover{ border-color:#94a3b8; }
+  .pill.active{
+    border-color:#2563eb;
+    box-shadow: 0 0 0 3px rgba(37,99,235,.15);
+  }
+  .primary{
+    padding: 11px 14px;
+    border-radius: 12px;
+    border: 1px solid #2563eb;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+  }
+  .primary:hover{ background:#1d4ed8; border-color:#1d4ed8; }
+  .secondary{
+    padding: 11px 14px;
+    border-radius: 12px;
+    border: 1px solid #cbd5e1;
+    background: #fff;
+    color: #0f172a;
+    cursor: pointer;
+    font-weight: 700;
+  }
+  .secondary:hover{ border-color:#94a3b8; }
+  .linkbtn{
+    display:inline-block;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid #cbd5e1;
+    text-decoration:none;
+    color:#0f172a;
+    background:#fff;
+    font-weight: 700;
+  }
+  .linkbtn:hover{ border-color:#94a3b8; }
+</style>
+
+<script>
+  const sectorEl = document.getElementById('sector');
+  const ambitionEl = document.getElementById('ambition');
+  const sectorLabelEl = document.getElementById('sectorLabel');
+  const ambitionLabelEl = document.getElementById('ambitionLabel');
+  const promptEl = document.getElementById('prompt');
+  const outputEl = document.getElementById('output');
+  const metaEl = document.getElementById('meta');
+
+  const defaultPrompts = {
+    readiness: "Provide an AI readiness and risk snapshot for this client, highlighting key gaps and quick wins.",
+    value: "Outline a value hypothesis and top 5 AI use cases with impact ranges and assumptions.",
+    roadmap: "Propose a phased AI roadmap and high-level architecture view aligned to risk and ambition.",
+    board: "Draft a board-level narrative summarizing why now, where to play, and how to control risk."
+  };
+
+  function sectorDescriptor(value){
+    if (value === "fs") return "global bank / insurer in a highly regulated environment";
+    if (value === "cmt") return "large CMT provider with complex customer journeys and high churn pressure";
+    return "enterprise";
+  }
+
+  function ambitionDescriptor(value){
+    if (value === "conservative") return "conservative (risk-first, tightly controlled pilots)";
+    if (value === "balanced") return "balanced (value-seeking with strong guardrails)";
+    if (value === "aggressive") return "aggressive (growth-first, faster experimentation)";
+    return value;
+  }
+
+  function headerBlock(scenario){
+    const sector = sectorEl.value;
+    const ambition = ambitionEl.value;
+
+    const sectorText = sectorDescriptor(sector);
+    const ambitionText = ambitionDescriptor(ambition);
+
+    return [
+      "ENTERPRISE AI VALUE & RISK ORCHESTRATOR — SIMULATED OUTPUT",
+      `Context: ${sectorText}, AI ambition: ${ambitionText}.`,
+      `View: ${scenarioLabels[scenario]}`,
+      "--------------------------------------------------------"
+    ].join("\\n");
+  }
+
+  const scenarioLabels = {
+    readiness: "Readiness & Risk snapshot",
+    value: "Value hypothesis & use case framing",
+    roadmap: "Roadmap & architecture view",
+    board: "Board / ExCo narrative"
+  };
+
+  function generateOutput(scenario){
+    const sector = sectorEl.value;
+    const ambition = ambitionEl.value;
+    const prompt = (promptEl.value || "").trim() || defaultPrompts[scenario];
+
+    const now = new Date().toLocaleString();
+    metaEl.textContent = `Scenario: ${scenarioLabels[scenario]} • Generated: ${now}`;
+
+    const sectorFocus = sector === "fs"
+      ? `Sector lens: Financial Services. Emphasis on regulatory compliance, model risk management, capital, and conduct risk.`
+      : `Sector lens: CMT. Emphasis on customer experience, churn, ARPU, and network/ops efficiency.`;
+
+    const ambitionFocus =
+      ambition === "conservative"
+        ? "Ambition lens: de-risk first – small, tightly governed pilots with clear controls and gates."
+        : ambition === "balanced"
+        ? "Ambition lens: balance value and risk – prioritize high-impact but governable domains with strong guardrails."
+        : "Ambition lens: growth-first – move faster on value, but still enforce non-negotiable guardrails on data and compliance.";
+
+    let body = "";
+
+    if (scenario === "readiness"){
+      body = `
+EXECUTIVE SNAPSHOT
+- Overall AI readiness: mixed – strong intent, pockets of maturity, but governance and platform still evolving.
+- Biggest constraint: fragmented data and unclear AI ownership across business, risk, and technology.
+
+READINESS DIMENSIONS
+- Strategy: AI ambition exists, but value pools not fully quantified by domain.
+- Data: key systems in place, but lineage, quality, and access control need tightening for AI-grade use.
+- Platform: experimentation happening, but no single enterprise AI platform with security, RAG, logging, and evaluation.
+- Governance: early-stage AI policy; model risk and AI risk frameworks not yet standardized.
+- People & process: champions exist; broader workforce not yet AI-ready.
+
+RISK SNAPSHOT
+- Data & privacy risk: ${sector === "fs" ? "High if customer, transaction, and PII data are used without clear classification and masking." : "Medium–High if customer interaction, behavioral, or content data are pooled without consent and usage rules."}
+- Regulatory risk: ${sector === "fs" ? "Model risk, fair lending, conduct, and auditability expectations are rising." : "AI use in personalization, recommendations, and content must respect consent, fairness, and consumer protection."}
+- Operational risk: dependency on manual controls, opaque shadow AI usage, and lack of incident playbooks.
+
+QUICK WINS (0–90 DAYS)
+- Define AI governance council with representation from business, risk, legal, and technology.
+- Approve initial AI policy and risk taxonomy (use cases, data classes, impact levels).
+- Stand up a minimal AI platform: secure LLM access, RAG capability, logging, and evaluation harness.
+- Select 2–3 pilots with high signal and controllable risk profile.
+
+KEY METRICS
+- Number of AI pilots under governance vs. shadow AI.
+- Time from use case idea to governed pilot.
+- % of AI usage routed through approved platform.
+- Number of incidents / escalations, and time to resolution.`.trim();
+    }
+
+    if (scenario === "value"){
+      body = `
+VALUE HYPOTHESIS — TOP AI OPPORTUNITIES
+
+PRIMARY VALUE LEVERS
+- Efficiency: reduce manual effort, accelerate decisioning, lower cost-to-serve.
+- Experience: improve customer / employee journeys, response speed, and consistency.
+- Risk: reduce errors, control leakage, strengthen oversight with better insight.
+
+EXAMPLE USE CASES (${sector === "fs" ? "FS" : "CMT"} FOCUS)
+${sector === "fs" ? `
+1) AI-assisted operations (claims, servicing, back office)
+   - Impact: cycle time reduction, lower manual touch, better capacity planning.
+2) Risk & compliance copilots
+   - Impact: faster policy interpretation, better documentation, reduced manual review load.
+3) Frontline advisory support
+   - Impact: improve quality and consistency of advice while keeping human in control.
+4) KYC / onboarding assistance
+   - Impact: speed up onboarding, reduce missing data, support analysts with summarization.
+` : `
+1) Customer service copilots
+   - Impact: faster resolution, lower handling time, improved CX scores.
+2) Churn risk & retention nudges
+   - Impact: proactive outreach to at-risk segments, uplift in retention.
+3) Network / ops insight copilots
+   - Impact: faster fault triage, better incident comms, fewer escalations.
+4) Sales / account intelligence copilots
+   - Impact: better context for reps, increased win rates, more relevant upsell.
+`}
+
+HIGH-LEVEL VALUE RANGE (ILLUSTRATIVE)
+- Efficiency: 10–30% effort reduction in targeted processes with well-designed copilots.
+- Experience: 5–15pt improvement in satisfaction metrics where AI augments, not replaces, human interactions.
+- Risk: lower error rates, fewer audit findings, better documentation (difficult to monetize, but important for resilience).
+
+ASSUMPTIONS
+- Adequate data quality and access controls for the chosen domains.
+- Change and training investment to embed AI into workflows.
+- Governance in place so scaling is approved and safe.
+
+NEXT STEPS
+- Select 2–3 use cases with clear baselines (time, cost, quality).
+- Estimate value per use case using conservative, base, and upside scenarios.
+- Socialize with Finance / Risk for alignment before board-level business case.`.trim();
+    }
+
+    if (scenario === "roadmap"){
+      body = `
+PHASED ROADMAP (SIMPLIFIED)
+
+PHASE 0–90 DAYS: FOUNDATIONS & PILOTS
+- Establish AI governance council and operating model.
+- Stand up an enterprise AI platform (secure LLM, RAG, logging, evaluations).
+- Deliver 2–3 highly visible but governable pilots with strong measurement.
+
+PHASE 3–9 MONTHS: SCALE USE CASES
+- Industrialize successful pilots into supported products.
+- Build reusable patterns: prompts, RAG connectors, guardrails, evaluation suites.
+- Expand to multiple domains (operations, CX, risk/compliance) under a single governance umbrella.
+
+PHASE 9–24 MONTHS: OPERATING MODEL INTEGRATION
+- Embed AI into process design, not just as a bolt-on assistant.
+- Align incentives, performance measures, and training to AI-enabled workflows.
+- Strengthen model risk management and regulatory engagement.
+
+ARCHITECTURE VIEW (ABSTRACTED)
+- Experience layer: copilots in the tools users already live in (workspace, CRM, core apps).
+- AI orchestration: routing, policy enforcement, prompt templates, workflow logic.
+- LLM + RAG: secure model endpoints, retrieval from approved and access-controlled content.
+- Data & security: classification, masking, governance, lineage, entitlements.
+- Observability: logging, monitoring, evaluations, incident management.
+
+NON-NEGOTIABLE CONTROLS
+- Identity and access: SSO, RBAC/ABAC, least privilege.
+- Data: classification, retention, DLP, encryption.
+- Evaluations: pre-production and ongoing tests on quality, fairness, robustness.
+- Explainability: citations and traceability for critical decisions.
+
+DECISION GATES
+- Move from pilot → scale only when: governance criteria met, KPIs proven, risks within appetite.`.trim();
+    }
+
+    if (scenario === "board"){
+      body = `
+BOARD / EXCO NARRATIVE (OUTLINE)
+
+WHY NOW
+- AI is reshaping cost, experience, and risk management across the sector.
+- Competitors are moving from experimentation to targeted scaling.
+- Regulatory expectations are evolving, and “no strategy” is itself a risk.
+
+WHERE TO PLAY
+- Focus on a small set of domains where data is controllable and value is tangible.
+- Prioritize use cases that improve efficiency, experience, or risk – with clear baselines and owners.
+
+HOW TO WIN
+- Build on a governed enterprise AI platform, not silo experiments.
+- Embed AI into processes with human oversight, not fully autonomous decisioning.
+- Establish a cross-functional AI governance model spanning business, risk, legal, and technology.
+
+RISK & CONTROL POSITION
+- Data: commit to privacy, security, and clear consent.
+- Models: obligation to test, monitor, and document.
+- People: ensure guardrails, training, and accountability remain with leadership, not with tools.
+
+INVESTMENT LOGIC
+- Start with a “no regrets” foundational investment (platform + governance + 2–3 use cases).
+- Use early wins to self-fund expansion.
+- Tie further investment to measured value and risk indicators.
+
+DECISION ASK
+- Endorse the AI strategy and guardrails.
+- Approve foundational investment and first wave of use cases.
+- Agree on clear oversight mechanisms and reporting cadence.`.trim();
+    }
+
+    return [
+      headerBlock(scenario),
+      `PROMPT\\n${prompt}`,
+      "--------------------------------------------------------",
+      sectorFocus,
+      ambitionFocus,
+      "",
+      body
+    ].join("\\n\\n");
+  }
+
+  let activeScenario = null;
+  document.querySelectorAll('.pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.pill').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeScenario = btn.dataset.scenario;
+      promptEl.value = defaultPrompts[activeScenario];
+      outputEl.textContent = "Click “Generate simulated output” to view the structured response.";
+      metaEl.textContent = "";
+    });
+  });
+
+  document.getElementById('run').addEventListener('click', () => {
+    if (!activeScenario) {
+      outputEl.textContent = "Select a scenario first (one of the pills above).";
+      return;
+    }
+    outputEl.textContent = generateOutput(activeScenario);
+  });
+
+  document.getElementById('copy').addEventListener('click', async () => {
+    const text = outputEl.textContent || "";
+    try {
+      await navigator.clipboard.writeText(text);
+      metaEl.textContent = (metaEl.textContent ? metaEl.textContent + " • " : "") + "Copied ✅";
+    } catch(e){
+      metaEl.textContent = (metaEl.textContent ? metaEl.textContent + " • " : "") + "Copy blocked by browser";
+    }
+  });
+
+  document.getElementById('reset').addEventListener('click', () => {
+    activeScenario = null;
+    document.querySelectorAll('.pill').forEach(b => b.classList.remove('active'));
+    promptEl.value = "";
+    outputEl.textContent = "Select a scenario to generate a structured value & risk view.";
+    metaEl.textContent = "";
+    sectorEl.value = "fs";
+    ambitionEl.value = "balanced";
+    sectorLabelEl.textContent = "global bank";
+    ambitionLabelEl.textContent = "balanced";
+  });
+
+  sectorEl.addEventListener('change', () => {
+    sectorLabelEl.textContent = sectorEl.value === "fs" ? "global bank" : "CMT provider";
+  });
+  ambitionEl.addEventListener('change', () => {
+    ambitionLabelEl.textContent = ambitionEl.value;
+  });
+
+  // initial text
+  promptEl.value = "Select a scenario to auto-fill a prompt, then generate a value & risk view.";
+  sectorLabelEl.textContent = "global bank";
+  ambitionLabelEl.textContent = "balanced";
+</script>
