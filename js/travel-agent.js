@@ -1,5 +1,5 @@
 // Temporary placeholder API (we'll replace after backend deploy)
-const API_BASE = "https://example.com";
+const API_BASE = "https://nil-quantum-beta.nil8rim.workers.dev";
 
 const form = document.getElementById("tripForm");
 const statusEl = document.getElementById("status");
