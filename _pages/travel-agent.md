@@ -51,4 +51,5 @@ Build a simple 1–3 day city break itinerary.
 <div id="status" style="margin-top:16px;"></div>
 <pre id="output" style="white-space:pre-wrap; margin-top:12px;"></pre>
 
-<script src="/js/travel-agent.js"></script>
+<script src="/js/travel-agent.js?v=2"></script>
+
