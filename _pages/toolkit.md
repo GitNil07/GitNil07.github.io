@@ -32,7 +32,17 @@ Most people use AI in a very general way and get generic results. This toolkit g
 
 ## Get access
 
-[👉 Pay £2 and Get Access](https://www.paypal.com/ncp/payment/NHG6D4GQ8QRAQ)
+<a href="https://www.paypal.com/ncp/payment/NHG6D4GQ8QRAQ" target="_blank" style="
+display:inline-block;
+padding:12px 20px;
+background-color:#000;
+color:#fff;
+text-decoration:none;
+font-weight:bold;
+margin-top:10px;
+">
+👉 Pay £2 and Get Access
+</a>
 
 After payment, please send confirmation to:
 
