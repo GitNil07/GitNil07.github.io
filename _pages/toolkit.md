@@ -48,7 +48,11 @@ After payment, please send confirmation to:
 
 **worldoftechservicepage@gmail.com**
 
+You will receive the toolkit within 12–24 hours (usually sooner).
+
+If you don’t receive it within 24 hours, please resend your confirmation email.
 You will receive the toolkit via email.
+
 ## Want coaching instead?
 
 If you would like personalised support, you can also contact me about 1:1 coaching.
