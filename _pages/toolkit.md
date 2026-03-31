@@ -36,7 +36,21 @@ Pay via PayPal using the link below. After payment, send confirmation to:
 
 **worldoftechservicepage@gmail.com**
 
-[Pay GBP 2 via PayPal](PASTE_YOUR_PAYPAL_LINK_HERE)
+[👉 Pay £2 and Get Access](https://www.paypal.com/ncp/payment/NHG6D4GQ8QRAQ)
+
+## Price
+
+**£2 (early access price)**
+
+## Get access
+
+[👉 Pay £2 and Get Access](https://www.paypal.com/ncp/payment/NHG6D4GQ8QRAQ)
+
+After payment, please send confirmation to:
+
+**worldoftechservicepage@gmail.com**
+
+You will receive the toolkit via email.
 
 ## Want coaching instead?
 
