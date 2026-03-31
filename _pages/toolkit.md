@@ -28,18 +28,6 @@ Most people use AI in a very general way and get generic results. This toolkit g
 
 ## Price
 
-**GBP 2**
-
-## How to get it
-
-Pay via PayPal using the link below. After payment, send confirmation to:
-
-**worldoftechservicepage@gmail.com**
-
-[👉 Pay £2 and Get Access](https://www.paypal.com/ncp/payment/NHG6D4GQ8QRAQ)
-
-## Price
-
 **£2 (early access price)**
 
 ## Get access
@@ -51,7 +39,6 @@ After payment, please send confirmation to:
 **worldoftechservicepage@gmail.com**
 
 You will receive the toolkit via email.
-
 ## Want coaching instead?
 
 If you would like personalised support, you can also contact me about 1:1 coaching.
