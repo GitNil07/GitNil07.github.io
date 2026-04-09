@@ -318,12 +318,31 @@
       inputBox.value = "";
       statusText.textContent = "Generating demo response...";
 
-      setTimeout(() => {
-        const reply = generateReply(text);
-        addMessage("assistant", reply);
-        statusText.textContent = "Response generated.";
-      }, 500);
+     setTimeout(() => {
+  const reply = generateReply(text);
+  typeMessage(reply);
+}, 500);
+      function typeMessage(text) {
+  const div = document.createElement('div');
+  div.className = 'msg assistant';
+  messagesEl.appendChild(div);
+
+  let i = 0;
+  const speed = 12; // typing speed
+
+  function type() {
+    if (i < text.length) {
+      div.textContent += text.charAt(i);
+      i++;
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+      setTimeout(type, speed);
+    } else {
+      statusText.textContent = "Response generated.";
     }
+  }
+
+  type();
+}
 
     function generateReply(text) {
       const t = text.toLowerCase();
