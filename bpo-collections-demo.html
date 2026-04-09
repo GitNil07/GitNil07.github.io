@@ -24,154 +24,70 @@
       background:linear-gradient(180deg,#09101f,#0e1430);
       color:var(--text);
     }
-    .wrap{
-      max-width:1100px;
-      margin:0 auto;
-      padding:24px;
-    }
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
     .hero{
-      margin-bottom:20px;
-      padding:24px;
-      border:1px solid var(--border);
-      border-radius:20px;
-      background:linear-gradient(135deg, rgba(122,162,255,.18), rgba(156,123,255,.14));
+      margin-bottom:20px;padding:24px;
+      border:1px solid var(--border);border-radius:20px;
+      background:linear-gradient(135deg,rgba(122,162,255,.18),rgba(156,123,255,.14));
     }
-    .hero h1{
-      margin:0 0 8px;
-      font-size:36px;
-    }
-    .hero p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.6;
-    }
-    .grid{
-      display:grid;
-      grid-template-columns:320px 1fr;
-      gap:20px;
-    }
-    .panel{
-      background:var(--panel);
-      border:1px solid var(--border);
-      border-radius:18px;
-      padding:18px;
-    }
-    .panel h2{
-      margin-top:0;
-      font-size:20px;
-    }
+    .hero h1{margin:0 0 8px;font-size:36px}
+    .hero p{margin:0;color:var(--muted);line-height:1.6}
+    .grid{display:grid;grid-template-columns:320px 1fr;gap:20px}
+    .panel{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:18px}
+    .panel h2{margin-top:0;font-size:20px}
     .scenario{
-      width:100%;
-      text-align:left;
-      margin:10px 0;
-      padding:14px;
-      border-radius:14px;
-      border:1px solid var(--border);
-      background:var(--panel2);
-      color:var(--text);
-      cursor:pointer;
+      width:100%;text-align:left;margin:10px 0;padding:14px;
+      border-radius:14px;border:1px solid var(--border);
+      background:var(--panel2);color:var(--text);cursor:pointer;
     }
-    .scenario:hover{
-      border-color:var(--accent);
-    }
-    .meta{
-  display:block;
-  font-size:12px;
-  color:var(--muted);
-  margin-top:4px;
-}
-    .chat{
-      display:flex;
-      flex-direction:column;
-      min-height:620px;
-    }
+    .scenario:hover{border-color:var(--accent)}
+    .meta{display:block;font-size:12px;color:var(--muted);margin-top:4px}
+    .chat{display:flex;flex-direction:column;min-height:620px}
     .chat-header{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      margin-bottom:14px;
-      gap:12px;
-      flex-wrap:wrap;
+      display:flex;justify-content:space-between;align-items:center;
+      margin-bottom:14px;gap:12px;flex-wrap:wrap;
     }
     .badge{
-      display:inline-block;
-      padding:6px 10px;
-      border-radius:999px;
-      background:rgba(122,162,255,.14);
-      border:1px solid rgba(122,162,255,.3);
-      color:#dbe6ff;
-      font-size:12px;
+      display:inline-block;padding:6px 10px;border-radius:999px;
+      background:rgba(122,162,255,.14);border:1px solid rgba(122,162,255,.3);
+      color:#dbe6ff;font-size:12px;
     }
     .messages{
-      flex:1;
-      overflow:auto;
-      border:1px solid var(--border);
-      border-radius:16px;
-      padding:16px;
-      background:#0d1430;
+      flex:1;overflow:auto;border:1px solid var(--border);
+      border-radius:16px;padding:16px;background:#0d1430;min-height:380px;
     }
     .msg{
-      max-width:78%;
-      margin-bottom:14px;
-      padding:12px 14px;
-      border-radius:16px;
-      line-height:1.6;
-      white-space:pre-wrap;
+      max-width:78%;margin-bottom:14px;padding:12px 14px;
+      border-radius:16px;line-height:1.6;white-space:pre-wrap;
     }
-    .user{
-      margin-left:auto;
-      background:#24335f;
-    }
-    .assistant{
-      background:#151f41;
-      border:1px solid var(--border);
-    }
-    .controls{
-      margin-top:14px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
+    .user{margin-left:auto;background:#24335f}
+    .assistant{background:#151f41;border:1px solid var(--border)}
+    .controls{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
     textarea{
-      width:100%;
-      min-height:90px;
-      resize:vertical;
-      border-radius:14px;
-      border:1px solid var(--border);
-      background:#0d1430;
-      color:var(--text);
-      padding:12px;
-      font:inherit;
+      width:100%;min-height:90px;resize:vertical;border-radius:14px;
+      border:1px solid var(--border);background:#0d1430;
+      color:var(--text);padding:12px;font:inherit;
     }
     button.primary{
       background:linear-gradient(135deg,var(--accent),var(--accent2));
-      color:white;
-      border:none;
-      padding:12px 16px;
-      border-radius:12px;
-      cursor:pointer;
-      font-weight:600;
+      color:white;border:none;padding:12px 16px;
+      border-radius:12px;cursor:pointer;font-weight:600;
     }
+    button.primary:disabled{opacity:.5;cursor:not-allowed}
     button.secondary{
-      background:transparent;
-      color:var(--text);
-      border:1px solid var(--border);
-      padding:12px 16px;
-      border-radius:12px;
-      cursor:pointer;
+      background:transparent;color:var(--text);border:1px solid var(--border);
+      padding:12px 16px;border-radius:12px;cursor:pointer;
     }
-    .status{
-      margin-top:10px;
-      color:var(--muted);
-      font-size:13px;
+    .status{margin-top:10px;color:var(--muted);font-size:13px}
+    .note{margin-top:16px;font-size:13px;color:var(--muted);line-height:1.5}
+    .key-row{display:flex;gap:8px;margin-bottom:16px;align-items:center}
+    .key-row input{
+      flex:1;padding:8px 12px;border-radius:10px;
+      border:1px solid var(--border);background:#0d1430;
+      color:var(--text);font:inherit;font-size:13px;
     }
-    .note{
-      margin-top:16px;
-      font-size:13px;
-      color:var(--muted);
-      line-height:1.5;
-    }
-    @media (max-width: 900px){
+    .key-row label{font-size:12px;color:var(--muted);white-space:nowrap}
+    @media(max-width:900px){
       .grid{grid-template-columns:1fr}
       .chat{min-height:520px}
       .msg{max-width:90%}
@@ -179,205 +95,231 @@
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="hero">
-      <h1>BPO AI Collections Agent</h1>
-      <p>
-        Claude-native demo for regulated financial support journeys:
-        overdue EMI, NACH bounce, escalation handling, and multilingual customer interaction.
-      </p>
-    </div>
+<div class="wrap">
 
-    <div class="grid">
-      <div class="panel">
-        <h2>Demo Scenarios</h2>
-<button type="button" class="scenario" onclick="loadScenario('emi')">
-  <span>Overdue EMI Reminder</span>
-  <span class="meta">Tone: calm, policy-aware, repayment options</span>
-</button>
-
-<button type="button" class="scenario" onclick="loadScenario('nach')">
-  <span>NACH Bounce Handling</span>
-  <span class="meta">Tone: explanatory, action-oriented</span>
-</button>
-
-<button type="button" class="scenario" onclick="loadScenario('escalation')">
-  <span>Escalation / Complaint</span>
-  <span class="meta">Tone: empathetic, de-escalation focused</span>
-</button>
-
-<button type="button" class="scenario" onclick="loadScenario('hindi')">
-  <span>Hindi Interaction</span>
-  <span class="meta">Tone: multilingual support example</span>
-</button>
-
-<button type="button" class="scenario" onclick="loadScenario('custom')">
-  <span>Blank Demo</span>
-  <span class="meta">Start fresh and type your own customer message</span>
-</button>
-
-        <button class="scenario" onclick="loadScenario('custom')">
-          Blank Demo
-          <div class="meta">Start fresh and type your own customer message</div>
-        </button>
-
-        <div class="note">
-          This is a demo UI with realistic example flows. It is designed for rapid showcase and discussion.
-        </div>
-      </div>
-
-      <div class="panel chat">
-        <div class="chat-header">
-          <h2 style="margin:0;">Conversation Demo</h2>
-          <span class="badge" id="scenarioBadge">Scenario: not selected</span>
-        </div>
-
-        <div class="messages" id="messages"></div>
-
-        <div class="controls">
-          <textarea id="inputBox" placeholder="Type a customer message..."></textarea>
-        </div>
-
-        <div class="controls">
-          <button class="primary" onclick="sendMessage()">Send</button>
-          <button class="secondary" onclick="resetChat()">Reset</button>
-        </div>
-
-        <div class="status" id="statusText">Ready.</div>
-      </div>
-    </div>
+  <div class="hero">
+    <h1>BPO AI Collections Agent</h1>
+    <p>Claude-native demo for regulated financial support journeys: overdue EMI, NACH bounce, escalation handling, and multilingual customer interaction.</p>
   </div>
 
-  <script>
-    const messagesEl = document.getElementById('messages');
-    const inputBox = document.getElementById('inputBox');
-    const scenarioBadge = document.getElementById('scenarioBadge');
-    const statusText = document.getElementById('statusText');
+  <!-- API Key input -->
+  <div class="panel" style="margin-bottom:20px">
+    <div class="key-row">
+      <label>Anthropic API Key</label>
+      <input type="password" id="apiKey" placeholder="sk-ant-..." />
+    </div>
+    <div style="font-size:12px;color:var(--muted)">Key stays in your browser only. Never stored or sent anywhere except Anthropic's API.</div>
+  </div>
 
-    const scenarioData = {
-      emi: {
-        badge: "Scenario: Overdue EMI Reminder",
-        starter: "I missed my EMI this month because of an unexpected expense. What should I do now?",
-        opening: [
-          { role: "assistant", text: "Hello, I’m here to help. I can see you may have missed this month’s EMI.\n\nNo worries — let’s look at the next steps calmly. Depending on your account, options may include making the missed payment now, checking any late fee implications, or discussing a repayment arrangement.\n\nCould you confirm whether you’re able to make a partial or full payment this week?" }
-        ]
-      },
-      nach: {
-        badge: "Scenario: NACH Bounce Handling",
-        starter: "My bank balance was low and the auto-debit failed. Will I be charged?",
-        opening: [
-          { role: "assistant", text: "I understand. A failed NACH auto-debit can happen if the balance is insufficient or due to a bank-side issue.\n\nIn many cases, there may be a bounce charge or late fee depending on policy. The best next step is to complete the overdue amount as soon as possible and confirm whether a re-presentation is scheduled.\n\nWould you like help with the payment options or the timeline for the next debit attempt?" }
-        ]
-      },
-      escalation: {
-        badge: "Scenario: Escalation / Complaint",
-        starter: "I’ve already called twice and I’m frustrated. Why am I still getting reminder messages?",
-        opening: [
-          { role: "assistant", text: "I’m sorry this has been frustrating. I understand repeated reminders can feel stressful, especially if you’ve already contacted support.\n\nLet me help de-escalate this properly. I can note your concern, explain why reminders may still be active, and guide the next step for resolution.\n\nIf your payment is already in process or a prior commitment was recorded, this may simply require an account update." }
-        ]
-      },
-      hindi: {
-        badge: "Scenario: Hindi Interaction",
-        starter: "Meri EMI late ho gayi hai. Ab mujhe kya karna chahiye?",
-        opening: [
-          { role: "assistant", text: "Bilkul, main madad karta hoon.\n\nAgar aapki EMI late ho gayi hai, to agla best step ye hai ki aap outstanding amount aur due date ko confirm karein. Kuch cases mein late fee ya bounce charge lag sakta hai, lekin jaldi action lene se issue ko manage kiya ja sakta hai.\n\nAap chahein to main aapko payment options ya next steps samjha sakta hoon." }
-        ]
-      },
-      custom: {
-        badge: "Scenario: Blank Demo",
-        starter: "",
-        opening: [
-          { role: "assistant", text: "Demo ready. Type a customer message to simulate a collections support interaction." }
-        ]
-      }
-    };
+  <div class="grid">
 
-    function addMessage(role, text) {
-      const div = document.createElement('div');
-      div.className = 'msg ' + role;
-      div.textContent = text;
-      messagesEl.appendChild(div);
-      messagesEl.scrollTop = messagesEl.scrollHeight;
+    <!-- Scenarios -->
+    <div class="panel">
+      <h2>Demo Scenarios</h2>
+
+      <button type="button" class="scenario" onclick="loadScenario('emi')">
+        <span>Overdue EMI Reminder</span>
+        <span class="meta">Tone: calm, policy-aware, repayment options</span>
+      </button>
+
+      <button type="button" class="scenario" onclick="loadScenario('nach')">
+        <span>NACH Bounce Handling</span>
+        <span class="meta">Tone: explanatory, action-oriented</span>
+      </button>
+
+      <button type="button" class="scenario" onclick="loadScenario('escalation')">
+        <span>Escalation / Complaint</span>
+        <span class="meta">Tone: empathetic, de-escalation focused</span>
+      </button>
+
+      <button type="button" class="scenario" onclick="loadScenario('hindi')">
+        <span>Hindi Interaction</span>
+        <span class="meta">Tone: multilingual support example</span>
+      </button>
+
+      <button type="button" class="scenario" onclick="loadScenario('custom')">
+        <span>Blank Demo</span>
+        <span class="meta">Start fresh and type your own customer message</span>
+      </button>
+
+      <div class="note">
+        Powered by Claude. Each scenario uses a finance-tuned system prompt with real API calls — not hardcoded replies.
+      </div>
+    </div>
+
+    <!-- Chat -->
+    <div class="panel chat">
+      <div class="chat-header">
+        <h2 style="margin:0">Conversation Demo</h2>
+        <span class="badge" id="scenarioBadge">Scenario: not selected</span>
+      </div>
+
+      <div class="messages" id="messages"></div>
+
+      <div class="controls">
+        <textarea id="inputBox" placeholder="Type a customer message..."></textarea>
+      </div>
+
+      <div class="controls">
+        <button class="primary" id="sendBtn" onclick="sendMessage()">Send</button>
+        <button class="secondary" onclick="resetChat()">Reset</button>
+      </div>
+
+      <div class="status" id="statusText">Enter your API key and select a scenario to begin.</div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const SYSTEM_PROMPT = `You are ARIA, an AI-powered Finance BPO collections agent for Accenture India Operations.
+You handle Collections & Payments interactions for Indian retail banking customers.
+
+PERSONA: Professional, empathetic, bilingual. Respond in Hindi if the customer writes in Hindi. Use Hinglish if they mix languages. Always address customers respectfully.
+
+MOCK CUSTOMER DATA (use for realistic responses):
+- Rahul Sharma | Loan: HOME-2023-4521 | EMI: ₹28,500 | Overdue: 2 months (₹57,000) | Next due: 5th May 2026
+- Priya Mehta | Loan: PERSONAL-2024-1190 | EMI: ₹12,200 | Status: Current | Next due: 10th May 2026
+- Amit Patel | Loan: CAR-2022-8834 | EMI: ₹18,750 | Overdue: 1 month | NACH bounce: Insufficient funds
+
+RULES:
+- Keep responses to 3-5 sentences unless the customer needs detailed explanation
+- Always end with a clear next action for the customer
+- If customer expresses frustration or mentions manager/complaint/legal: acknowledge, empathise, offer escalation
+- For payments: offer to generate a payment link to their registered mobile
+- Never invent loan data outside the three customers above
+- Use RBI Fair Practices Code tone: firm but respectful, never threatening`;
+
+  const scenarioData = {
+    emi: {
+      badge: "Scenario: Overdue EMI Reminder",
+      starter: "I missed my EMI this month because of an unexpected expense. What should I do now?"
+    },
+    nach: {
+      badge: "Scenario: NACH Bounce Handling",
+      starter: "My bank balance was low and the auto-debit failed. Will I be charged a penalty?"
+    },
+    escalation: {
+      badge: "Scenario: Escalation / Complaint",
+      starter: "I've already called twice and I'm frustrated. Why am I still getting reminder messages?"
+    },
+    hindi: {
+      badge: "Scenario: Hindi Interaction",
+      starter: "Meri EMI late ho gayi hai. Ab mujhe kya karna chahiye?"
+    },
+    custom: {
+      badge: "Scenario: Blank Demo",
+      starter: ""
     }
+  };
 
-    function resetChat() {
-      messagesEl.innerHTML = "";
-      inputBox.value = "";
-      scenarioBadge.textContent = "Scenario: not selected";
-      statusText.textContent = "Ready.";
-    }
+  // Conversation history for multi-turn context
+  let history = [];
 
-    function loadScenario(key) {
-      resetChat();
-      const s = scenarioData[key];
-      scenarioBadge.textContent = s.badge;
-      s.opening.forEach(m => addMessage(m.role, m.text));
-      inputBox.value = s.starter;
-      statusText.textContent = "Scenario loaded.";
-    }
+  const messagesEl = document.getElementById('messages');
+  const inputBox   = document.getElementById('inputBox');
+  const badge      = document.getElementById('scenarioBadge');
+  const statusText = document.getElementById('statusText');
+  const sendBtn    = document.getElementById('sendBtn');
 
-    function sendMessage() {
-      const text = inputBox.value.trim();
-      if (!text) return;
-      addMessage("user", text);
-      inputBox.value = "";
-      statusText.textContent = "Generating demo response...";
-
-     setTimeout(() => {
-  const reply = generateReply(text);
-  typeMessage(reply);
-}, 500);
-      function typeMessage(text) {
-  const div = document.createElement('div');
-  div.className = 'msg assistant';
-  messagesEl.appendChild(div);
-
-  let i = 0;
-  const speed = 12; // typing speed
-
-  function type() {
-    if (i < text.length) {
-      div.textContent += text.charAt(i);
-      i++;
-      messagesEl.scrollTop = messagesEl.scrollHeight;
-      setTimeout(type, speed);
-    } else {
-      statusText.textContent = "Response generated.";
-    }
+  function addMessage(role, text) {
+    const div = document.createElement('div');
+    div.className = 'msg ' + role;
+    div.textContent = text;
+    messagesEl.appendChild(div);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+    return div;
   }
 
-  type();
-}
+  function resetChat() {
+    messagesEl.innerHTML = '';
+    inputBox.value = '';
+    history = [];
+    badge.textContent = 'Scenario: not selected';
+    statusText.textContent = 'Ready.';
+  }
 
-    function generateReply(text) {
-      const t = text.toLowerCase();
+  function loadScenario(key) {
+    resetChat();
+    const s = scenarioData[key];
+    badge.textContent = s.badge;
+    inputBox.value = s.starter;
+    addMessage('assistant', 'Namaste 🙏 I\'m ARIA, your Accenture Finance support agent. How can I help you today?\n\nआप हिंदी में भी बात कर सकते हैं।');
+    statusText.textContent = 'Scenario loaded. Press Send to begin.';
+  }
 
-      if (t.includes("frustrated") || t.includes("complaint") || t.includes("harass") || t.includes("stress")) {
-        return "I’m sorry this experience has been frustrating.\n\nHere’s what I can do next:\n1. Acknowledge your complaint and record it for follow-up\n2. Clarify the current account status\n3. Help reduce unnecessary confusion by explaining whether reminders are system-generated or pending account updates\n\nIf you’d like, I can help draft the next resolution step in a calm, formal way.";
+  async function sendMessage() {
+    const apiKey = document.getElementById('apiKey').value.trim();
+    const text   = inputBox.value.trim();
+
+    if (!apiKey) { statusText.textContent = '⚠ Please enter your Anthropic API key above.'; return; }
+    if (!text)   { statusText.textContent = '⚠ Please type a message first.'; return; }
+
+    // Add user message to UI and history
+    addMessage('user', text);
+    history.push({ role: 'user', content: text });
+    inputBox.value = '';
+    sendBtn.disabled = true;
+    statusText.textContent = 'ARIA is thinking...';
+
+    // Typing indicator
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'msg assistant';
+    typingDiv.textContent = '...';
+    messagesEl.appendChild(typingDiv);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+
+    try {
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': apiKey,
+          'anthropic-version': '2023-06-01',
+          'anthropic-dangerous-direct-browser-access': 'true'
+        },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 1000,
+          system: SYSTEM_PROMPT,
+          messages: history
+        })
+      });
+
+      const data = await res.json();
+
+      if (data.error) {
+        typingDiv.textContent = '⚠ API error: ' + data.error.message;
+        statusText.textContent = 'Error. Check your API key.';
+        history.pop();
+      } else {
+        const reply = data.content.map(b => b.text || '').join('');
+        typingDiv.textContent = reply;
+        history.push({ role: 'assistant', content: reply });
+        statusText.textContent = 'Response received.';
       }
-
-      if (t.includes("nach") || t.includes("auto-debit") || t.includes("bounce") || t.includes("bank balance")) {
-        return "A NACH or auto-debit failure is usually linked to insufficient balance, account restrictions, or a bank-side issue.\n\nRecommended next steps:\n- Complete the overdue payment manually if available\n- Check whether the debit will be re-attempted\n- Review any bounce charge or late fee implications\n\nFor a production setup, this response would also be policy-validated before being shown.";
-      }
-
-      if (t.includes("emi") || t.includes("late") || t.includes("missed payment") || t.includes("overdue")) {
-        return "Thanks for explaining. Missing an EMI doesn’t automatically mean the situation can’t be managed.\n\nThe priority is to:\n- confirm the overdue amount\n- understand any late fee implications\n- explore whether full or partial repayment is possible soon\n\nIn a live deployment, the agent would use account context and policy rules before recommending next actions.";
-      }
-
-      if (t.includes("meri") || t.includes("mujhe") || t.includes("kya") || t.includes("hindi")) {
-        return "Samajh gaya.\n\nAise case mein sabse pehle overdue amount aur due status verify karna zaroori hota hai. Uske baad payment option, re-attempt timeline, ya support escalation ka next step suggest kiya ja sakta hai.\n\nYeh demo dikhata hai ki multilingual financial support journeys ko safe aur structured tareeke se handle kiya ja sakta hai.";
-      }
-
-      return "Thanks — this demo is designed to simulate a safe, customer-facing collections support response.\n\nFor production, the next layer would include:\n- account-aware context\n- policy validation\n- audit logging\n- secure backend orchestration";
+    } catch (err) {
+      typingDiv.textContent = '⚠ Connection error. Check your API key and internet connection.';
+      statusText.textContent = 'Connection failed.';
+      history.pop();
     }
 
-   window.loadScenario = loadScenario;
-window.sendMessage = sendMessage;
-window.resetChat = resetChat;
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+    sendBtn.disabled = false;
+  }
 
-window.addEventListener('load', () => {
-  loadScenario('emi');
-});
-  </script>
+  // Allow Enter key to send (Shift+Enter for new line)
+  inputBox.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+  });
+
+  // Load default scenario on open
+  window.addEventListener('load', () => loadScenario('emi'));
+
+  // Expose to HTML onclick
+  window.loadScenario = loadScenario;
+  window.sendMessage  = sendMessage;
+  window.resetChat    = resetChat;
+</script>
 </body>
 </html>
