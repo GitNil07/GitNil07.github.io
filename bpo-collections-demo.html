@@ -75,10 +75,11 @@
       border-color:var(--accent);
     }
     .meta{
-      font-size:12px;
-      color:var(--muted);
-      margin-top:4px;
-    }
+  display:block;
+  font-size:12px;
+  color:var(--muted);
+  margin-top:4px;
+}
     .chat{
       display:flex;
       flex-direction:column;
@@ -190,26 +191,30 @@
     <div class="grid">
       <div class="panel">
         <h2>Demo Scenarios</h2>
+<button type="button" class="scenario" onclick="loadScenario('emi')">
+  <span>Overdue EMI Reminder</span>
+  <span class="meta">Tone: calm, policy-aware, repayment options</span>
+</button>
 
-        <button class="scenario" onclick="loadScenario('emi')">
-          Overdue EMI Reminder
-          <div class="meta">Tone: calm, policy-aware, repayment options</div>
-        </button>
+<button type="button" class="scenario" onclick="loadScenario('nach')">
+  <span>NACH Bounce Handling</span>
+  <span class="meta">Tone: explanatory, action-oriented</span>
+</button>
 
-        <button class="scenario" onclick="loadScenario('nach')">
-          NACH Bounce Handling
-          <div class="meta">Tone: explanatory, action-oriented</div>
-        </button>
+<button type="button" class="scenario" onclick="loadScenario('escalation')">
+  <span>Escalation / Complaint</span>
+  <span class="meta">Tone: empathetic, de-escalation focused</span>
+</button>
 
-        <button class="scenario" onclick="loadScenario('escalation')">
-          Escalation / Complaint
-          <div class="meta">Tone: empathetic, de-escalation focused</div>
-        </button>
+<button type="button" class="scenario" onclick="loadScenario('hindi')">
+  <span>Hindi Interaction</span>
+  <span class="meta">Tone: multilingual support example</span>
+</button>
 
-        <button class="scenario" onclick="loadScenario('hindi')">
-          Hindi Interaction
-          <div class="meta">Tone: multilingual support example</div>
-        </button>
+<button type="button" class="scenario" onclick="loadScenario('custom')">
+  <span>Blank Demo</span>
+  <span class="meta">Start fresh and type your own customer message</span>
+</button>
 
         <button class="scenario" onclick="loadScenario('custom')">
           Blank Demo
@@ -366,7 +371,13 @@
       return "Thanks — this demo is designed to simulate a safe, customer-facing collections support response.\n\nFor production, the next layer would include:\n- account-aware context\n- policy validation\n- audit logging\n- secure backend orchestration";
     }
 
-    loadScenario('emi');
+   window.loadScenario = loadScenario;
+window.sendMessage = sendMessage;
+window.resetChat = resetChat;
+
+window.addEventListener('load', () => {
+  loadScenario('emi');
+});
   </script>
 </body>
 </html>
