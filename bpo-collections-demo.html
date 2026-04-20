@@ -80,13 +80,7 @@
     }
     .status{margin-top:10px;color:var(--muted);font-size:13px}
     .note{margin-top:16px;font-size:13px;color:var(--muted);line-height:1.5}
-    .key-row{display:flex;gap:8px;margin-bottom:16px;align-items:center}
-    .key-row input{
-      flex:1;padding:8px 12px;border-radius:10px;
-      border:1px solid var(--border);background:#0d1430;
-      color:var(--text);font:inherit;font-size:13px;
-    }
-    .key-row label{font-size:12px;color:var(--muted);white-space:nowrap}
+    
     @media(max-width:900px){
       .grid{grid-template-columns:1fr}
       .chat{min-height:520px}
@@ -103,12 +97,10 @@
   </div>
 
   <!-- API Key input -->
-  <div class="panel" style="margin-bottom:20px">
-    <div class="key-row">
-      <label>Anthropic API Key</label>
-      <input type="password" id="apiKey" placeholder="sk-ant-..." />
+    <div class="panel" style="margin-bottom:20px">
+    <div style="font-size:13px;color:#dbe6ff;line-height:1.6">
+      Live model integration available via enterprise Claude/OpenAI endpoint — contact team to configure.
     </div>
-    <div style="font-size:12px;color:var(--muted)">Key stays in your browser only. Never stored or sent anywhere except Anthropic's API.</div>
   </div>
 
   <div class="grid">
@@ -142,10 +134,9 @@
         <span class="meta">Start fresh and type your own customer message</span>
       </button>
 
-      <div class="note">
-        Powered by Claude. Each scenario uses a finance-tuned system prompt with real API calls — not hardcoded replies.
+            <div class="note">
+        Production version connects to a secure enterprise LLM endpoint. This demo showcases the interaction and workflow design.
       </div>
-    </div>
 
     <!-- Chat -->
     <div class="panel chat">
@@ -165,30 +156,13 @@
         <button class="secondary" onclick="resetChat()">Reset</button>
       </div>
 
-      <div class="status" id="statusText">Enter your API key and select a scenario to begin.</div>
-    </div>
+            <div class="status" id="statusText">Select a scenario to begin.</div>
 
   </div>
 </div>
 
 <script>
-  const SYSTEM_PROMPT = `You are ARIA, an AI-powered Finance BPO collections agent for Accenture India Operations.
-You handle Collections & Payments interactions for Indian retail banking customers.
-
-PERSONA: Professional, empathetic, bilingual. Respond in Hindi if the customer writes in Hindi. Use Hinglish if they mix languages. Always address customers respectfully.
-
-MOCK CUSTOMER DATA (use for realistic responses):
-- Rahul Sharma | Loan: HOME-2023-4521 | EMI: ₹28,500 | Overdue: 2 months (₹57,000) | Next due: 5th May 2026
-- Priya Mehta | Loan: PERSONAL-2024-1190 | EMI: ₹12,200 | Status: Current | Next due: 10th May 2026
-- Amit Patel | Loan: CAR-2022-8834 | EMI: ₹18,750 | Overdue: 1 month | NACH bounce: Insufficient funds
-
-RULES:
-- Keep responses to 3-5 sentences unless the customer needs detailed explanation
-- Always end with a clear next action for the customer
-- If customer expresses frustration or mentions manager/complaint/legal: acknowledge, empathise, offer escalation
-- For payments: offer to generate a payment link to their registered mobile
-- Never invent loan data outside the three customers above
-- Use RBI Fair Practices Code tone: firm but respectful, never threatening`;
+  
 
   const scenarioData = {
     emi: {
@@ -214,7 +188,7 @@ RULES:
   };
 
   // Conversation history for multi-turn context
-  let history = [];
+
 
   const messagesEl = document.getElementById('messages');
   const inputBox   = document.getElementById('inputBox');
@@ -234,7 +208,7 @@ RULES:
   function resetChat() {
     messagesEl.innerHTML = '';
     inputBox.value = '';
-    history = [];
+
     badge.textContent = 'Scenario: not selected';
     statusText.textContent = 'Ready.';
   }
@@ -248,16 +222,74 @@ RULES:
     statusText.textContent = 'Scenario loaded. Press Send to begin.';
   }
 
-  async function sendMessage() {
-    const apiKey = document.getElementById('apiKey').value.trim();
-    const text   = inputBox.value.trim();
+  async function sendMessage()   function sendMessage() {
+    const text = inputBox.value.trim();
 
-    if (!apiKey) { statusText.textContent = '⚠ Please enter your Anthropic API key above.'; return; }
-    if (!text)   { statusText.textContent = '⚠ Please type a message first.'; return; }
+    if (!text) {
+      statusText.textContent = 'Please type a message first.';
+      return;
+    }
 
+    addMessage('user', text);
+    inputBox.value = '  function generateReply(text, scenario) {
+    const t = text.toLowerCase();
+
+    if (scenario.includes('Overdue EMI')) {
+      return `Thank you for letting me know. Situations like this can happen, and the first step is to confirm the overdue amount and due date on your account.
+
+Depending on the repayment status, the next step may be to make the missed EMI or discuss whether a short-term repayment arrangement is available.
+
+Would you like me to walk you through the possible payment options for this month?`;
+    }
+
+    if (scenario.includes('NACH Bounce')) {
+      return `A failed auto-debit can happen because of insufficient balance or a bank-side issue. In such cases, there may be bounce-related charges or a delayed repayment flag depending on policy.
+
+The immediate priority is to complete the overdue amount and confirm whether the debit will be re-attempted.
+
+Would you like to proceed with a manual payment option or understand the likely fee implications first?`;
+    }
+
+    if (scenario.includes('Escalation')) {
+      return `I’m sorry this has been frustrating, and I understand repeated reminders can create a poor experience. Let me help clarify the situation calmly.
+
+Reminder messages can continue if the account update, payment confirmation, or prior service request has not yet been fully reflected in the workflow.
+
+If you want, I can help log this as an escalation path and outline the next resolution step clearly.`;
+    }
+
+    if (scenario.includes('Hindi') || t.includes('meri') || t.includes('mujhe') || t.includes('kya')) {
+      return `Bilkul, main madad kar sakta hoon. Agar EMI late ho gayi hai, to sabse pehle overdue amount aur due date confirm karna zaroori hota hai.
+
+Uske baad payment option, penalty implication, ya repayment support ka next step samjhaya ja sakta hai.
+
+Agar aap chahein, main aapko simple next steps Hindi mein explain kar deta hoon.`;
+    }
+
+    return `Thank you. This prototype is designed to demonstrate how a collections support agent can guide customer conversations using structured, policy-aware responses.
+
+In a production version, the same interaction would be backed by secure orchestration, customer context, and compliance controls.`;
+  }';
+    sendBtn.disabled = true;
+    statusText.textContent = 'ARIA is thinking...';
+
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'msg assistant';
+    typingDiv.textContent = 'Thinking...';
+    messagesEl.appendChild(typingDiv);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+
+    setTimeout(() => {
+      const reply = generateReply(text, badge.textContent);
+      typingDiv.textContent = reply;
+      statusText.textContent = 'Response generated.';
+      sendBtn.disabled = false;
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+    }, 700);
+  }
     // Add user message to UI and history
     addMessage('user', text);
-    history.push({ role: 'user', content: text });
+  
     inputBox.value = '';
     sendBtn.disabled = true;
     statusText.textContent = 'ARIA is thinking...';
