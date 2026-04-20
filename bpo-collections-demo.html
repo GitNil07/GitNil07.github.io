@@ -14,74 +14,214 @@
       --accent:#7aa2ff;
       --accent2:#9c7bff;
       --border:rgba(255,255,255,.1);
-      --ok:#1dbf73;
-      --warn:#ffb020;
     }
+
     *{box-sizing:border-box}
+
     body{
       margin:0;
       font-family:Inter,Segoe UI,Arial,sans-serif;
       background:linear-gradient(180deg,#09101f,#0e1430);
       color:var(--text);
     }
-    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:24px;
+    }
+
     .hero{
-      margin-bottom:20px;padding:24px;
-      border:1px solid var(--border);border-radius:20px;
+      margin-bottom:20px;
+      padding:24px;
+      border:1px solid var(--border);
+      border-radius:20px;
       background:linear-gradient(135deg,rgba(122,162,255,.18),rgba(156,123,255,.14));
     }
-    .hero h1{margin:0 0 8px;font-size:36px}
-    .hero p{margin:0;color:var(--muted);line-height:1.6}
-    .grid{display:grid;grid-template-columns:320px 1fr;gap:20px}
-    .panel{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:18px}
-    .panel h2{margin-top:0;font-size:20px}
+
+    .hero h1{
+      margin:0 0 8px;
+      font-size:36px;
+    }
+
+    .hero p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    .top-note{
+      margin-bottom:20px;
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:18px;
+      color:#dbe6ff;
+      font-size:13px;
+      line-height:1.6;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:320px 1fr;
+      gap:20px;
+    }
+
+    .panel{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:18px;
+    }
+
+    .panel h2{
+      margin-top:0;
+      font-size:20px;
+    }
+
     .scenario{
-      width:100%;text-align:left;margin:10px 0;padding:14px;
-      border-radius:14px;border:1px solid var(--border);
-      background:var(--panel2);color:var(--text);cursor:pointer;
+      width:100%;
+      text-align:left;
+      margin:10px 0;
+      padding:14px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:var(--panel2);
+      color:var(--text);
+      cursor:pointer;
+      transition:border-color .2s ease, transform .2s ease;
     }
-    .scenario:hover{border-color:var(--accent)}
-    .meta{display:block;font-size:12px;color:var(--muted);margin-top:4px}
-    .chat{display:flex;flex-direction:column;min-height:620px}
+
+    .scenario:hover{
+      border-color:var(--accent);
+      transform:translateY(-1px);
+    }
+
+    .meta{
+      display:block;
+      font-size:12px;
+      color:var(--muted);
+      margin-top:4px;
+    }
+
+    .note{
+      margin-top:16px;
+      font-size:13px;
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    .chat{
+      display:flex;
+      flex-direction:column;
+      min-height:620px;
+    }
+
     .chat-header{
-      display:flex;justify-content:space-between;align-items:center;
-      margin-bottom:14px;gap:12px;flex-wrap:wrap;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:8px;
     }
+
+    .chat-subtext{
+      margin-bottom:14px;
+      font-size:12px;
+      color:var(--muted);
+      line-height:1.5;
+    }
+
     .badge{
-      display:inline-block;padding:6px 10px;border-radius:999px;
-      background:rgba(122,162,255,.14);border:1px solid rgba(122,162,255,.3);
-      color:#dbe6ff;font-size:12px;
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(122,162,255,.14);
+      border:1px solid rgba(122,162,255,.3);
+      color:#dbe6ff;
+      font-size:12px;
     }
+
     .messages{
-      flex:1;overflow:auto;border:1px solid var(--border);
-      border-radius:16px;padding:16px;background:#0d1430;min-height:380px;
+      flex:1;
+      overflow:auto;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:16px;
+      background:#0d1430;
+      min-height:380px;
     }
+
     .msg{
-      max-width:78%;margin-bottom:14px;padding:12px 14px;
-      border-radius:16px;line-height:1.6;white-space:pre-wrap;
+      max-width:78%;
+      margin-bottom:14px;
+      padding:12px 14px;
+      border-radius:16px;
+      line-height:1.6;
+      white-space:pre-wrap;
     }
-    .user{margin-left:auto;background:#24335f}
-    .assistant{background:#151f41;border:1px solid var(--border)}
-    .controls{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+
+    .user{
+      margin-left:auto;
+      background:#24335f;
+    }
+
+    .assistant{
+      background:#151f41;
+      border:1px solid var(--border);
+    }
+
+    .controls{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
     textarea{
-      width:100%;min-height:90px;resize:vertical;border-radius:14px;
-      border:1px solid var(--border);background:#0d1430;
-      color:var(--text);padding:12px;font:inherit;
+      width:100%;
+      min-height:100px;
+      resize:vertical;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:#0d1430;
+      color:var(--text);
+      padding:12px;
+      font:inherit;
     }
+
     button.primary{
       background:linear-gradient(135deg,var(--accent),var(--accent2));
-      color:white;border:none;padding:12px 16px;
-      border-radius:12px;cursor:pointer;font-weight:600;
+      color:white;
+      border:none;
+      padding:12px 16px;
+      border-radius:12px;
+      cursor:pointer;
+      font-weight:600;
     }
-    button.primary:disabled{opacity:.5;cursor:not-allowed}
+
+    button.primary:disabled{
+      opacity:.5;
+      cursor:not-allowed;
+    }
+
     button.secondary{
-      background:transparent;color:var(--text);border:1px solid var(--border);
-      padding:12px 16px;border-radius:12px;cursor:pointer;
+      background:transparent;
+      color:var(--text);
+      border:1px solid var(--border);
+      padding:12px 16px;
+      border-radius:12px;
+      cursor:pointer;
     }
-    .status{margin-top:10px;color:var(--muted);font-size:13px}
-    .note{margin-top:16px;font-size:13px;color:var(--muted);line-height:1.5}
-    
-    @media(max-width:900px){
+
+    .status{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    @media (max-width: 900px){
       .grid{grid-template-columns:1fr}
       .chat{min-height:520px}
       .msg{max-width:90%}
@@ -89,269 +229,209 @@
   </style>
 </head>
 <body>
-<div class="wrap">
+  <div class="wrap">
 
-  <div class="hero">
-    <h1>BPO AI Collections Agent</h1>
-    <p>Claude-native demo for regulated financial support journeys: overdue EMI, NACH bounce, escalation handling, and multilingual customer interaction.</p>
-  </div>
+    <div class="hero">
+      <h1>BPO AI Collections Agent</h1>
+      <p>Claude-native demo for regulated financial support journeys: overdue EMI, NACH bounce, escalation handling, and multilingual customer interaction.</p>
+    </div>
 
-  <!-- API Key input -->
-    <div class="panel" style="margin-bottom:20px">
-    <div style="font-size:13px;color:#dbe6ff;line-height:1.6">
+    <div class="top-note">
       Live model integration available via enterprise Claude/OpenAI endpoint — contact team to configure.
+    </div>
+
+    <div class="grid">
+
+      <div class="panel">
+        <h2>Demo Scenarios</h2>
+
+        <button type="button" class="scenario" onclick="loadScenario('emi')">
+          <span>Overdue EMI Reminder</span>
+          <span class="meta">Tone: calm, policy-aware, repayment options</span>
+        </button>
+
+        <button type="button" class="scenario" onclick="loadScenario('nach')">
+          <span>NACH Bounce Handling</span>
+          <span class="meta">Tone: explanatory, action-oriented</span>
+        </button>
+
+        <button type="button" class="scenario" onclick="loadScenario('escalation')">
+          <span>Escalation / Complaint</span>
+          <span class="meta">Tone: empathetic, de-escalation focused</span>
+        </button>
+
+        <button type="button" class="scenario" onclick="loadScenario('hindi')">
+          <span>Hindi Interaction</span>
+          <span class="meta">Tone: multilingual support example</span>
+        </button>
+
+        <button type="button" class="scenario" onclick="loadScenario('custom')">
+          <span>Blank Demo</span>
+          <span class="meta">Start fresh and type your own customer message</span>
+        </button>
+
+        <div class="note">
+          Production version connects to a secure enterprise LLM endpoint. This demo showcases the interaction and workflow design.
+        </div>
+      </div>
+
+      <div class="panel chat">
+        <div class="chat-header">
+          <h2 style="margin:0">Conversation Demo</h2>
+          <span class="badge" id="scenarioBadge">Scenario: not selected</span>
+        </div>
+
+        <div class="chat-subtext">
+          This public version uses a local simulation engine to demonstrate conversational flow, tone, and workflow design.
+        </div>
+
+        <div class="messages" id="messages"></div>
+
+        <div class="controls">
+          <textarea id="inputBox" placeholder="Type a customer message..."></textarea>
+        </div>
+
+        <div class="controls">
+          <button class="primary" id="sendBtn" onclick="sendMessage()">Send</button>
+          <button class="secondary" onclick="resetChat()">Reset</button>
+        </div>
+
+        <div class="status" id="statusText">Select a scenario to begin.</div>
+      </div>
+
     </div>
   </div>
 
-  <div class="grid">
-
-    <!-- Scenarios -->
-    <div class="panel">
-      <h2>Demo Scenarios</h2>
-
-      <button type="button" class="scenario" onclick="loadScenario('emi')">
-        <span>Overdue EMI Reminder</span>
-        <span class="meta">Tone: calm, policy-aware, repayment options</span>
-      </button>
-
-      <button type="button" class="scenario" onclick="loadScenario('nach')">
-        <span>NACH Bounce Handling</span>
-        <span class="meta">Tone: explanatory, action-oriented</span>
-      </button>
-
-      <button type="button" class="scenario" onclick="loadScenario('escalation')">
-        <span>Escalation / Complaint</span>
-        <span class="meta">Tone: empathetic, de-escalation focused</span>
-      </button>
-
-      <button type="button" class="scenario" onclick="loadScenario('hindi')">
-        <span>Hindi Interaction</span>
-        <span class="meta">Tone: multilingual support example</span>
-      </button>
-
-      <button type="button" class="scenario" onclick="loadScenario('custom')">
-        <span>Blank Demo</span>
-        <span class="meta">Start fresh and type your own customer message</span>
-      </button>
-
-            <div class="note">
-        Production version connects to a secure enterprise LLM endpoint. This demo showcases the interaction and workflow design.
-      </div>
-
-    <!-- Chat -->
-    <div class="panel chat">
-      <div class="chat-header">
-        <h2 style="margin:0">Conversation Demo</h2>
-        <span class="badge" id="scenarioBadge">Scenario: not selected</span>
-      </div>
-
-      <div class="messages" id="messages"></div>
-
-      <div class="controls">
-        <textarea id="inputBox" placeholder="Type a customer message..."></textarea>
-      </div>
-
-      <div class="controls">
-        <button class="primary" id="sendBtn" onclick="sendMessage()">Send</button>
-        <button class="secondary" onclick="resetChat()">Reset</button>
-      </div>
-
-            <div class="status" id="statusText">Select a scenario to begin.</div>
-
-  </div>
-</div>
-
-<script>
-  
-
-  const scenarioData = {
-    emi: {
-      badge: "Scenario: Overdue EMI Reminder",
-      starter: "I missed my EMI this month because of an unexpected expense. What should I do now?"
-    },
-    nach: {
-      badge: "Scenario: NACH Bounce Handling",
-      starter: "My bank balance was low and the auto-debit failed. Will I be charged a penalty?"
-    },
-    escalation: {
-      badge: "Scenario: Escalation / Complaint",
-      starter: "I've already called twice and I'm frustrated. Why am I still getting reminder messages?"
-    },
-    hindi: {
-      badge: "Scenario: Hindi Interaction",
-      starter: "Meri EMI late ho gayi hai. Ab mujhe kya karna chahiye?"
-    },
-    custom: {
-      badge: "Scenario: Blank Demo",
-      starter: ""
-    }
-  };
-
-  // Conversation history for multi-turn context
-
-
-  const messagesEl = document.getElementById('messages');
-  const inputBox   = document.getElementById('inputBox');
-  const badge      = document.getElementById('scenarioBadge');
-  const statusText = document.getElementById('statusText');
-  const sendBtn    = document.getElementById('sendBtn');
-
-  function addMessage(role, text) {
-    const div = document.createElement('div');
-    div.className = 'msg ' + role;
-    div.textContent = text;
-    messagesEl.appendChild(div);
-    messagesEl.scrollTop = messagesEl.scrollHeight;
-    return div;
-  }
-
-  function resetChat() {
-    messagesEl.innerHTML = '';
-    inputBox.value = '';
-
-    badge.textContent = 'Scenario: not selected';
-    statusText.textContent = 'Ready.';
-  }
-
-  function loadScenario(key) {
-    resetChat();
-    const s = scenarioData[key];
-    badge.textContent = s.badge;
-    inputBox.value = s.starter;
-    addMessage('assistant', 'Namaste 🙏 I\'m ARIA, your Accenture Finance support agent. How can I help you today?\n\nआप हिंदी में भी बात कर सकते हैं।');
-    statusText.textContent = 'Scenario loaded. Press Send to begin.';
-  }
-
-  async function sendMessage()   function sendMessage() {
-    const text = inputBox.value.trim();
-
-    if (!text) {
-      statusText.textContent = 'Please type a message first.';
-      return;
-    }
-
-    addMessage('user', text);
-    inputBox.value = '  function generateReply(text, scenario) {
-    const t = text.toLowerCase();
-
-    if (scenario.includes('Overdue EMI')) {
-      return `Thank you for letting me know. Situations like this can happen, and the first step is to confirm the overdue amount and due date on your account.
-
-Depending on the repayment status, the next step may be to make the missed EMI or discuss whether a short-term repayment arrangement is available.
-
-Would you like me to walk you through the possible payment options for this month?`;
-    }
-
-    if (scenario.includes('NACH Bounce')) {
-      return `A failed auto-debit can happen because of insufficient balance or a bank-side issue. In such cases, there may be bounce-related charges or a delayed repayment flag depending on policy.
-
-The immediate priority is to complete the overdue amount and confirm whether the debit will be re-attempted.
-
-Would you like to proceed with a manual payment option or understand the likely fee implications first?`;
-    }
-
-    if (scenario.includes('Escalation')) {
-      return `I’m sorry this has been frustrating, and I understand repeated reminders can create a poor experience. Let me help clarify the situation calmly.
-
-Reminder messages can continue if the account update, payment confirmation, or prior service request has not yet been fully reflected in the workflow.
-
-If you want, I can help log this as an escalation path and outline the next resolution step clearly.`;
-    }
-
-    if (scenario.includes('Hindi') || t.includes('meri') || t.includes('mujhe') || t.includes('kya')) {
-      return `Bilkul, main madad kar sakta hoon. Agar EMI late ho gayi hai, to sabse pehle overdue amount aur due date confirm karna zaroori hota hai.
-
-Uske baad payment option, penalty implication, ya repayment support ka next step samjhaya ja sakta hai.
-
-Agar aap chahein, main aapko simple next steps Hindi mein explain kar deta hoon.`;
-    }
-
-    return `Thank you. This prototype is designed to demonstrate how a collections support agent can guide customer conversations using structured, policy-aware responses.
-
-In a production version, the same interaction would be backed by secure orchestration, customer context, and compliance controls.`;
-  }';
-    sendBtn.disabled = true;
-    statusText.textContent = 'ARIA is thinking...';
-
-    const typingDiv = document.createElement('div');
-    typingDiv.className = 'msg assistant';
-    typingDiv.textContent = 'Thinking...';
-    messagesEl.appendChild(typingDiv);
-    messagesEl.scrollTop = messagesEl.scrollHeight;
-
-    setTimeout(() => {
-      const reply = generateReply(text, badge.textContent);
-      typingDiv.textContent = reply;
-      statusText.textContent = 'Response generated.';
-      sendBtn.disabled = false;
-      messagesEl.scrollTop = messagesEl.scrollHeight;
-    }, 700);
-  }
-    // Add user message to UI and history
-    addMessage('user', text);
-  
-    inputBox.value = '';
-    sendBtn.disabled = true;
-    statusText.textContent = 'ARIA is thinking...';
-
-    // Typing indicator
-    const typingDiv = document.createElement('div');
-    typingDiv.className = 'msg assistant';
-    typingDiv.textContent = '...';
-    messagesEl.appendChild(typingDiv);
-    messagesEl.scrollTop = messagesEl.scrollHeight;
-
-    try {
-      const res = await fetch('https://api.anthropic.com/v1/messages', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': apiKey,
-          'anthropic-version': '2023-06-01',
-          'anthropic-dangerous-direct-browser-access': 'true'
-        },
-        body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
-          max_tokens: 1000,
-          system: SYSTEM_PROMPT,
-          messages: history
-        })
-      });
-
-      const data = await res.json();
-
-      if (data.error) {
-        typingDiv.textContent = '⚠ API error: ' + data.error.message;
-        statusText.textContent = 'Error. Check your API key.';
-        history.pop();
-      } else {
-        const reply = data.content.map(b => b.text || '').join('');
-        typingDiv.textContent = reply;
-        history.push({ role: 'assistant', content: reply });
-        statusText.textContent = 'Response received.';
+  <script>
+    const scenarioData = {
+      emi: {
+        badge: "Scenario: Overdue EMI Reminder",
+        starter: "I missed my EMI this month because of an unexpected expense. What should I do now?",
+        opening: "Namaste. I’m ARIA, your finance support assistant. I can help explain the next steps for overdue EMI cases.\n\nYou can also continue this conversation in Hindi if that is easier."
+      },
+      nach: {
+        badge: "Scenario: NACH Bounce Handling",
+        starter: "My bank balance was low and the auto-debit failed. Will I be charged a penalty?",
+        opening: "Hello, I’m ARIA. I can help you understand what happens after a failed NACH or auto-debit attempt.\n\nIf you prefer, I can explain the likely next steps in simple terms."
+      },
+      escalation: {
+        badge: "Scenario: Escalation / Complaint",
+        starter: "I've already called twice and I'm frustrated. Why am I still getting reminder messages?",
+        opening: "Hello, I’m ARIA. I understand escalation cases need a calm and clear response.\n\nI’ll help explain why reminders may continue and what the next resolution path could be."
+      },
+      hindi: {
+        badge: "Scenario: Hindi Interaction",
+        starter: "Meri EMI late ho gayi hai. Ab mujhe kya karna chahiye?",
+        opening: "Namaste. Main ARIA hoon, aapki finance support assistant.\n\nAap Hindi mein baat kar sakte hain, aur main aapko next steps simple tareeke se samjhaungi."
+      },
+      custom: {
+        badge: "Scenario: Blank Demo",
+        starter: "",
+        opening: "Hello, I’m ARIA. This blank mode lets you test your own customer message and view the workflow response style."
       }
-    } catch (err) {
-      typingDiv.textContent = '⚠ Connection error. Check your API key and internet connection.';
-      statusText.textContent = 'Connection failed.';
-      history.pop();
+    };
+
+    const messagesEl = document.getElementById("messages");
+    const inputBox = document.getElementById("inputBox");
+    const badge = document.getElementById("scenarioBadge");
+    const statusText = document.getElementById("statusText");
+    const sendBtn = document.getElementById("sendBtn");
+
+    function addMessage(role, text) {
+      const div = document.createElement("div");
+      div.className = "msg " + role;
+      div.textContent = text;
+      messagesEl.appendChild(div);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+      return div;
     }
 
-    messagesEl.scrollTop = messagesEl.scrollHeight;
-    sendBtn.disabled = false;
-  }
+    function resetChat() {
+      messagesEl.innerHTML = "";
+      inputBox.value = "";
+      badge.textContent = "Scenario: not selected";
+      statusText.textContent = "Ready.";
+    }
 
-  // Allow Enter key to send (Shift+Enter for new line)
-  inputBox.addEventListener('keydown', e => {
-    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
-  });
+    function loadScenario(key) {
+      resetChat();
+      const s = scenarioData[key];
+      badge.textContent = s.badge;
+      inputBox.value = s.starter;
+      addMessage("assistant", s.opening);
+      statusText.textContent = "Scenario loaded. Press Send to continue.";
+    }
 
-  // Load default scenario on open
-  window.addEventListener('load', () => loadScenario('emi'));
+    function generateReply(text, scenario) {
+      const t = text.toLowerCase();
 
-  // Expose to HTML onclick
-  window.loadScenario = loadScenario;
-  window.sendMessage  = sendMessage;
-  window.resetChat    = resetChat;
-</script>
+      if (scenario.includes("Overdue EMI")) {
+        if (t.includes("partial") || t.includes("part payment") || t.includes("half")) {
+          return "A partial payment may still help reduce the overdue balance, but the exact impact depends on repayment rules and the account status.\n\nThe recommended next step would be to confirm the minimum payable amount and whether any late fee is already applied.\n\nWould you like me to explain how a customer-friendly repayment conversation could be handled here?";
+        }
+
+        return "Thank you for letting me know. Situations like this can happen, and the first step is to confirm the overdue amount and due date on the account.\n\nDepending on the repayment status, the next step may be to clear the missed EMI or discuss whether a short-term repayment arrangement is available.\n\nWould you like me to walk through the likely payment options for this month?";
+      }
+
+      if (scenario.includes("NACH Bounce")) {
+        return "A failed auto-debit can happen because of insufficient balance or a bank-side issue. In many cases, there may be a bounce-related charge or delayed repayment flag depending on policy.\n\nThe immediate priority is to complete the overdue amount and confirm whether the debit will be re-attempted automatically.\n\nWould you like to proceed with a manual payment path or understand the possible fee implications first?";
+      }
+
+      if (scenario.includes("Escalation")) {
+        return "I’m sorry this has been frustrating, and I understand repeated reminders can create a poor experience. Let me clarify the likely reason calmly.\n\nReminder messages can continue if a payment update, service request, or prior commitment has not yet been fully reflected in the workflow.\n\nIf needed, the next step would be to acknowledge the complaint, confirm current account status, and route the case for a managed follow-up.";
+      }
+
+      if (scenario.includes("Hindi") || t.includes("meri") || t.includes("mujhe") || t.includes("kya")) {
+        return "Bilkul, main madad kar sakti hoon. Agar EMI late ho gayi hai, to sabse pehle overdue amount aur due date confirm karna zaroori hota hai.\n\nUske baad payment option, possible late fee, aur repayment support ka next step samjhaya ja sakta hai.\n\nAgar aap chahein, main isse aur simple Hindi mein step-by-step explain kar sakti hoon.";
+      }
+
+      if (t.includes("manager") || t.includes("complaint") || t.includes("legal") || t.includes("frustrated")) {
+        return "I understand the concern, and this should be handled with empathy and clarity. In a production setup, this type of message would normally trigger an escalation-aware workflow.\n\nThe right next step would be to acknowledge the concern, avoid repetitive friction, and move the case into a managed review path.\n\nWould you like a sample escalation-safe response for this situation?";
+      }
+
+      return "Thank you. This prototype is designed to demonstrate how a collections support agent can guide customer conversations using structured, policy-aware responses.\n\nIn a production version, the same interaction would be backed by secure orchestration, customer context, and compliance controls.\n\nIf you’d like, try one of the scenarios to see a more specific workflow response.";
+    }
+
+    function sendMessage() {
+      const text = inputBox.value.trim();
+
+      if (!text) {
+        statusText.textContent = "Please type a message first.";
+        return;
+      }
+
+      addMessage("user", text);
+      inputBox.value = "";
+      sendBtn.disabled = true;
+      statusText.textContent = "ARIA is thinking...";
+
+      const thinkingDiv = document.createElement("div");
+      thinkingDiv.className = "msg assistant";
+      thinkingDiv.textContent = "Thinking...";
+      messagesEl.appendChild(thinkingDiv);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+
+      setTimeout(() => {
+        const reply = generateReply(text, badge.textContent);
+        thinkingDiv.textContent = reply;
+        statusText.textContent = "Response generated.";
+        sendBtn.disabled = false;
+        messagesEl.scrollTop = messagesEl.scrollHeight;
+      }, 500);
+    }
+
+    inputBox.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+      }
+    });
+
+    window.addEventListener("load", () => loadScenario("emi"));
+
+    window.loadScenario = loadScenario;
+    window.sendMessage = sendMessage;
+    window.resetChat = resetChat;
+  </script>
 </body>
 </html>
