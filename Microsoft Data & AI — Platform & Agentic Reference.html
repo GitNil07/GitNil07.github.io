@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)file:///C:/Users/nilormi.das/Downloads/msft_ai_reference_2.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Microsoft Data &amp; AI — Platform &amp; Agentic Reference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="./Microsoft Data &amp; AI — Platform &amp; Agentic Reference_files/css2" rel="stylesheet">
+<style>
+:root{
+  --bg:#06060c;
+  --surface:#0d0d16;
+  --surface2:#13131f;
+  --border:#1c1c2e;
+  --border2:#242436;
+  --text:#e4e4f0;
+  --text2:#9090aa;
+  --text3:#55556a;
+  --accent:#5b6af0;
+  --accent2:#00c8a0;
+  --amber:#f0b840;
+  --coral:#f06060;
+  --pink:#c060f0;
+  --blue:#4090f0;
+  --green:#60c060;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:15px}
+
+/* ── HERO ── */
+.hero{position:relative;padding:64px 0 48px;overflow:hidden;border-bottom:1px solid var(--border)}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 60% 30%,rgba(91,106,240,.12) 0%,transparent 70%),radial-gradient(ellipse 40% 40% at 20% 80%,rgba(0,200,160,.07) 0%,transparent 60%);pointer-events:none}
+.hero-inner{max-width:900px;margin:0 auto;padding:0 28px}
+.hero-tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);border:1px solid rgba(91,106,240,.35);border-radius:2px;padding:4px 12px;margin-bottom:20px}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(28px,5vw,46px);font-weight:800;line-height:1.1;color:#fff;margin-bottom:16px;letter-spacing:-1px}
+.hero h1 span{color:var(--accent)}
+.hero-sub{font-size:15px;color:var(--text2);max-width:620px;line-height:1.7;margin-bottom:28px}
+.hero-meta{display:flex;gap:20px;flex-wrap:wrap}
+.hero-pill{font-size:11px;font-family:'IBM Plex Mono',monospace;color:var(--text3);display:flex;align-items:center;gap:6px}
+.hero-pill::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent2)}
+
+/* ── NAV ── */
+.toc{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.toc-inner{max-width:900px;margin:0 auto;padding:0 28px;display:flex;gap:0;overflow-x:auto}
+.toc-link{font-size:11px;font-family:'IBM Plex Mono',monospace;letter-spacing:.5px;text-transform:uppercase;color:var(--text3);padding:13px 14px;text-decoration:none;border-bottom:2px solid transparent;white-space:nowrap;transition:all .15s}
+.toc-link:hover{color:var(--text)}
+.toc-link.active{color:var(--accent);border-bottom-color:var(--accent)}
+
+/* ── LAYOUT ── */
+.shell{max-width:900px;margin:0 auto;padding:0 28px 80px}
+
+/* ── SECTION HEADERS ── */
+.sec-hd{padding:52px 0 24px}
+.sec-tag{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text3);margin-bottom:10px}
+.sec-title{font-family:'Syne',sans-serif;font-size:clamp(20px,3vw,28px);font-weight:700;color:#fff;margin-bottom:8px}
+.sec-desc{font-size:14px;color:var(--text2);max-width:640px;line-height:1.7}
+.divider{height:1px;background:var(--border);margin:0 0 32px}
+
+/* ── TOOL CARDS ── */
+.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px}
+.tool-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 20px;transition:border-color .2s;position:relative;overflow:hidden}
+.tool-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;opacity:.7}
+.tool-card:hover{border-color:var(--border2)}
+.tc-accent-blue::before{background:var(--accent)}
+.tc-accent-teal::before{background:var(--accent2)}
+.tc-accent-amber::before{background:var(--amber)}
+.tc-accent-coral::before{background:var(--coral)}
+.tc-accent-pink::before{background:var(--pink)}
+.tc-accent-green::before{background:var(--green)}
+.tc-accent-blue2::before{background:var(--blue)}
+.tool-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:#fff;margin-bottom:3px}
+.tool-type{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text3);margin-bottom:10px}
+.tool-desc{font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:12px}
+.tool-use{font-size:12px;color:var(--text2);line-height:1.6}
+.tool-use strong{color:var(--text);font-weight:500}
+.tag-row{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px}
+.tag{font-size:10px;font-family:'IBM Plex Mono',monospace;padding:2px 7px;border-radius:3px;border:1px solid}
+.tag-blue{color:var(--accent);border-color:rgba(91,106,240,.3);background:rgba(91,106,240,.08)}
+.tag-teal{color:var(--accent2);border-color:rgba(0,200,160,.3);background:rgba(0,200,160,.08)}
+.tag-amber{color:var(--amber);border-color:rgba(240,184,64,.3);background:rgba(240,184,64,.08)}
+.tag-coral{color:var(--coral);border-color:rgba(240,96,96,.3);background:rgba(240,96,96,.08)}
+.tag-pink{color:var(--pink);border-color:rgba(192,96,240,.3);background:rgba(192,96,240,.08)}
+.tag-green{color:var(--green);border-color:rgba(96,192,96,.3);background:rgba(96,192,96,.08)}
+
+/* ── WIDE CARD ── */
+.tool-card-wide{grid-column:1/-1}
+
+/* ── COMPARISON TABLE ── */
+.comp-table{width:100%;border-collapse:collapse;margin-bottom:28px;font-size:13px}
+.comp-table th{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text3);padding:9px 12px;text-align:left;border-bottom:1px solid var(--border);background:var(--surface)}
+.comp-table td{padding:10px 12px;border-bottom:1px solid var(--border2);color:var(--text2);vertical-align:top;line-height:1.55}
+.comp-table td:first-child{color:var(--text);font-weight:500;font-size:13px;white-space:nowrap}
+.comp-table tr:last-child td{border-bottom:none}
+.comp-table tr:hover td{background:var(--surface)}
+
+/* ── INDUSTRY MATRIX ── */
+.ind-matrix{overflow-x:auto;margin-bottom:28px}
+.ind-table{width:100%;border-collapse:collapse;font-size:12px;min-width:680px}
+.ind-table th{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text3);padding:8px 10px;text-align:center;border-bottom:1px solid var(--border);background:var(--surface)}
+.ind-table th:first-child{text-align:left}
+.ind-table td{padding:9px 10px;border-bottom:1px solid var(--border2);text-align:center;vertical-align:middle}
+.ind-table td:first-child{text-align:left;color:var(--text);font-weight:500;white-space:nowrap}
+.ind-table tr:last-child td{border-bottom:none}
+.cell-primary{color:var(--accent2);font-size:16px}
+.cell-secondary{color:var(--amber);font-size:14px;opacity:.8}
+.cell-none{color:var(--border2);font-size:12px}
+
+/* ── AGENTIC SECTION ── */
+.agent-stack{display:grid;gap:10px;margin-bottom:28px}
+.agent-layer{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px 20px;display:grid;grid-template-columns:140px 1fr;gap:16px;align-items:start}
+.al-label{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;font-weight:500}
+.al-title{font-size:14px;font-weight:500;color:#fff;margin-bottom:4px}
+.al-desc{font-size:13px;color:var(--text2);line-height:1.6}
+.al-tools{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
+.al-tool{font-size:11px;font-family:'IBM Plex Mono',monospace;background:var(--surface2);border:1px solid var(--border2);border-radius:3px;padding:2px 8px;color:var(--text2)}
+
+/* ── ARCH DECISIONS ── */
+.dec-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:28px}
+.dec-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 16px}
+.dc-q{font-size:11px;font-weight:500;color:var(--text3);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px;font-family:'IBM Plex Mono',monospace}
+.dc-opt{font-size:12px;color:var(--text2);padding:5px 0;border-bottom:1px solid var(--border2);line-height:1.5}
+.dc-opt:last-child{border-bottom:none;padding-bottom:0}
+.dc-opt strong{color:var(--text);display:block;font-weight:500;font-size:11px}
+.dc-opt em{color:var(--text3);font-style:normal;font-size:11px}
+
+/* ── CALLOUT BOXES ── */
+.callout{border-radius:8px;padding:16px 18px;margin:18px 0;font-size:13px;line-height:1.65}
+.callout-blue{background:rgba(91,106,240,.08);border:1px solid rgba(91,106,240,.25);color:var(--text2)}
+.callout-teal{background:rgba(0,200,160,.08);border:1px solid rgba(0,200,160,.25);color:var(--text2)}
+.callout-amber{background:rgba(240,184,64,.08);border:1px solid rgba(240,184,64,.25);color:var(--text2)}
+.callout strong{color:var(--text);font-weight:500}
+.callout-lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;display:block}
+
+/* ── PROSE ── */
+.prose{font-size:14px;color:var(--text2);line-height:1.75;margin-bottom:16px}
+.prose strong{color:var(--text);font-weight:500}
+.prose em{color:var(--accent2);font-style:normal}
+
+/* ── KEY INSIGHT ── */
+.insight{background:var(--surface2);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:14px 18px;margin:16px 0;font-size:14px;color:var(--text2);line-height:1.65;font-style:italic}
+.insight strong{color:var(--text);font-style:normal;font-weight:500}
+
+/* ── FOOTER ── */
+.footer{border-top:1px solid var(--border);padding:32px 28px;max-width:900px;margin:0 auto}
+.footer-text{font-size:12px;color:var(--text3);font-family:'IBM Plex Mono',monospace}
+
+@media(max-width:600px){
+  .tool-grid,.dec-grid{grid-template-columns:1fr}
+  .tool-card-wide{grid-column:1}
+  .agent-layer{grid-template-columns:1fr}
+  .hero{padding:40px 0 32px}
+}
+
+/* ── GLOSSARY STYLES ── */
+.gcat-btn{font-size:11px;padding:3px 10px;border-radius:99px;border:1px solid var(--border2);background:var(--surface);color:var(--text3);cursor:pointer;transition:all .15s;font-family:'IBM Plex Mono',monospace;white-space:nowrap}
+.gcat-btn:hover{color:var(--text)}
+.gcat-btn.gcat-active{background:rgba(91,106,240,.12);color:var(--accent);border-color:rgba(91,106,240,.4)}
+#gsearch{transition:border-color .15s}
+#gsearch:focus{border-color:var(--border2) !important;box-shadow:0 0 0 2px rgba(91,106,240,.12)}
+.grow{display:grid;grid-template-columns:190px 1fr auto;gap:12px;padding:11px 0;border-bottom:1px solid var(--border2);align-items:start}
+.grow:last-child{border-bottom:none}
+.grow-word{font-size:13px;font-weight:500;color:var(--text);line-height:1.4}
+.grow-def{font-size:12px;color:var(--text2);line-height:1.6}
+.grow-def strong{color:var(--text)}
+.grow-cat{font-size:9px;font-family:'IBM Plex Mono',monospace;padding:2px 7px;border-radius:3px;border:1px solid;white-space:nowrap;margin-top:2px;font-weight:500}
+@media(max-width:600px){.grow{grid-template-columns:1fr;gap:4px}.grow-cat{width:fit-content}}
+
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- HERO -->
+<!-- ══════════════════════════════════════════ -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Microsoft Group · Data &amp; AI Practice · Field Reference</div>
+    <h1>Microsoft <span>Data &amp; AI</span><br>Platform Reference</h1>
+    <p class="hero-sub">A practitioner's map of the Microsoft Data &amp; AI ecosystem — covering every major tool, agentic architecture patterns, governance controls, industry applicability, and key architectural trade-offs. Structured for use in client engagement and solution design across FSI, Insurance, Retail, Healthcare, Energy, and Government.</p>
+    <div class="hero-meta">
+      <span class="hero-pill">15–20 minute read</span>
+      <span class="hero-pill">Agentic AI · Data Platform · Governance · GenAI</span>
+      <span class="hero-pill">FSI · Insurance · Retail · Healthcare · Energy</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- NAV -->
+<!-- ══════════════════════════════════════════ -->
+<nav class="toc">
+  <div class="toc-inner">
+    <a class="toc-link active" href="file:///C:/Users/nilormi.das/Downloads/msft_ai_reference_2.html#platform">Data Platform</a>
+    <a class="toc-link" href="file:///C:/Users/nilormi.das/Downloads/msft_ai_reference_2.html#agentic">Agentic AI</a>
+    <a class="toc-link" href="file:///C:/Users/nilormi.das/Downloads/msft_ai_reference_2.html#genai">GenAI &amp; LLMs</a>
+    <a class="toc-link" href="file:///C:/Users/nilormi.das/Downloads/msft_ai_reference_2.html#governance">Governance</a>
+    <a class="toc-link" href="file:///C:/Users/nilormi.das/Downloads/msft_ai_reference_2.html#analytics">Analytics &amp; BI</a>
+    <a class="toc-link" href="file:///C:/Users/nilormi.das/Downloads/msft_ai_reference_2.html#devops">DevOps &amp; MLOps</a>
+    <a class="toc-link" href="file:///C:/Users/nilormi.das/Downloads/msft_ai_reference_2.html#industry">Industry Matrix</a>
+    <a class="toc-link" href="file:///C:/Users/nilormi.das/Downloads/msft_ai_reference_2.html#decisions">Arch Decisions</a>
+    <a class="toc-link" href="file:///C:/Users/nilormi.das/Downloads/msft_ai_reference_2.html#glossary">Glossary</a>
+</div></nav>
+
+<div class="shell">
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 1: DATA PLATFORM -->
+<!-- ══════════════════════════════════════════ -->
+<div id="platform">
+<div class="sec-hd">
+  <div class="sec-tag">Section 01</div>
+  <div class="sec-title">Data Platform — The Foundation Layer</div>
+  <div class="sec-desc">The infrastructure that stores, processes, and governs data at scale. Every AI and agentic workload sits on top of this. Get this wrong and the entire AI programme fails.</div>
+</div>
+<div class="divider"></div>
+
+<div class="prose">The Microsoft data platform story converged in 2023 into a single answer: <strong>Microsoft Fabric</strong>. Before Fabric, clients had to stitch together Azure Synapse, Azure Data Factory, Power BI, and Azure Databricks into pipelines. Now those workloads share a single storage layer — <em>OneLake</em> — which eliminates data movement and the integration complexity that used to consume most of the engineering budget.</div>
+
+<div class="tool-grid">
+
+  <div class="tool-card tc-accent-blue tool-card-wide">
+    <div class="tool-name">Microsoft Fabric</div>
+    <div class="tool-type">Unified SaaS Analytics Platform</div>
+    <div class="tool-desc">The single answer to "which Azure data platform?" Built on <strong>OneLake</strong> — one logical storage layer that all workloads share. Combines Data Engineering (Spark notebooks, pipelines), Data Warehousing (SQL endpoint), Data Science (ML experiments), Real-Time Intelligence (event streaming), and Power BI into one SaaS interface. No data movement between tools. DirectLake connects Power BI directly to OneLake without import or refresh cycles.</div>
+    <div class="tool-use"><strong>Agentic relevance:</strong> The Gold layer of Fabric is where data products live — the governed, quality-assured datasets that feed RAG applications, feature stores, and agentic memory systems. The self-serve layer (notebooks, SQL endpoint) enables Data Analyst agents to query live data.</div>
+    <div class="tag-row">
+      <span class="tag tag-blue">All industries</span>
+      <span class="tag tag-teal">Foundation platform</span>
+      <span class="tag tag-blue">Preferred: FSI, Retail, Healthcare</span>
+    </div>
+  </div>
+
+  <div class="tool-card tc-accent-teal">
+    <div class="tool-name">Azure Data Lake Storage Gen2 (ADLS)</div>
+    <div class="tool-type">Scalable Object Storage</div>
+    <div class="tool-desc">Hierarchical namespace object storage that underpins Fabric's OneLake and standalone data lake architectures. Stores raw, Bronze, and Silver zone data in open formats (Parquet, Delta, JSON). RBAC and ACL security at file and folder level.</div>
+    <div class="tool-use"><strong>When still used standalone:</strong> When Fabric is not yet adopted, or when a client has existing Databricks architecture where ADLS serves as the storage layer beneath Unity Catalog.</div>
+    <div class="tag-row">
+      <span class="tag tag-teal">Storage layer</span>
+      <span class="tag tag-amber">Legacy / Databricks stacks</span>
+    </div>
+  </div>
+
+  <div class="tool-card tc-accent-amber">
+    <div class="tool-name">Azure Synapse Analytics</div>
+    <div class="tool-type">Integrated Analytics Service (Legacy Path)</div>
+    <div class="tool-desc">The predecessor architecture to Fabric — combines SQL data warehouse (Dedicated/Serverless SQL Pool), Spark processing, and data integration (Synapse Pipelines) in one workspace. Still widely deployed in existing enterprise estates.</div>
+    <div class="tool-use"><strong>Recommended approach:</strong> For new programmes, use Fabric. For existing Synapse deployments, the migration path is Fabric Warehouse (SQL workloads) and Fabric notebooks (Spark workloads). Synapse continues to receive support but is not the strategic investment direction.</div>
+    <div class="tag-row">
+      <span class="tag tag-amber">Migration target → Fabric</span>
+      <span class="tag tag-blue">FSI, Government</span>
+    </div>
+  </div>
+
+  <div class="tool-card tc-accent-blue">
+    <div class="tool-name">Azure Data Factory (ADF)</div>
+    <div class="tool-type">Data Orchestration &amp; ETL / ELT</div>
+    <div class="tool-desc">Cloud-native ETL/ELT service with 100+ connectors to SaaS, on-prem, and cloud sources. Manages pipeline scheduling, monitoring, and dependency management. In Fabric, the equivalent is Fabric Data Pipelines — same paradigm, native SaaS experience. ADF remains relevant for hybrid (on-prem to cloud) ingestion scenarios.</div>
+    <div class="tool-use"><strong>Agentic relevance:</strong> ADF pipeline events are the source triggers for agentic monitoring systems — precisely the pattern in the LangGraph pipeline monitoring asset. Azure Event Grid bridges ADF pipeline completion events to Event Hubs for real-time agent consumption.</div>
+    <div class="tag-row">
+      <span class="tag tag-blue">Ingestion layer</span>
+      <span class="tag tag-teal">Hybrid / on-prem sources</span>
+      <span class="tag tag-amber">Being absorbed → Fabric Pipelines</span>
+    </div>
+  </div>
+
+  <div class="tool-card tc-accent-teal">
+    <div class="tool-name">Azure Databricks</div>
+    <div class="tool-type">Unified Data + AI Platform (Partner)</div>
+    <div class="tool-desc">Apache Spark-based platform with MLflow for experiment tracking, Unity Catalog for data governance, and Mosaic AI for model serving and fine-tuning. Microsoft's preferred partner for Spark-heavy data engineering and advanced ML workloads. Delta Lake (open format) is native — full interoperability with Fabric via shortcuts.</div>
+    <div class="tool-use"><strong>Positioning:</strong> Databricks and Fabric are not binary — they coexist and complement. Databricks for complex Spark pipelines and ML training workloads. Fabric for the BI, SQL, and self-serve consumption layer. Databricks Unity Catalog federates with Purview for unified governance across the estate.</div>
+    <div class="tag-row">
+      <span class="tag tag-blue">FSI, Healthcare, Manufacturing</span>
+      <span class="tag tag-teal">ML-heavy workloads</span>
+      <span class="tag tag-pink">Coexists with Fabric</span>
+    </div>
+  </div>
+
+  <div class="tool-card tc-accent-pink">
+    <div class="tool-name">Azure Event Hubs</div>
+    <div class="tool-type">Real-Time Event Streaming</div>
+    <div class="tool-desc">Fully managed, scalable event streaming service — the Azure equivalent of Apache Kafka. Handles millions of events per second. Supports the AMQP, Kafka, and HTTPS protocols. Events are retained for up to 7 days (standard) or 90 days (premium). Kafka API compatibility means no code change for existing Kafka producers.</div>
+    <div class="tool-use"><strong>Agentic relevance:</strong> Event Hubs is the streaming backbone for real-time agentic monitoring. In the pipeline monitoring system, ADF pipeline events route through Azure Event Grid into Event Hubs, where the SLA Watcher and Schema Drift agents consume them as a continuous stream — zero-touch architecture with no ADF code changes required.</div>
+    <div class="tag-row">
+      <span class="tag tag-pink">Streaming / real-time</span>
+      <span class="tag tag-teal">Agentic event source</span>
+      <span class="tag tag-blue">IoT, Telco, Retail, FSI</span>
+    </div>
+  </div>
+
+  <div class="tool-card tc-accent-coral">
+    <div class="tool-name">Azure Event Grid</div>
+    <div class="tool-type">Event Routing &amp; Reactive Architecture</div>
+    <div class="tool-desc">Serverless event broker that routes events from Azure services (ADF, Blob Storage, Service Bus, custom sources) to subscribers (Event Hubs, Functions, Logic Apps, webhooks) — with filtering, transformation, and dead-letter handling. Enables fully reactive, event-driven architectures without polling.</div>
+    <div class="tool-use"><strong>Agentic relevance:</strong> Event Grid is the zero-touch bridge between ADF pipeline completion events and the agent monitoring layer. No code changes to existing ADF pipelines — Event Grid listens natively to ADF pipeline run events and forwards them. This is the "connect without touching" pattern for retrofitting agentic monitoring onto existing data estates.</div>
+    <div class="tag-row">
+      <span class="tag tag-coral">Event routing</span>
+      <span class="tag tag-teal">Agentic architecture</span>
+      <span class="tag tag-blue">All industries</span>
+    </div>
+  </div>
+
+  <div class="tool-card tc-accent-green">
+    <div class="tool-name">Azure Cosmos DB</div>
+    <div class="tool-type">Globally Distributed NoSQL Database</div>
+    <div class="tool-desc">Multi-model (document, key-value, graph, column-family) globally distributed database with 99.999% availability SLA. Sub-10ms reads. Multiple consistency models. Native vector search capability (preview) making it relevant for embedding storage alongside operational data.</div>
+    <div class="tool-use"><strong>Agentic relevance:</strong> Cosmos DB is increasingly used as the operational memory store for agentic systems — storing agent state, conversation history, and retrieved entity data alongside the operational records agents need to act on. In FSI KYC scenarios, the client entity graph and case history live in Cosmos DB while agents query and update it.</div>
+    <div class="tag-row">
+      <span class="tag tag-green">Agentic memory / state</span>
+      <span class="tag tag-blue">FSI, Retail, Healthcare</span>
+      <span class="tag tag-teal">Global scale</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="callout callout-blue">
+  <span class="callout-lbl">Platform simplification — the Fabric value proposition</span>
+  Fabric changes the economics of data platform investment. The integration complexity that previously required significant engineering effort to solve — stitching together Synapse, ADF, Power BI, and Databricks into coherent pipelines — is now addressed by the platform itself. Investment shifts toward data products, governance design, and business outcomes rather than infrastructure engineering. For new greenfield programmes, Fabric is the default recommendation. For existing estates, the migration path from Synapse and ADF is clear and well-supported.
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 2: AGENTIC AI TOOLS -->
+<!-- ══════════════════════════════════════════ -->
+<div id="agentic">
+<div class="sec-hd">
+  <div class="sec-tag">Section 02</div>
+  <div class="sec-title">Agentic AI — Orchestration, Memory &amp; Tool Use</div>
+  <div class="sec-desc">The Microsoft tools and partner frameworks that enable autonomous AI agents to plan, use tools, take actions, and coordinate across multi-agent systems.</div>
+</div>
+<div class="divider"></div>
+
+<div class="prose">Agentic AI on Microsoft Azure sits across three layers: <strong>orchestration frameworks</strong> that manage agent logic and state, <strong>Azure AI services</strong> that give agents capabilities (model inference, memory, tool use), and the <strong>data platform</strong> beneath that agents read from and write to. Microsoft's own Semantic Kernel sits at the centre — with LangGraph and LangChain as the leading open-source alternatives where finer control is required.</div>
+
+<div class="agent-stack">
+
+  <div class="agent-layer">
+    <div><div class="al-label" style="color:var(--accent)">Layer 5</div><div style="color:var(--text3);font-size:11px;margin-top:2px">User / Business Apps</div></div>
+    <div>
+      <div class="al-title">Experience &amp; Access Layer</div>
+      <div class="al-desc">How humans and business systems interact with agentic outputs — chatbots, Power Apps, Teams bots, API endpoints, dashboards. This is what stakeholders see; everything beneath is invisible to them.</div>
+      <div class="al-tools"><span class="al-tool">Azure API Management</span><span class="al-tool">Power Apps</span><span class="al-tool">Teams Toolkit</span><span class="al-tool">Copilot Studio</span></div>
+    </div>
+  </div>
+
+  <div class="agent-layer">
+    <div><div class="al-label" style="color:var(--pink)">Layer 4</div><div style="color:var(--text3);font-size:11px;margin-top:2px">Orchestration</div></div>
+    <div>
+      <div class="al-title">Agent Orchestration &amp; Coordination</div>
+      <div class="al-desc">Manages agent state, tool selection, multi-agent coordination, and the sense-decide-act loop. This is where the critical architectural decision lives: Microsoft-native vs. open-source framework.</div>
+      <div class="al-tools"><span class="al-tool">Semantic Kernel</span><span class="al-tool">LangGraph</span><span class="al-tool">AutoGen</span><span class="al-tool">Azure AI Agent Service</span><span class="al-tool">Copilot Studio (low-code)</span></div>
+    </div>
+  </div>
+
+  <div class="agent-layer">
+    <div><div class="al-label" style="color:var(--accent2)">Layer 3</div><div style="color:var(--text3);font-size:11px;margin-top:2px">AI Core</div></div>
+    <div>
+      <div class="al-title">Models, Agents &amp; Intelligence Services</div>
+      <div class="al-desc">Foundation models for reasoning and generation. Cognitive services for document processing, speech, and vision. Vector stores for semantic retrieval. Tool execution environments for code and API calls.</div>
+      <div class="al-tools"><span class="al-tool">Azure OpenAI (GPT-4o, GPT-4o-mini)</span><span class="al-tool">Azure AI Foundry</span><span class="al-tool">Azure AI Search</span><span class="al-tool">Azure Cognitive Services</span></div>
+    </div>
+  </div>
+
+  <div class="agent-layer">
+    <div><div class="al-label" style="color:var(--amber)">Layer 2</div><div style="color:var(--text3);font-size:11px;margin-top:2px">Data Pipelines</div></div>
+    <div>
+      <div class="al-title">Data Engineering &amp; AI Data Pipelines</div>
+      <div class="al-desc">Ingestion, transformation, feature engineering, embedding generation, vector indexing. The bridge between the data platform and the AI core. Quality here determines quality of agent outputs.</div>
+      <div class="al-tools"><span class="al-tool">Fabric Pipelines</span><span class="al-tool">Azure Databricks</span><span class="al-tool">Event Hubs</span><span class="al-tool">Event Grid</span><span class="al-tool">Azure Functions</span></div>
+    </div>
+  </div>
+
+  <div class="agent-layer">
+    <div><div class="al-label" style="color:var(--text3)">Layer 1</div><div style="color:var(--text3);font-size:11px;margin-top:2px">Foundation</div></div>
+    <div>
+      <div class="al-title">Enterprise Data Platform</div>
+      <div class="al-desc">Scalable storage, compute, and trusted data products. The Gold layer of the medallion architecture. Agent outputs are only as trustworthy as the data they're grounded in.</div>
+      <div class="al-tools"><span class="al-tool">Microsoft Fabric (OneLake)</span><span class="al-tool">Azure Data Lake Gen2</span><span class="al-tool">Azure Cosmos DB</span><span class="al-tool">Azure SQL</span></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="tool-grid">
+
+  <div class="tool-card tc-accent-blue">
+    <div class="tool-name">Semantic Kernel</div>
+    <div class="tool-type">Microsoft's Agentic Orchestration SDK</div>
+    <div class="tool-desc">Microsoft's open-source SDK for building AI agents and multi-agent systems. Supports Python, C#, and Java. Native integration with Azure OpenAI, Azure AI Search, and Microsoft Graph. Provides planners (automatic task decomposition), plugins (tools agents can invoke), and memory connectors (Azure AI Search, Cosmos DB). AutoInvoke: agents automatically call the right plugin for a task.</div>
+    <div class="tool-use"><strong>When to choose:</strong> Microsoft-first organisations. .NET/C# development teams. Deep integration with Microsoft 365 and Teams required. Microsoft support and roadmap alignment critical (e.g., regulated FSI clients with vendor support requirements).</div>
+    <div class="tag-row">
+      <span class="tag tag-blue">Microsoft-native</span>
+      <span class="tag tag-teal">FSI, Government, Healthcare</span>
+      <span class="tag tag-amber">.NET / C# teams</span>
+    </div>
+  </div>
+
+  <div class="tool-card tc-accent-coral">
+    <div class="tool-name">LangGraph</div>
+    <div class="tool-type">Open-Source Stateful Agent Framework</div>
+    <div class="tool-desc">Graph-based state machine framework for building <strong>auditable, deterministic agentic workflows</strong>. Each agent is a node in a directed graph; edges represent state transitions. Full control over the agent loop — no magic, no hidden behaviour. Integrates with any LLM provider via LiteLLM or LangChain. Pydantic v2 for typed state schemas. LangSmith for observability and tracing.</div>
+    <div class="tool-use"><strong>When to choose:</strong> Where auditability is non-negotiable (statutory reporting, regulated processes). Where you need fine-grained control over agent state transitions. Where the team is Python-native and values explicit over implicit. This was the choice for the pipeline monitoring agentic system — deterministic state transitions were required for statutory risk context.</div>
+    <div class="tag-row">
+      <span class="tag tag-coral">Maximum auditability</span>
+      <span class="tag tag-blue">Regulated environments</span>
+      <span class="tag tag-teal">Python teams</span>
+    </div>
+  </div>
+
+  <div class="tool-card tc-accent-pink">
+    <div class="tool-name">AutoGen (Microsoft Research)</div>
+    <div class="tool-type">Multi-Agent Conversation Framework</div>
+    <div class="tool-desc">Microsoft Research framework for building multi-agent conversations. Agents communicate via natural language messages in a conversational loop. Supports hierarchical (GroupChat with Manager), sequential, and peer-to-peer patterns. AutoGen Studio provides a no-code interface for building and testing agent teams. Strong for research and exploration; less suited to production audit requirements.</div>
+    <div class="tool-use"><strong>When to choose:</strong> Research and experimentation. Rapid prototyping of multi-agent patterns. Scenarios where agents negotiating via natural language is desirable. Less suited to regulated production deployments where explicit state transitions and audit trails are required.</div>
+    <div class="tag-row">
+      <span class="tag tag-pink">R&amp;D / prototyping</span>
+      <span class="tag tag-blue">Microsoft ecosystem</span>
+      <span class="tag tag-amber">Not for regulated production</span>
+    </div>
+  </div>
+
+  <div class="tool-card tc-accent-teal">
+    <div class="tool-name">Azure AI Agent Service</div>
+    <div class="tool-type">Managed Agentic Platform (Preview → GA)</div>
+    <div class="tool-desc">Microsoft's managed service for deploying and scaling AI agents — handles the infrastructure, tool integration, state persistence, and monitoring. Provides thread management (multi-turn conversations), built-in tools (code interpreter, file search, Bing grounding), and function calling. Integrates natively with Azure OpenAI models and Azure AI Foundry.</div>
+    <div class="tool-use"><strong>When to choose:</strong> When operational simplicity outweighs control requirements. When the client wants a managed service rather than managing LangGraph infrastructure. When rapid deployment of conversational agents (customer service, HR, internal knowledge bots) is the priority. Not yet the first choice for high-complexity, high-audit-requirement agentic workflows.</div>
+    <div class="tag-row">
+      <span class="tag tag-teal">Managed / operational simplicity</span>
+      <span class="tag tag-blue">FSI, Retail, Enterprise</span>
+      <span class="tag tag-amber">Preview → GA trajectory</span>
+    </div>
+  </div>
+
+  <div class="tool-card tc-accent-amber">
+    <div class="tool-name">Copilot Studio</div>
+    <div class="tool-type">Low-Code Agent Builder</div>
+    <div class="tool-desc">Microsoft's low-code/no-code platform for building conversational AI agents (previously Power Virtual Agents). Drag-and-drop topic design, native integration with Microsoft 365 Copilot, Dataverse for data, Azure OpenAI for generative responses, and Power Automate for workflow actions. Agents deploy to Teams, websites, SharePoint, and Teams channels. Now supports custom agent actions via connectors to external APIs.</div>
+    <div class="tool-use"><strong>When to choose:</strong> Non-technical business teams building internal productivity agents. HR bots, IT helpdesk agents, policy Q&amp;A assistants. When the client has strong Microsoft 365 adoption and wants agents in the existing workspace without new infrastructure. Not appropriate for complex multi-agent architectures or regulated decisioning systems.</div>
+    <div class="tag-row">
+      <span class="tag tag-amber">Low-code / citizen developer</span>
+      <span class="tag tag-teal">Productivity agents</span>
+      <span class="tag tag-blue">All industries</span>
+    </div>
+  </div>
+
+  <div class="tool-card tc-accent-green">
+    <div class="tool-name">MCP (Model Context Protocol)</div>
+    <div class="tool-type">Emerging Open Standard for Tool Integration</div>
+    <div class="tool-desc">Anthropic-originated open standard for how AI agents communicate with external tools, APIs, and data sources. Microsoft is adopting MCP as the standard for tool integration across Azure AI services and Copilot extensions. Enables standardised, auditable tool invocation — any MCP-compatible tool can be used by any MCP-compatible agent framework without custom integration code.</div>
+    <div class="tool-use"><strong>Architecture consideration:</strong> MCP functions as the "USB standard" for agentic tool integration — design tool integration layers to be MCP-compatible now, even where not all tools are MCP-native yet. This future-proofs agentic architectures as the ecosystem matures. Semantic Kernel, LangGraph, and Azure AI Agent Service are all moving toward native MCP support.</div>
+    <div class="tag-row">
+      <span class="tag tag-green">Emerging standard</span>
+      <span class="tag tag-teal">Future-proofing</span>
+      <span class="tag tag-blue">All industries</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="callout callout-amber">
+  <span class="callout-lbl">Framework selection — Director decision guide</span>
+  <strong>Regulated FSI / Healthcare / Government:</strong> LangGraph — maximum auditability, deterministic state, full audit trail. 
+  <strong>Microsoft-first enterprise / .NET teams:</strong> Semantic Kernel — native Azure integration, vendor support.
+  <strong>Rapid prototyping / R&amp;D:</strong> AutoGen — conversational flexibility, fast experimentation.
+  <strong>Operational simplicity / managed:</strong> Azure AI Agent Service — infrastructure handled, less control.
+  <strong>Business users / productivity:</strong> Copilot Studio — no code, Teams integration, fast time-to-value.
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 3: GENAI & MODELS -->
+<!-- ══════════════════════════════════════════ -->
+<div id="genai">
+<div class="sec-hd">
+  <div class="sec-tag">Section 03</div>
+  <div class="sec-title">GenAI, Models &amp; Intelligent Services</div>
+  <div class="sec-desc">The model layer — where natural language understanding, generation, document processing, and semantic retrieval happen.</div>
+</div>
+<div class="divider"></div>
+
+<div class="tool-grid">
+
+  <div class="tool-card tc-accent-blue tool-card-wide">
+    <div class="tool-name">Azure OpenAI Service</div>
+    <div class="tool-type">Foundation Model API — Microsoft's Core GenAI Offer</div>
+    <div class="tool-desc">Microsoft's managed deployment of OpenAI's models on Azure infrastructure — GPT-4o (multimodal, best reasoning), GPT-4o-mini (fast, cost-efficient, ideal for classification and high-volume tasks), o1/o3 (extended reasoning for complex problems), DALL-E (image generation), Whisper (speech-to-text), and text embeddings (text-embedding-3-large/small). All models run within Azure's compliance boundary — data does not leave the customer's Azure tenant. Private endpoints, customer-managed keys, and Azure AD authentication. Enterprise SLAs.</div>
+    <div class="tool-use"><strong>Agentic pattern — deterministic-first:</strong> In high-volume agentic systems, use GPT-4o-mini for classification and routing decisions (fast, cheap), and GPT-4o only for complex reasoning tasks requiring judgment. This is the pattern that achieves $0.02/run cost efficiency. For regulated FSI: Azure OpenAI is the only acceptable option (data residency, compliance boundary, no data training on customer inputs).</div>
+    <div class="tag-row">
+      <span class="tag tag-blue">All industries</span>
+      <span class="tag tag-teal">Primary choice: FSI, Healthcare, Government</span>
+      <span class="tag tag-amber">Data residency compliant</span>
+    </div>
+  </div>
+
+  <div class="tool-card tc-accent-pink">
+    <div class="tool-name">Azure AI Foundry</div>
+    <div class="tool-type">Unified AI Development Platform</div>
+    <div class="tool-desc">Microsoft's central hub for enterprise AI development — model catalogue (OpenAI, Meta Llama, Mistral, Phi, Cohere, and 1,600+ models), prompt flow for orchestration, model fine-tuning, evaluation frameworks, and AI application deployment. The successor to Azure AI Studio, evolved into the enterprise GenAI programme hub. Integrates with Fabric for data, Purview for governance, and Azure AI Agent Service for agentic deployment.</div>
+    <div class="tool-use"><strong>Positioning in engagement:</strong> AI Foundry is where model strategy decisions are operationalised — which model for which task, how to fine-tune on proprietary data, how to evaluate outputs against business criteria, and how to deploy into production with full monitoring and governance. The CDO-facing framing: a unified control tower for the organisation's AI programme.</div>
+    <div class="tag-row">
+      <span class="tag tag-pink">Model strategy hub</span>
+      <span class="tag tag-blue">FSI, Insurance, Energy</span>
+      <span class="tag tag-teal">Fine-tuning, evaluation</span>
+    </div>
+  </div>
+
+  <div class="tool-card tc-accent-teal">
+    <div class="tool-name">Azure AI Search</div>
+    <div class="tool-type">Enterprise Search + Vector Store</div>
+    <div class="tool-desc">Fully managed search service combining <strong>keyword (BM25) + vector (approximate nearest neighbour) + semantic re-ranking</strong> in a single index. Hybrid retrieval is the most robust RAG pattern for enterprise knowledge applications. Supports multi-modal embeddings, RBAC on search results (user only retrieves content they're permitted to see), integrated chunking, and incremental indexing. Azure OpenAI embedding models integrate natively.</div>
+    <div class="tool-use"><strong>Agentic relevance:</strong> Azure AI Search is the retrieval layer for Enterprise Knowledge archetype — the RAG backbone for document Q&amp;A, policy search, regulatory document analysis, and internal knowledge management agents. Hybrid retrieval (vector + keyword) outperforms pure vector search for enterprise content with precise terminology (regulatory text, medical records, legal documents).</div>
+    <div class="tag-row">
+      <span class="tag tag-teal">RAG backbone</span>
+      <span class="tag tag-blue">FSI, Healthcare, Legal, Government</span>
+      <span class="tag tag-pink">Hybrid retrieval preferred</span>
+    </div>
+  </div>
+
+  <div class="tool-card tc-accent-amber">
+    <div class="tool-name">Azure Cognitive Services (AI Services)</div>
+    <div class="tool-type">Pre-Built AI Capabilities</div>
+    <div class="tool-desc">Suite of pre-built AI capabilities: <strong>Document Intelligence</strong> (OCR, form extraction, contract analysis — key for insurance, legal, banking document workflows), <strong>Speech Services</strong> (speech-to-text, text-to-speech, speaker identification), <strong>Computer Vision</strong> (image classification, object detection, OCR), <strong>Language Services</strong> (NLP, entity recognition, sentiment, PII detection), <strong>Translator</strong>. These are the Cognitive Services Enablement archetype in practice.</div>
+    <div class="tool-use"><strong>Agentic relevance:</strong> Cognitive Services are typically the first layer in a document-processing agentic pipeline — Document Intelligence extracts structured data from unstructured sources (PDFs, scanned forms, contracts) before an agent reasons over that structured data. In regulated industries, Document Intelligence + Azure OpenAI for analysis is the standard pattern for document-heavy processes.</div>
+    <div class="tag-row">
+      <span class="tag tag-amber">Document processing</span>
+      <span class="tag tag-blue">Insurance, Legal, Healthcare, Banking</span>
+      <span class="tag tag-teal">Preprocessing for agentic</span>
+    </div>
+  </div>
+
+  <div class="tool-card tc-accent-coral">
+    <div class="tool-name">Microsoft Phi (Small Language Models)</div>
+    <div class="tool-type">Efficient On-Device / Edge Models</div>
+    <div class="tool-desc">Microsoft Research's family of small but capable language models — Phi-3-mini (3.8B), Phi-3-small (7B), Phi-3-medium (14B), Phi-3-vision (multimodal). Designed to deliver GPT-3.5-level reasoning at a fraction of the cost. Available via Azure AI Foundry, Ollama (local), and ONNX Runtime (edge/mobile). Phi-3-vision handles image + text inputs — relevant for document processing, quality control inspection.</div>
+    <div class="tool-use"><strong>Agentic relevance:</strong> Phi models are ideal for the deterministic-first design pattern — use Phi-3-mini for classification and routing tasks (nearly free to run), reserve GPT-4o for complex reasoning. In edge or offline scenarios (manufacturing shop floor, clinical device), Phi runs on-device without cloud connectivity. Proven in regulated manufacturing quality control systems where document and image analysis must operate without cloud connectivity.</div>
+    <div class="tag-row">
+      <span class="tag tag-coral">Cost-efficient inference</span>
+      <span class="tag tag-blue">Manufacturing, Healthcare (edge)</span>
+      <span class="tag tag-teal">Offline / on-device</span>
+    </div>
+  </div>
+
+  <div class="tool-card tc-accent-green">
+    <div class="tool-name">Microsoft Copilot for M365</div>
+    <div class="tool-type">Enterprise Productivity AI</div>
+    <div class="tool-desc">AI assistant embedded across Microsoft 365 — Word, Excel, PowerPoint, Outlook, Teams, and SharePoint. Grounded in the user's Microsoft Graph data (emails, meetings, documents, chats) via Semantic Kernel and Azure OpenAI. Copilot Extensions allow organisations to connect custom data sources and build custom Copilot agents via Copilot Studio or code. The most widely deployed GenAI product in enterprise — large-scale rollouts are now measured in tens of thousands of licences across FSI, professional services, and retail sectors.</div>
+    <div class="tool-use"><strong>Deployment considerations:</strong> Copilot deployment requires more than licence procurement. It requires a data security and oversharing assessment (SharePoint permissions expose far more than organisations realise), a structured adoption strategy, a value measurement framework using Viva Insights telemetry, and a governance model for what employees can and cannot do with AI-generated content. The Copilot Governance Authority engagement pattern addresses all of these systematically.</div>
+    <div class="tag-row">
+      <span class="tag tag-green">All industries — widespread</span>
+      <span class="tag tag-blue">FSI, Professional Services</span>
+      <span class="tag tag-amber">Governance required</span>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 4: GOVERNANCE -->
+<!-- ══════════════════════════════════════════ -->
+<div id="governance">
+<div class="sec-hd">
+  <div class="sec-tag">Section 04</div>
+  <div class="sec-title">Governance — Purview &amp; the Trust Layer</div>
+  <div class="sec-desc">The tools that make data trustworthy and AI auditable. In regulated industries, governance is not a phase two activity — it is the architecture.</div>
+</div>
+<div class="divider"></div>
+
+<div class="tool-grid">
+
+  <div class="tool-card tc-accent-blue tool-card-wide">
+    <div class="tool-name">Microsoft Purview</div>
+    <div class="tool-type">Unified Data Governance Platform</div>
+    <div class="tool-desc">Microsoft's end-to-end data governance service — the horizontal capability that runs across every data and AI layer. Five core capabilities: <strong>Data Map</strong> (automated discovery and classification of data assets across Azure, M365, on-prem, and multi-cloud using 200+ built-in classifiers including PII, financial data, health data); <strong>Data Catalog</strong> (searchable, business-friendly catalogue of all data assets with business glossary, ownership, and lineage); <strong>Data Lineage</strong> (end-to-end lineage auto-discovered from ADF, Synapse, Fabric, Databricks, and SQL — showing exactly where each data element came from and what depends on it); <strong>Data Policy</strong> (access control policies that enforce who can access what data, applied automatically across services); <strong>Compliance Manager</strong> (regulatory compliance assessment against GDPR, BCBS 239, Solvency II, HIPAA, and others).</div>
+    <div class="tool-use"><strong>Agentic relevance:</strong> Purview is the governance layer for agentic systems in two ways. First, it provides the data lineage that agents need to understand the provenance and quality of the data they're acting on. Second, Purview's access policies govern what data agents are permitted to access — an agent operating within Purview-enforced policies can only access data the human user it represents is permitted to see. For the pipeline monitoring asset, the roadmap is to replace the static networkx lineage DAG with Purview's auto-discovered lineage from ADF metadata — dynamic, always current, no manual maintenance.</div>
+    <div class="tag-row">
+      <span class="tag tag-blue">Mandatory: FSI, Healthcare, Government</span>
+      <span class="tag tag-teal">Lineage, cataloguing, compliance</span>
+      <span class="tag tag-coral">BCBS 239, Solvency II, HIPAA</span>
+    </div>
+  </div>
+
+  <div class="tool-card tc-accent-teal">
+    <div class="tool-name">Microsoft Entra ID (Azure AD)</div>
+    <div class="tool-type">Identity &amp; Access Management</div>
+    <div class="tool-desc">Microsoft's cloud identity platform — authentication (OAuth 2.0, OIDC, SAML), authorisation (RBAC, ABAC), Managed Identities for Azure services, Privileged Identity Management (PIM), and Conditional Access policies. For agentic systems: Managed Identities allow agents to authenticate to Azure services (Key Vault, Storage, Cosmos DB, Azure OpenAI) without storing credentials in code.</div>
+    <div class="tool-use"><strong>Agentic security pattern:</strong> Every agent should authenticate via a Managed Identity — no credentials in code, no secrets in environment variables. Entra ID + Purview policies together create a Zero Trust access model for agentic systems: agents only access what they're explicitly permitted to, enforced at the infrastructure level rather than the application level.</div>
+    <div class="tag-row">
+      <span class="tag tag-teal">Zero Trust security</span>
+      <span class="tag tag-blue">All industries — mandatory</span>
+      <span class="tag tag-amber">Managed Identity for agents</span>
+    </div>
+  </div>
+
+  <div class="tool-card tc-accent-amber">
+    <div class="tool-name">Azure Key Vault</div>
+    <div class="tool-type">Secrets, Keys &amp; Certificate Management</div>
+    <div class="tool-desc">Centralised, HSM-backed secrets management — API keys, connection strings, certificates, and encryption keys. FIPS 140-2 validated hardware. Soft-delete and purge protection prevent accidental deletion. Azure Private Link for network isolation. Key rotation policies with automatic rotation for supported services.</div>
+    <div class="tool-use"><strong>Agentic architecture pattern:</strong> All agent credentials (Azure OpenAI API keys, database connection strings, external API keys) stored in Key Vault and accessed via Managed Identity — never in code, config files, or environment variables. This is the minimum secure configuration for any production agentic system in a regulated environment. Audited access logs show which agent accessed which secret and when.</div>
+    <div class="tag-row">
+      <span class="tag tag-amber">Secrets management</span>
+      <span class="tag tag-blue">Regulated: FSI, Healthcare, Government</span>
+      <span class="tag tag-teal">Agent credential store</span>
+    </div>
+  </div>
+
+  <div class="tool-card tc-accent-coral">
+    <div class="tool-name">Azure Policy</div>
+    <div class="tool-type">Governance-as-Code</div>
+    <div class="tool-desc">Built-in and custom policy definitions that enforce, audit, and remediate Azure resource configurations at scale. Built-in policies cover data encryption, network isolation, diagnostic logging, Purview integration, and AI service configuration. Initiative (policy set) groupings for regulatory standards (ISO 27001, NIST, PCI-DSS, Solvency II data requirements). Policy Assignment deploys governance at management group, subscription, or resource group level.</div>
+    <div class="tool-use"><strong>Agentic governance pattern:</strong> Use Azure Policy to enforce that all AI services deployed in the tenant must use private endpoints, customer-managed keys, diagnostic logging enabled, and Purview registration. This ensures every new agentic component meets governance requirements automatically, without relying on individual teams to remember compliance steps.</div>
+    <div class="tag-row">
+      <span class="tag tag-coral">Governance-as-code</span>
+      <span class="tag tag-blue">FSI, Healthcare, Government</span>
+      <span class="tag tag-teal">Automated compliance enforcement</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="insight">"In regulated FSI, Purview is not a feature you add to the data platform — it is the condition under which the FCA and PRA allow you to use AI in production. Lineage, classification, and access policy are not governance nice-to-haves; they are the auditable evidence that your AI system meets Consumer Duty and BCBS 239 requirements."</div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 5: ANALYTICS & BI -->
+<!-- ══════════════════════════════════════════ -->
+<div id="analytics">
+<div class="sec-hd">
+  <div class="sec-tag">Section 05</div>
+  <div class="sec-title">Analytics, BI &amp; Data Science</div>
+  <div class="sec-desc">The consumption layer — where data products become decisions. From self-serve BI to ML model training and deployment.</div>
+</div>
+<div class="divider"></div>
+
+<div class="tool-grid">
+
+  <div class="tool-card tc-accent-blue">
+    <div class="tool-name">Power BI</div>
+    <div class="tool-type">Business Intelligence &amp; Self-Serve Analytics</div>
+    <div class="tool-desc">Microsoft's BI platform — now native in Fabric as Power BI Fabric mode. DirectLake connectivity means reports query OneLake directly without import or scheduled refresh. DAX for measures. Power Query for data preparation. Row-level security for governed self-serve. Fabric Copilot in Power BI enables natural language report creation and DAX generation.</div>
+    <div class="tool-use"><strong>Agentic relevance:</strong> Power BI is the output layer for Data Analyst agents — agents that generate reports and visualisations on demand. Fabric Copilot in Power BI is also becoming an agentic capability in itself — users ask questions in natural language and the AI generates and executes the DAX or SQL query against OneLake.</div>
+    <div class="tag-row">
+      <span class="tag tag-blue">All industries</span>
+      <span class="tag tag-teal">Self-serve BI persona</span>
+      <span class="tag tag-amber">Strongly preferred: FSI, Retail, Energy</span>
+    </div>
+  </div>
+
+  <div class="tool-card tc-accent-teal">
+    <div class="tool-name">Azure Machine Learning (Azure ML)</div>
+    <div class="tool-type">ML Lifecycle Management Platform</div>
+    <div class="tool-desc">End-to-end ML platform: experiment tracking (MLflow integration), model registry, automated ML (AutoML), responsible AI dashboard (fairness, explainability, error analysis), managed compute for training and inference, and model deployment to managed endpoints (real-time and batch). Integration with Fabric feature stores and Databricks for data access.</div>
+    <div class="tool-use"><strong>Agentic relevance:</strong> Azure ML is the ML Ops layer for the ML &amp; AI-Enabled Lakehouse archetype. It manages the lifecycle of ML models that agents use as tools — credit risk models, fraud detection models, churn propensity models. The Responsible AI dashboard in Azure ML provides the fairness and explainability evidence required for regulated model deployment.</div>
+    <div class="tag-row">
+      <span class="tag tag-teal">ML Ops platform</span>
+      <span class="tag tag-blue">FSI, Healthcare, Manufacturing</span>
+      <span class="tag tag-coral">Responsible AI dashboard</span>
+    </div>
+  </div>
+
+  <div class="tool-card tc-accent-amber">
+    <div class="tool-name">Azure Stream Analytics</div>
+    <div class="tool-type">Real-Time Analytics on Streaming Data</div>
+    <div class="tool-desc">Fully managed, serverless stream processing using SQL-like query language. Processes data from Event Hubs, IoT Hub, and Blob Storage. Sub-second latency. Built-in ML model scoring for real-time anomaly detection. Output to Power BI for live dashboards, Azure SQL, Cosmos DB, or storage.</div>
+    <div class="tool-use"><strong>When to use:</strong> Real-time KPI monitoring, IoT telemetry processing, fraud detection on payment streams, network monitoring in Telco. When Fabric Real-Time Intelligence (KQL-based) is not yet available or when the team is more comfortable with SQL. Stream Analytics fills the gap between event ingestion (Event Hubs) and agentic processing for simpler real-time analytics.</div>
+    <div class="tag-row">
+      <span class="tag tag-amber">Real-time analytics</span>
+      <span class="tag tag-blue">Telco, Manufacturing, IoT</span>
+      <span class="tag tag-teal">Fraud detection, monitoring</span>
+    </div>
+  </div>
+
+  <div class="tool-card tc-accent-pink">
+    <div class="tool-name">Fabric Real-Time Intelligence</div>
+    <div class="tool-type">KQL-Based Real-Time Analytics (Fabric-Native)</div>
+    <div class="tool-desc">Fabric's native real-time analytics capability — based on Kusto Query Language (KQL), the same query language as Azure Data Explorer. Handles high-volume, time-series, and log data with sub-second query response. Eventstream for no-code event processing. Activator for event-driven triggers and alerts. Native integration with Fabric data products and OneLake.</div>
+    <div class="tool-use"><strong>Agentic relevance:</strong> Fabric Activator is particularly relevant for agentic architectures — it monitors data patterns in real time and triggers automated actions (alert an agent, run a workflow, update a dashboard) when conditions are met. This is a lighter-weight alternative to a full LangGraph agent for deterministic, rule-based monitoring scenarios.</div>
+    <div class="tag-row">
+      <span class="tag tag-pink">Fabric-native streaming</span>
+      <span class="tag tag-teal">Agentic triggers (Activator)</span>
+      <span class="tag tag-blue">Telco, Financial Markets, IoT</span>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 6: DEVOPS & MLOPS -->
+<!-- ══════════════════════════════════════════ -->
+<div id="devops">
+<div class="sec-hd">
+  <div class="sec-tag">Section 06</div>
+  <div class="sec-title">DevOps, MLOps &amp; Infrastructure</div>
+  <div class="sec-desc">The operational discipline that keeps data and AI systems reliable, auditable, and cost-efficient in production.</div>
+</div>
+<div class="divider"></div>
+
+<div class="tool-grid">
+
+  <div class="tool-card tc-accent-blue">
+    <div class="tool-name">Azure DevOps</div>
+    <div class="tool-type">CI/CD &amp; Project Management</div>
+    <div class="tool-desc">End-to-end DevOps platform — Azure Repos (git), Azure Pipelines (CI/CD), Azure Boards (Agile project management), Azure Test Plans, and Azure Artifacts (package management). Native integration with Fabric workspace git integration, ADF pipeline deployment, and Azure ML model deployment pipelines. Supports Infrastructure-as-Code (Bicep, Terraform) deployment automation.</div>
+    <div class="tag-row">
+      <span class="tag tag-blue">All industries</span>
+      <span class="tag tag-teal">CI/CD for data &amp; AI</span>
+    </div>
+  </div>
+
+  <div class="tool-card tc-accent-teal">
+    <div class="tool-name">Azure Monitor &amp; Application Insights</div>
+    <div class="tool-type">Observability &amp; Alerting</div>
+    <div class="tool-desc">Full-stack monitoring — infrastructure metrics, application performance, distributed tracing, log analytics (Log Analytics Workspace / KQL), and alerting. Application Insights instruments AI application telemetry — request rates, failure rates, latency percentiles. Integration with Azure OpenAI usage metrics (tokens, cost, latency) for GenAI cost monitoring.</div>
+    <div class="tool-use"><strong>Agentic monitoring:</strong> Every agentic system in production needs Azure Monitor for infrastructure-level observability (agent compute health, Event Hubs throughput, latency SLAs) alongside application-level tracing of agent actions and LLM calls. LangSmith (LangGraph's observability tool) complements Azure Monitor for agent reasoning traces.</div>
+    <div class="tag-row">
+      <span class="tag tag-teal">Observability</span>
+      <span class="tag tag-amber">GenAI cost monitoring</span>
+      <span class="tag tag-blue">All industries</span>
+    </div>
+  </div>
+
+  <div class="tool-card tc-accent-amber">
+    <div class="tool-name">Azure Cost Management + Billing (FinOps)</div>
+    <div class="tool-type">Cloud Cost Optimisation</div>
+    <div class="tool-desc">Native FinOps tooling — cost analysis by resource, department, project, and tag. Budget alerts. Cost anomaly detection. Reserved Instance and Savings Plan recommendations. Azure OpenAI token usage tracking by deployment, enabling cost attribution per agentic use case. Integration with Fabric capacity units monitoring.</div>
+    <div class="tool-use"><strong>AI cost governance:</strong> Most organisations deploying GenAI have no visibility of cost per transaction, per use case, or per business unit. Implementing token-level cost attribution across Azure OpenAI deployments — combined with the deterministic-first LLM invocation pattern — is the path from uncontrolled AI spend to $0.02 per transaction unit economics. FinOps for AI is increasingly a standalone workstream in data transformation programmes.</div>
+    <div class="tag-row">
+      <span class="tag tag-amber">FinOps / cost control</span>
+      <span class="tag tag-blue">All industries</span>
+      <span class="tag tag-teal">AI cost attribution</span>
+    </div>
+  </div>
+
+  <div class="tool-card tc-accent-coral">
+    <div class="tool-name">Terraform / Azure Bicep</div>
+    <div class="tool-type">Infrastructure as Code</div>
+    <div class="tool-desc">Terraform (HashiCorp, multi-cloud) and Bicep (Microsoft-native, Azure-only) are the two Infrastructure-as-Code choices for Azure. Both generate repeatable, auditable, version-controlled infrastructure deployments. Terraform has broader community support and multi-cloud capability; Bicep has tighter Azure API coverage and is Microsoft's strategic direction.</div>
+    <div class="tool-use"><strong>Agentic infrastructure pattern:</strong> Every production agentic system should have its infrastructure codified — in the pipeline monitoring asset, 8 Azure modules were Terraform-managed: Event Hubs, Event Grid, Key Vault, Storage, Azure OpenAI, Azure Functions, networking, and monitoring. IaC enables reproducible, auditable, environment-consistent deployment — essential for regulated industries where infrastructure configuration is part of the compliance audit.</div>
+    <div class="tag-row">
+      <span class="tag tag-coral">Infrastructure as Code</span>
+      <span class="tag tag-blue">Regulated: FSI, Healthcare, Government</span>
+      <span class="tag tag-teal">Reproducible deployments</span>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 7: INDUSTRY MATRIX -->
+<!-- ══════════════════════════════════════════ -->
+<div id="industry">
+<div class="sec-hd">
+  <div class="sec-tag">Section 07</div>
+  <div class="sec-title">Industry Preference Matrix</div>
+  <div class="sec-desc">Which tools are primary, which are secondary, and which are less relevant — by industry. ● Primary preferred · ◐ Secondary / situational · ○ Less common.</div>
+</div>
+<div class="divider"></div>
+
+<div class="ind-matrix">
+<table class="ind-table">
+<thead>
+  <tr>
+    <th>Tool</th>
+    <th>FSI / Bank</th>
+    <th>Insurance</th>
+    <th>Retail</th>
+    <th>Healthcare</th>
+    <th>Energy / Util.</th>
+    <th>Telco / CMT</th>
+    <th>Gov / Public</th>
+  </tr>
+</thead>
+<tbody>
+  <tr><td>Microsoft Fabric</td><td class="cell-primary">●</td><td class="cell-primary">●</td><td class="cell-primary">●</td><td class="cell-secondary">◐</td><td class="cell-primary">●</td><td class="cell-primary">●</td><td class="cell-secondary">◐</td></tr>
+  <tr><td>Azure Databricks</td><td class="cell-primary">●</td><td class="cell-secondary">◐</td><td class="cell-secondary">◐</td><td class="cell-primary">●</td><td class="cell-primary">●</td><td class="cell-primary">●</td><td class="cell-secondary">◐</td></tr>
+  <tr><td>Azure OpenAI</td><td class="cell-primary">●</td><td class="cell-primary">●</td><td class="cell-primary">●</td><td class="cell-primary">●</td><td class="cell-primary">●</td><td class="cell-primary">●</td><td class="cell-primary">●</td></tr>
+  <tr><td>Microsoft Purview</td><td class="cell-primary">●</td><td class="cell-primary">●</td><td class="cell-secondary">◐</td><td class="cell-primary">●</td><td class="cell-secondary">◐</td><td class="cell-secondary">◐</td><td class="cell-primary">●</td></tr>
+  <tr><td>Semantic Kernel</td><td class="cell-primary">●</td><td class="cell-primary">●</td><td class="cell-secondary">◐</td><td class="cell-primary">●</td><td class="cell-secondary">◐</td><td class="cell-secondary">◐</td><td class="cell-primary">●</td></tr>
+  <tr><td>LangGraph</td><td class="cell-primary">●</td><td class="cell-primary">●</td><td class="cell-secondary">◐</td><td class="cell-primary">●</td><td class="cell-primary">●</td><td class="cell-primary">●</td><td class="cell-primary">●</td></tr>
+  <tr><td>Azure AI Search</td><td class="cell-primary">●</td><td class="cell-primary">●</td><td class="cell-secondary">◐</td><td class="cell-primary">●</td><td class="cell-secondary">◐</td><td class="cell-secondary">◐</td><td class="cell-primary">●</td></tr>
+  <tr><td>AI Foundry</td><td class="cell-primary">●</td><td class="cell-primary">●</td><td class="cell-secondary">◐</td><td class="cell-primary">●</td><td class="cell-secondary">◐</td><td class="cell-secondary">◐</td><td class="cell-secondary">◐</td></tr>
+  <tr><td>Document Intelligence</td><td class="cell-secondary">◐</td><td class="cell-primary">●</td><td class="cell-secondary">◐</td><td class="cell-primary">●</td><td class="cell-secondary">◐</td><td class="cell-secondary">◐</td><td class="cell-primary">●</td></tr>
+  <tr><td>Copilot M365</td><td class="cell-primary">●</td><td class="cell-primary">●</td><td class="cell-primary">●</td><td class="cell-secondary">◐</td><td class="cell-primary">●</td><td class="cell-primary">●</td><td class="cell-secondary">◐</td></tr>
+  <tr><td>Azure ML</td><td class="cell-primary">●</td><td class="cell-primary">●</td><td class="cell-secondary">◐</td><td class="cell-primary">●</td><td class="cell-primary">●</td><td class="cell-secondary">◐</td><td class="cell-secondary">◐</td></tr>
+  <tr><td>Event Hubs</td><td class="cell-secondary">◐</td><td class="cell-secondary">◐</td><td class="cell-primary">●</td><td class="cell-secondary">◐</td><td class="cell-primary">●</td><td class="cell-primary">●</td><td class="cell-secondary">◐</td></tr>
+  <tr><td>Copilot Studio</td><td class="cell-secondary">◐</td><td class="cell-secondary">◐</td><td class="cell-primary">●</td><td class="cell-secondary">◐</td><td class="cell-secondary">◐</td><td class="cell-secondary">◐</td><td class="cell-secondary">◐</td></tr>
+  <tr><td>Azure Cosmos DB</td><td class="cell-primary">●</td><td class="cell-secondary">◐</td><td class="cell-primary">●</td><td class="cell-secondary">◐</td><td class="cell-secondary">◐</td><td class="cell-secondary">◐</td><td class="cell-secondary">◐</td></tr>
+  <tr><td>Phi (Small LLMs)</td><td class="cell-none">○</td><td class="cell-secondary">◐</td><td class="cell-secondary">◐</td><td class="cell-primary">●</td><td class="cell-primary">●</td><td class="cell-secondary">◐</td><td class="cell-secondary">◐</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="prose">
+<strong>FSI / Banking:</strong> The most demanding environment. Purview is mandatory (BCBS 239, Consumer Duty). LangGraph preferred over AutoGen for auditability. Azure OpenAI over open-source models (data residency). Cosmos DB for client entity graphs and KYC state. Semantic Kernel where the team is .NET-native.<br><br>
+<strong>Insurance:</strong> Document Intelligence is primary — claims forms, policy documents, broker submissions. The cyber underwriting AI pattern (classify broker submissions against risk appetite) runs on Azure OpenAI + Document Intelligence. Purview critical for Solvency II lineage. AI Foundry for the model governance layer.<br><br>
+<strong>Retail:</strong> Fabric is the preferred platform for the unified customer data layer. Copilot Studio for customer-facing bots. Event Hubs for real-time basket and transaction streaming. Cosmos DB for the product catalogue and recommendation serving layer. Copilot M365 for internal productivity.<br><br>
+<strong>Healthcare:</strong> Phi models for on-device / edge (clinical devices, hospitals with offline requirements). Document Intelligence for clinical note extraction. Purview for HIPAA compliance. Azure ML for clinical predictive models (readmission, diagnosis support). Azure OpenAI within a compliant boundary (BAA required).<br><br>
+<strong>Energy &amp; Utilities:</strong> Databricks primary for the ML-heavy workloads (predictive maintenance, network optimisation). Event Hubs for IoT and sensor telemetry. Fabric for the operational reporting and BI layer. LangGraph for agentic maintenance and field dispatch systems.<br><br>
+<strong>Telco / CMT:</strong> The most data-intensive environment — OSS/BSS, network telemetry, subscriber data. Event Hubs at massive scale for real-time telemetry ingestion. Databricks for the complex data engineering layer. Fabric for the analytics and BI layer. The Common Data Fabric + Data Mesh + GenAI pattern is the emerging reference architecture for large-scale Telco data transformation.
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 8: KEY ARCHITECTURAL DECISIONS -->
+<!-- ══════════════════════════════════════════ -->
+<div id="decisions">
+<div class="sec-hd">
+  <div class="sec-tag">Section 08</div>
+  <div class="sec-title">Key Architectural Decisions — Trade-offs &amp; Selection Criteria</div>
+  <div class="sec-desc">The six decisions that define every Microsoft Data &amp; AI architecture. Know the trade-offs, not just the options.</div>
+</div>
+<div class="divider"></div>
+
+<div class="dec-grid">
+
+  <div class="dec-card">
+    <div class="dc-q">Platform choice</div>
+    <div class="dc-opt"><strong>Microsoft Fabric</strong><em>New programmes, Microsoft-first orgs</em>Unified SaaS, OneLake, lower TCO, faster time-to-value. The forward investment.</div>
+    <div class="dc-opt"><strong>Databricks + ADLS</strong><em>ML-heavy, Spark-native teams</em>More engineering flexibility, stronger ML Ops, coexists with Fabric.</div>
+    <div class="dc-opt"><strong>Azure Synapse</strong><em>Existing deployments only</em>Migrate to Fabric. Not the recommended new build.</div>
+  </div>
+
+  <div class="dec-card">
+    <div class="dc-q">Agentic framework</div>
+    <div class="dc-opt"><strong>LangGraph</strong><em>Regulated, audit-critical</em>Deterministic state, maximum auditability, explicit control. FSI, Healthcare, Government default.</div>
+    <div class="dc-opt"><strong>Semantic Kernel</strong><em>Microsoft-first, .NET teams</em>Native Azure integration, vendor support, roadmap alignment.</div>
+    <div class="dc-opt"><strong>Azure AI Agent Service</strong><em>Operational simplicity</em>Managed, less control, best for conversational / productivity agents.</div>
+  </div>
+
+  <div class="dec-card">
+    <div class="dc-q">Model strategy</div>
+    <div class="dc-opt"><strong>GPT-4o (Azure OpenAI)</strong><em>Complex reasoning, quality-critical</em>Reserve for tasks requiring judgment. Cost: higher.</div>
+    <div class="dc-opt"><strong>GPT-4o-mini</strong><em>Classification, routing, high-volume</em>Deterministic-first pattern. Near-free for simple tasks. $0.02/run economics.</div>
+    <div class="dc-opt"><strong>Phi-3 (on-device)</strong><em>Edge, offline, cost-sensitive</em>Manufacturing, Healthcare edge, Telco network devices.</div>
+  </div>
+
+  <div class="dec-card">
+    <div class="dc-q">RAG / retrieval pattern</div>
+    <div class="dc-opt"><strong>Hybrid (Azure AI Search)</strong><em>Enterprise default</em>Vector + keyword + semantic re-ranking. Most robust for regulated content with precise terminology.</div>
+    <div class="dc-opt"><strong>Pure vector</strong><em>General knowledge Q&amp;A</em>Faster, simpler. Misses exact terminology matches. Not suitable for legal / regulatory text.</div>
+    <div class="dc-opt"><strong>Graph-augmented</strong><em>Relationship-heavy domains</em>KYC entity graphs, healthcare patient networks, supply chain dependencies.</div>
+  </div>
+
+  <div class="dec-card">
+    <div class="dc-q">Governance model</div>
+    <div class="dc-opt"><strong>Purview-first</strong><em>Regulated industries</em>Mandatory for BCBS 239, Solvency II, HIPAA, Consumer Duty. Lineage, classification, access policy automated.</div>
+    <div class="dc-opt"><strong>Fabric-native governance</strong><em>Fabric-only estates</em>Workspace-level RBAC, sensitivity labels via M365. Adequate for non-regulated environments.</div>
+    <div class="dc-opt"><strong>Databricks Unity Catalog</strong><em>Databricks-heavy estates</em>Federate with Purview for enterprise-wide governance. Strong ML Ops governance.</div>
+  </div>
+
+  <div class="dec-card">
+    <div class="dc-q">Memory architecture</div>
+    <div class="dc-opt"><strong>Stateless + logs</strong><em>Monitoring, batch agents</em>Simple, auditable, no data retention concerns. The pipeline monitoring system pattern.</div>
+    <div class="dc-opt"><strong>Session memory</strong><em>Conversational agents</em>Multi-turn continuity within a session. Azure AI Agent Service threads. No cross-session retention.</div>
+    <div class="dc-opt"><strong>Persistent (Cosmos DB)</strong><em>Long-running, learning agents</em>Cross-session knowledge retention. Requires explicit data governance policy on what the agent retains.</div>
+  </div>
+
+</div>
+
+<div class="callout callout-teal">
+  <span class="callout-lbl">Selection principle — context over defaults</span>
+  The response to "which Microsoft AI tool should we use?" is never a single tool name. It is a structured set of questions: what is the current data engineering maturity, what are the regulatory compliance requirements, and where does the priority sit between maximum auditability and speed-to-value? The decision framework above provides the criteria. The right answer differs meaningfully between a Tier 1 bank (LangGraph, Purview, Azure OpenAI, maximum governance) and a FTSE 100 retailer (Fabric, Copilot Studio, SaaS-first for phase one). Fluency with these trade-offs, not just tool familiarity, is what drives sound architecture recommendations.
+</div>
+
+<div class="insight">"The Microsoft Data &amp; AI stack is not a menu — it is an architecture. Tools that appear similar (Fabric vs Synapse, LangGraph vs Semantic Kernel, Purview vs native RBAC) have fundamentally different implications for scalability, auditability, and cost at enterprise scale. The decision that matters is not which tools to use, but which trade-offs are acceptable for this organisation, in this regulatory context, at this moment in their data maturity journey."</div>
+
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 9: GLOSSARY -->
+<!-- ══════════════════════════════════════════ -->
+<div id="glossary">
+<div class="sec-hd">
+  <div class="sec-tag">Section 09</div>
+  <div class="sec-title">Glossary — 60 Terms Across Eight Domains</div>
+  <div class="sec-desc">Data Platform · Agentic AI · AI &amp; GenAI · Data Architecture · Governance · Responsible AI · FSI Regulatory · Practice Accelerators. Searchable and filterable. 60 terms.</div>
+</div>
+<div class="divider"></div>
+
+<div style="margin-bottom:12px">
+  <input type="text" id="gsearch" placeholder="Search any term or definition..." oninput="renderGloss()" style="width:100%;padding:9px 14px;font-size:13px;background:var(--surface);border:1px solid var(--border2);border-radius:6px;color:var(--text);outline:none;font-family:&#39;IBM Plex Sans&#39;,sans-serif">
+</div>
+<div id="gcats" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px"><button class="gcat-btn gcat-active" onclick="setGCat(&#39;all&#39;,this)">All terms</button><button class="gcat-btn" onclick="setGCat(&#39;platform&#39;,this)">Data Platform</button><button class="gcat-btn" onclick="setGCat(&#39;agentic&#39;,this)">Agentic AI</button><button class="gcat-btn" onclick="setGCat(&#39;ai&#39;,this)">AI / GenAI</button><button class="gcat-btn" onclick="setGCat(&#39;arch&#39;,this)">Data Architecture</button><button class="gcat-btn" onclick="setGCat(&#39;gov&#39;,this)">Governance</button><button class="gcat-btn" onclick="setGCat(&#39;rai&#39;,this)">Responsible AI</button><button class="gcat-btn" onclick="setGCat(&#39;fsi&#39;,this)">FSI &amp; Regulatory</button><button class="gcat-btn" onclick="setGCat(&#39;acc&#39;,this)">Practice Accelerators</button></div>
+<div id="glist">
+    <div class="grow">
+      <div class="grow-word">Microsoft Fabric</div>
+      <div class="grow-def">Unified SaaS analytics platform built on <strong>OneLake</strong> — one logical storage layer shared by all workloads. Consolidates Data Engineering (Spark), Data Warehousing (SQL), Data Science (ML), Real-Time Intelligence (streaming), and Power BI into a single SaaS interface. Eliminates data movement and inter-tool synchronisation.</div>
+      <span class="grow-cat" style="color:#5b6af0;border-color:#5b6af0">Platform</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">OneLake</div>
+      <div class="grow-def">Single logical storage layer underpinning all of Microsoft Fabric. All workloads read from and write to OneLake without copying or moving data. Delta Lake open format ensures full interoperability with Databricks and external tools via shortcuts.</div>
+      <span class="grow-cat" style="color:#5b6af0;border-color:#5b6af0">Platform</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">DirectLake</div>
+      <div class="grow-def">Power BI Fabric connectivity mode that queries OneLake directly — no data import, no scheduled refresh cycle. Enables live, governed BI reporting at scale with sub-second query performance against the same data engineers and data scientists use.</div>
+      <span class="grow-cat" style="color:#5b6af0;border-color:#5b6af0">Platform</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Azure Data Lake Storage Gen2</div>
+      <div class="grow-def">Hierarchical namespace object storage underpinning Fabric OneLake and standalone data lake architectures. Stores raw, Bronze, and Silver zone data in open formats (Parquet, Delta, JSON). RBAC and ACL security enforced at file and folder level.</div>
+      <span class="grow-cat" style="color:#5b6af0;border-color:#5b6af0">Platform</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Azure Event Hubs</div>
+      <div class="grow-def">Fully managed, Kafka-compatible event streaming service. Handles millions of events per second. Up to 90-day retention. Supports AMQP, Kafka API, and HTTPS protocols. The real-time event ingestion backbone for agentic monitoring pipelines and IoT/telemetry architectures.</div>
+      <span class="grow-cat" style="color:#5b6af0;border-color:#5b6af0">Platform</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Azure Event Grid</div>
+      <div class="grow-def">Serverless event router that bridges Azure services to subscribers (Event Hubs, Functions, Logic Apps, webhooks) with filtering and dead-letter handling — without polling. Enables zero-touch reactive architectures. Routes ADF pipeline events to the agent monitoring layer with no ADF code changes required.</div>
+      <span class="grow-cat" style="color:#5b6af0;border-color:#5b6af0">Platform</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Azure Cosmos DB</div>
+      <div class="grow-def">Globally distributed multi-model NoSQL database (document, key-value, graph). Sub-10ms reads, 99.999% availability SLA. Native vector search capability for embedding storage alongside operational data. Used as agentic memory and state store — client entity graphs, KYC case history, agent working state.</div>
+      <span class="grow-cat" style="color:#5b6af0;border-color:#5b6af0">Platform</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Azure Databricks</div>
+      <div class="grow-def">Apache Spark-based unified data and AI platform. MLflow for experiment tracking, Unity Catalog for data governance, Delta Lake for open-format storage (full Fabric interoperability via shortcuts), Mosaic AI for model serving and fine-tuning. Preferred for ML-heavy data engineering. Coexists with Fabric rather than competing with it.</div>
+      <span class="grow-cat" style="color:#5b6af0;border-color:#5b6af0">Platform</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Azure Data Factory</div>
+      <div class="grow-def">Cloud-native ETL/ELT orchestration with 100+ source connectors. Manages pipeline scheduling, monitoring, and dependency management. Evolving toward Fabric Data Pipelines for Fabric-native environments; remains essential for hybrid (on-prem to cloud) ingestion scenarios.</div>
+      <span class="grow-cat" style="color:#5b6af0;border-color:#5b6af0">Platform</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Azure Synapse Analytics</div>
+      <div class="grow-def">Predecessor architecture to Fabric — integrates SQL data warehouse, Spark processing, and data integration. Widely deployed in existing enterprise estates. For new programmes, Fabric is the recommended path. Migration: Synapse Dedicated SQL → Fabric Warehouse; Synapse Spark → Fabric notebooks.</div>
+      <span class="grow-cat" style="color:#5b6af0;border-color:#5b6af0">Platform</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Agentic AI</div>
+      <div class="grow-def">AI systems that autonomously plan, select tools, take multi-step actions, observe outcomes, and adjust — completing complex workflows beyond single-prompt Q&amp;A. Five conditions for true agency: persistent identity, cyclical sense-decide-act loop, multiple possible actions, autonomy, and goal-directed behaviour.</div>
+      <span class="grow-cat" style="color:#f06060;border-color:#f06060">Agentic AI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">LangGraph</div>
+      <div class="grow-def">Open-source graph-based state machine framework for building auditable, deterministic agentic workflows. Each agent is a node; edges are state transitions. Full, explicit control over the agent loop. No hidden behaviour. Preferred for regulated environments where every state transition must be traceable and auditable.</div>
+      <span class="grow-cat" style="color:#f06060;border-color:#f06060">Agentic AI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Semantic Kernel</div>
+      <div class="grow-def">Microsoft's open-source agentic orchestration SDK (Python, C#, Java). Native Azure OpenAI, Azure AI Search, and Microsoft Graph integration. Provides planners (task decomposition), plugins (tools agents invoke), and memory connectors. AutoInvoke enables automatic plugin selection. Strategic choice for Microsoft-first and .NET organisations.</div>
+      <span class="grow-cat" style="color:#f06060;border-color:#f06060">Agentic AI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">AutoGen</div>
+      <div class="grow-def">Microsoft Research multi-agent conversation framework. Agents communicate via natural language in a conversational loop. GroupChat with Manager supports hierarchical patterns. AutoGen Studio provides a no-code builder. Well-suited to research and rapid prototyping; less appropriate for regulated production deployments requiring explicit audit trails.</div>
+      <span class="grow-cat" style="color:#f06060;border-color:#f06060">Agentic AI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Azure AI Agent Service</div>
+      <div class="grow-def">Microsoft's managed agentic platform handling infrastructure, tool integration, state persistence (thread management for multi-turn conversations), and monitoring. Built-in tools: code interpreter, file search, Bing grounding, function calling. Best for operational simplicity where fine-grained control is not a priority.</div>
+      <span class="grow-cat" style="color:#f06060;border-color:#f06060">Agentic AI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Copilot Studio</div>
+      <div class="grow-def">Microsoft low-code/no-code conversational agent builder (evolved from Power Virtual Agents). Drag-and-drop topic design, native M365 Copilot and Teams integration, Dataverse for data, Power Automate for actions. Best for business users building productivity, HR, IT helpdesk, and internal knowledge agents.</div>
+      <span class="grow-cat" style="color:#f06060;border-color:#f06060">Agentic AI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">MCP (Model Context Protocol)</div>
+      <div class="grow-def">Open standard for how AI agents communicate with external tools, APIs, and data sources — standardised, auditable tool invocation without custom per-tool integration code. The "USB standard" for agentic tool integration. Microsoft is adopting MCP across Azure AI services. Design agentic tool layers to be MCP-compatible now for future-proofing.</div>
+      <span class="grow-cat" style="color:#f06060;border-color:#f06060">Agentic AI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">ReAct Pattern</div>
+      <div class="grow-def">Reasoning + Acting — the cognitive loop in most agentic systems. Agent reasons about current state, selects an action (tool call or LLM inference), observes the result, reasons again. The explicit mechanism enabling autonomous multi-step task completion.</div>
+      <span class="grow-cat" style="color:#f06060;border-color:#f06060">Agentic AI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Human-in-the-Loop (HITL)</div>
+      <div class="grow-def">Design pattern where an agent produces a recommendation that a human reviews and approves before any consequential action. Mandatory for Execute-tier agentic deployments in regulated environments. Preserves human accountability at every decision point while automating the preparation and recommendation steps.</div>
+      <span class="grow-cat" style="color:#f06060;border-color:#f06060">Agentic AI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Hierarchical Multi-Agent</div>
+      <div class="grow-def">Orchestration pattern where a Supervisor/Orchestrator agent decomposes a task, delegates to specialist sub-agents, and synthesises results. Governable, auditable, clear accountability. The appropriate default for regulated FSI environments. Inherent risk: single point of failure at the orchestrator.</div>
+      <span class="grow-cat" style="color:#f06060;border-color:#f06060">Agentic AI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Deterministic-First Design</div>
+      <div class="grow-def">Agentic architectural principle: run rule-based deterministic checks before any LLM call. Invoke the LLM only where human-like contextual judgment cannot be replicated by rules. Keeps per-transaction LLM cost minimal (the $0.02/run pattern), reduces hallucination risk, and makes system behaviour auditable and predictable.</div>
+      <span class="grow-cat" style="color:#f06060;border-color:#f06060">Agentic AI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">LiteLLM</div>
+      <div class="grow-def">Unified API gateway for multiple LLM providers enabling multi-model routing strategies — GPT-4o-mini for classification and routing, GPT-4o for complex reasoning — without vendor lock-in. Integrates natively with LangGraph to keep model provider choice independent of the orchestration framework.</div>
+      <span class="grow-cat" style="color:#f06060;border-color:#f06060">Agentic AI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Execute-tier (Agentic Risk)</div>
+      <div class="grow-def">RAI risk classification for agents taking autonomous actions — writing data, sending communications, triggering downstream workflows. Requires strictly bounded scope (what the agent can and cannot do), comprehensive audit logging of every action with triggering evidence, and RAI Review Board sign-off before production deployment.</div>
+      <span class="grow-cat" style="color:#f06060;border-color:#f06060">Agentic AI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Assist-tier (Agentic Risk)</div>
+      <div class="grow-def">RAI risk classification for agents that produce recommendations which a human reviews and approves before any consequential action. The appropriate initial tier for most FSI agentic deployments. Human accountability is explicit and preserved at every decision point.</div>
+      <span class="grow-cat" style="color:#f06060;border-color:#f06060">Agentic AI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Azure OpenAI Service</div>
+      <div class="grow-def">Microsoft's managed deployment of OpenAI models (GPT-4o, GPT-4o-mini, o1/o3, DALL-E, Whisper, text embeddings) within the customer's Azure compliance boundary. Data does not leave the tenant. Private endpoints, customer-managed keys, Azure AD authentication, enterprise SLAs. The only compliant option for regulated FSI, Healthcare, and Government workloads with data residency requirements.</div>
+      <span class="grow-cat" style="color:#4090f0;border-color:#4090f0">AI / GenAI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Azure AI Foundry</div>
+      <div class="grow-def">Microsoft's unified hub for enterprise AI development. Model catalogue (1,600+ models: OpenAI, Meta Llama, Mistral, Phi, Cohere), prompt flow orchestration, model fine-tuning, evaluation frameworks, and production deployment. The organisational control tower for AI programme model strategy, evaluation, and governance.</div>
+      <span class="grow-cat" style="color:#4090f0;border-color:#4090f0">AI / GenAI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Azure AI Search</div>
+      <div class="grow-def">Enterprise search combining keyword (BM25), vector (ANN), and semantic re-ranking in a single hybrid index. RBAC ensures users only retrieve content they are authorised to see. Integrated chunking and incremental indexing. Native Azure OpenAI embedding integration. The preferred retrieval layer for Enterprise Knowledge (RAG) workloads across regulated industries.</div>
+      <span class="grow-cat" style="color:#4090f0;border-color:#4090f0">AI / GenAI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">RAG (Retrieval-Augmented Generation)</div>
+      <div class="grow-def">Architecture where a foundation model generates responses grounded in retrieved enterprise content rather than purely from training data. Reduces hallucination and enables domain-specific knowledge. Five layers: Ingest → Extract → Enrich &amp; Embed → Index &amp; Store → Retrieve &amp; Synthesise. Quality of retrieval governs quality of generation.</div>
+      <span class="grow-cat" style="color:#4090f0;border-color:#4090f0">AI / GenAI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Hybrid Retrieval</div>
+      <div class="grow-def">RAG pattern combining vector similarity, keyword (BM25) matching, and semantic re-ranking in one pipeline. Most robust for enterprise content with precise terminology (regulatory text, legal contracts, clinical records) where pure vector search misses exact term matches. Azure AI Search implements all three in a single managed service.</div>
+      <span class="grow-cat" style="color:#4090f0;border-color:#4090f0">AI / GenAI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Embedding Model</div>
+      <div class="grow-def">A model that converts text or data into dense numerical vectors for semantic similarity search. Quality of embeddings determines quality of RAG retrieval. Azure OpenAI text-embedding-3-large provides highest quality. text-embedding-3-small offers a cost/performance trade-off for high-volume applications.</div>
+      <span class="grow-cat" style="color:#4090f0;border-color:#4090f0">AI / GenAI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Knowledge Graph</div>
+      <div class="grow-def">Structured representation of entities and their relationships enabling multi-hop reasoning — e.g. "who is the relationship manager for this customer's parent company's subsidiary?" Complements vector search for relationship-heavy domains: KYC entity resolution, healthcare patient networks, supply chain dependencies.</div>
+      <span class="grow-cat" style="color:#4090f0;border-color:#4090f0">AI / GenAI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Azure Cognitive Services</div>
+      <div class="grow-def">Pre-built AI capabilities: Document Intelligence (OCR, form extraction, contract analysis), Speech (speech-to-text, speaker ID), Computer Vision, Language (NLP, entity recognition, PII detection), Translator. Typically the first processing layer in document-centric agentic pipelines — extracts structured data before an agent reasons over it.</div>
+      <span class="grow-cat" style="color:#4090f0;border-color:#4090f0">AI / GenAI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Microsoft Phi (Small LLMs)</div>
+      <div class="grow-def">Microsoft Research family of small language models (Phi-3-mini 3.8B through Phi-3-vision multimodal). Near GPT-3.5 reasoning at a fraction of the cost. Available via Azure AI Foundry, Ollama (local), and ONNX Runtime (edge/mobile). Optimal for on-device or offline deployments in Manufacturing edge, clinical devices, and field scenarios.</div>
+      <span class="grow-cat" style="color:#4090f0;border-color:#4090f0">AI / GenAI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Microsoft Copilot (M365)</div>
+      <div class="grow-def">AI assistant embedded across Microsoft 365 (Word, Excel, PowerPoint, Outlook, Teams, SharePoint). Grounded in the user's Microsoft Graph data via Semantic Kernel and Azure OpenAI. Copilot Extensions connect custom data sources. Requires data security assessment (SharePoint oversharing), adoption strategy, value measurement (Viva Insights), and a governance model before enterprise rollout.</div>
+      <span class="grow-cat" style="color:#4090f0;border-color:#4090f0">AI / GenAI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Medallion Architecture</div>
+      <div class="grow-def">Data platform zone pattern. <strong>Bronze</strong>: raw, immutable ingested data. <strong>Silver</strong>: cleansed, conformed, quality-checked. <strong>Gold</strong>: business-ready domain data products curated for consumption. Each zone carries defined quality SLAs, ownership, and access controls. AI applications consume from the Gold layer.</div>
+      <span class="grow-cat" style="color:#00c8a0;border-color:#00c8a0">Architecture</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Data Mesh</div>
+      <div class="grow-def">Organisational and operating model for data at scale. Four pillars: Data as a Product (domain teams own governed data outputs), Domain-Driven Ownership (accountability follows business domains not IT systems), Self-Serve Platform (central team enables domains without becoming a bottleneck), Federated Computational Governance (policies defined centrally, enforced at domain level via the platform).</div>
+      <span class="grow-cat" style="color:#00c8a0;border-color:#00c8a0">Architecture</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Data Product</div>
+      <div class="grow-def">A reusable, governed dataset with defined consumers, quality guarantees, SLAs, and a managed lifecycle. Six required characteristics: Discoverable, Addressable, Self-Describing, Trustworthy, Secure &amp; Accessible, Interoperable. Three types: Source-Aligned (immutable from source system), Aggregated (cross-domain derived), Consumption-Aligned (purpose-built for a specific use case).</div>
+      <span class="grow-cat" style="color:#00c8a0;border-color:#00c8a0">Architecture</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Hub &amp; Spoke (Governance)</div>
+      <div class="grow-def">Data governance operating model. The <strong>Hub</strong> holds governance standards, platform architecture, quality framework, and lineage tooling — "globally consistent." <strong>Spokes</strong> are domain teams owning data products within those standards — "locally applied." The most scalable model for multi-domain enterprises. Balances central control with domain agility and accountability.</div>
+      <span class="grow-cat" style="color:#00c8a0;border-color:#00c8a0">Architecture</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">CDC (Change Data Capture)</div>
+      <div class="grow-def">Ingestion pattern that streams only changed rows from source systems (inserts, updates, deletes) — near-real-time replication without impacting source database performance. Preferred over full-table batch loads for high-volume transactional systems in FSI, Retail, and Telco.</div>
+      <span class="grow-cat" style="color:#00c8a0;border-color:#00c8a0">Architecture</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Feature Store</div>
+      <div class="grow-def">Centralised repository for ML features — derived data representations used in both model training and real-time inference. Ensures consistency between training and serving environments. Provides a governed catalogue of reusable features, preventing teams from independently recomputing the same transformations.</div>
+      <span class="grow-cat" style="color:#00c8a0;border-color:#00c8a0">Architecture</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Microsoft Purview</div>
+      <div class="grow-def">Unified data governance platform. Five capabilities: <strong>Data Map</strong> (automated discovery and classification across Azure, M365, on-prem, multi-cloud using 200+ classifiers), <strong>Data Catalog</strong> (searchable asset catalogue with business glossary, ownership, lineage), <strong>Data Lineage</strong> (auto-discovered from ADF, Fabric, Databricks, SQL), <strong>Data Policy</strong> (access enforcement across services), <strong>Compliance Manager</strong> (BCBS 239, Solvency II, HIPAA, GDPR assessment).</div>
+      <span class="grow-cat" style="color:#f0b840;border-color:#f0b840">Governance</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Data Lineage</div>
+      <div class="grow-def">End-to-end tracing of data from origin through every transformation to final consumption. Answers the regulatory audit question: "where did this number come from?" Purview auto-discovers lineage from ADF run metadata, Fabric pipeline logs, and Databricks notebooks — eliminating manually maintained lineage graphs. Critical for BCBS 239, Solvency II, and Consumer Duty compliance.</div>
+      <span class="grow-cat" style="color:#f0b840;border-color:#f0b840">Governance</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Data Governance</div>
+      <div class="grow-def">The formal system of policies, standards, roles, and processes defining who is accountable for data, what quality standards apply, and how decisions about data are made. Governance precedes and enables any technology investment — it cannot be retrofit into a data platform after the fact.</div>
+      <span class="grow-cat" style="color:#f0b840;border-color:#f0b840">Governance</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">MDM (Master Data Management)</div>
+      <div class="grow-def">Creating and maintaining a single authoritative record for key business entities — Customer, Product, Location, Counterparty, Legal Entity. Without MDM, every domain has a different definition of "Customer" and cross-domain analytics and AI applications produce inconsistent, untrustworthy results.</div>
+      <span class="grow-cat" style="color:#f0b840;border-color:#f0b840">Governance</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Data Steward</div>
+      <div class="grow-def">Operational role responsible for day-to-day data quality within a domain — under the authority of the Business Data Owner. Bridges business domain expertise and technical data management. Configures quality rules, resolves data issues, reviews lineage, and approves data product publication. In a YAML SLA contract pattern, the steward edits contracts without touching code.</div>
+      <span class="grow-cat" style="color:#f0b840;border-color:#f0b840">Governance</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Azure Policy</div>
+      <div class="grow-def">Governance-as-code service enforcing Azure resource configuration at scale. Built-in initiatives cover encryption, network isolation, Purview registration, and AI service configuration against ISO 27001, PCI-DSS, and Solvency II standards. Ensures every new AI component automatically meets governance requirements without relying on individual team compliance.</div>
+      <span class="grow-cat" style="color:#f0b840;border-color:#f0b840">Governance</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Azure Key Vault</div>
+      <div class="grow-def">HSM-backed centralised secrets management for API keys, connection strings, certificates, and encryption keys. FIPS 140-2 validated. Accessed via Managed Identity — no credentials in code. Audit logs capture which agent or service accessed which secret and when. Minimum required configuration for any production agentic system in a regulated environment.</div>
+      <span class="grow-cat" style="color:#f0b840;border-color:#f0b840">Governance</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Microsoft Entra ID</div>
+      <div class="grow-def">Microsoft's cloud identity platform (formerly Azure AD). OAuth 2.0/OIDC authentication, RBAC and ABAC authorisation, Managed Identities for Azure services (agents authenticate without stored credentials), Conditional Access policies, and Privileged Identity Management. The Zero Trust security foundation for all Azure workloads including agentic systems.</div>
+      <span class="grow-cat" style="color:#f0b840;border-color:#f0b840">Governance</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Responsible AI (RAI)</div>
+      <div class="grow-def">Governance framework ensuring AI systems are fair, transparent, explainable, accountable, and safe. In regulated FSI maps directly to: FCA Consumer Duty (explainability and fair customer outcomes), GDPR right to explanation, EU AI Act risk tier requirements, and PRA expectations for AI operational resilience.</div>
+      <span class="grow-cat" style="color:#60c060;border-color:#60c060">RAI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">EU AI Act</div>
+      <div class="grow-def">EU regulation classifying AI by risk. <strong>Unacceptable</strong>: prohibited (social scoring, manipulative AI, real-time biometric ID in public spaces). <strong>High Risk</strong>: strict controls required — credit decisioning, KYC, employment screening, critical infrastructure. <strong>Limited Risk</strong>: transparency obligations. <strong>Minimal Risk</strong>: no specific requirements. In force from August 2024, full obligations phased to 2026.</div>
+      <span class="grow-cat" style="color:#60c060;border-color:#60c060">RAI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Model Card</div>
+      <div class="grow-def">Structured documentation for every AI model: purpose, training data characteristics, performance metrics, known limitations, out-of-scope uses, and bias evaluation across relevant demographic groups. FCA and PRA expect model cards for any AI system involved in customer-facing decisions. Azure ML Responsible AI Dashboard automates model card generation.</div>
+      <span class="grow-cat" style="color:#60c060;border-color:#60c060">RAI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Red Teaming (AI)</div>
+      <div class="grow-def">Adversarial testing — deliberately attempting to elicit harmful, biased, discriminatory, or unsafe outputs before production deployment. Mandatory for Execute-tier and Orchestrate-tier agentic deployments in regulated environments. Azure AI Foundry provides integrated red teaming and safety evaluation tooling.</div>
+      <span class="grow-cat" style="color:#60c060;border-color:#60c060">RAI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Azure ML Responsible AI Dashboard</div>
+      <div class="grow-def">Integrated Azure ML tooling for model interpretability, fairness assessment (demographic parity, equalised odds), error analysis, and causal analysis. Generates model cards automatically. Supports counterfactual explanations ("what would need to change for a different outcome?") — directly relevant for GDPR right to explanation and Consumer Duty compliance.</div>
+      <span class="grow-cat" style="color:#60c060;border-color:#60c060">RAI</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">BCBS 239</div>
+      <div class="grow-def">Basel Committee Principle 239 — requires banks to have strong risk data aggregation capabilities and accurate, timely risk reporting. Mandates end-to-end data lineage, data quality controls, and documented data definitions for all risk inputs. The primary regulatory driver for data governance and lineage investment in Tier 1 and Tier 2 banks.</div>
+      <span class="grow-cat" style="color:#c060f0;border-color:#c060f0">FSI &amp; Regulatory</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">DORA</div>
+      <div class="grow-def">Digital Operational Resilience Act (EU) — requires FSI firms to manage ICT and AI operational resilience. Data pipelines and AI systems must meet continuity, recovery, and incident reporting requirements. In force from January 2025. Operational resilience of agentic systems (fallbacks, offline capability, recovery procedures) is a direct DORA obligation.</div>
+      <span class="grow-cat" style="color:#c060f0;border-color:#c060f0">FSI &amp; Regulatory</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Consumer Duty</div>
+      <div class="grow-def">FCA principle requiring financial services firms to deliver good retail customer outcomes — including fair value, clarity, and explainability of automated decisions. AI systems that make or materially influence customer decisions must be auditable and demonstrably free of bias. Model cards and pre-deployment bias testing are the baseline evidence requirement.</div>
+      <span class="grow-cat" style="color:#c060f0;border-color:#c060f0">FSI &amp; Regulatory</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Solvency II</div>
+      <div class="grow-def">EU insurance regulation requiring capital proportionate to risk exposure. Demands high-quality risk data aggregation, end-to-end lineage for all capital model inputs, and documented data quality controls. The PRA Dear CEO letter on data lineage gaps is the active enforcement mechanism driving data platform and Purview investment in UK insurers.</div>
+      <span class="grow-cat" style="color:#c060f0;border-color:#c060f0">FSI &amp; Regulatory</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Bernanke Report</div>
+      <div class="grow-def">2024 independent review of a major central bank's forecasting processes. Identified data quality and analytical capability gaps as material constraints on forecasting accuracy. A significant driver of enterprise data platform investment in the central banking sector — federated data platforms, self-service analytics, AI/ML products, and agentic AI capabilities under Hub &amp; Spoke governance.</div>
+      <span class="grow-cat" style="color:#c060f0;border-color:#c060f0">FSI &amp; Regulatory</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">ISO/IEC 42001</div>
+      <div class="grow-def">International standard for AI management systems — the "ISO 27001 for AI." Provides governance, transparency, AI risk management, and continuous monitoring controls across the AI lifecycle. Certifiable standard demonstrating AI management maturity to regulators, institutional clients, and boards. Increasingly referenced by FCA and PRA in AI guidance.</div>
+      <span class="grow-cat" style="color:#c060f0;border-color:#c060f0">FSI &amp; Regulatory</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">SDTT (Smart Data Transition Toolkit)</div>
+      <div class="grow-def">Data migration accelerator. 80–90% automation on schema conversion (SQL DDL translation across database platforms), 40–50% on data migration and validation. Significantly reduces migration cost and timeline versus manual conversion. Used in Azure migration business cases for quantified TCO reduction modelling.</div>
+      <span class="grow-cat" style="color:#f0d060;border-color:#f0d060">Practice Accelerators</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">myNav</div>
+      <div class="grow-def">Cloud platform assessment and simulation tool. Inventories existing IT estate, maps workloads to cloud services, simulates Azure architectures, and produces indicative cost models. Used in pre-sales and discovery phases to build a credible Azure migration business case with evidence-based TCO projections.</div>
+      <span class="grow-cat" style="color:#f0d060;border-color:#f0d060">Practice Accelerators</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">IDF (Intelligent Data Foundation)</div>
+      <div class="grow-def">Reusable framework accelerating data engineering pipeline build, deployment, and automation across Fabric, Synapse, and Databricks environments. Pre-built connectors, transformation patterns, and quality check libraries reduce pipeline build time materially versus bespoke development.</div>
+      <span class="grow-cat" style="color:#f0d060;border-color:#f0d060">Practice Accelerators</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Data Beacon</div>
+      <div class="grow-def">Framework for transparent, collaborative, and visual data management and consumption. Provides integrated data DNA-based asset search, collaborative data access workflows, and multiple consumption mode support (BI, API, data science). Addresses discoverability and self-serve dimensions of the data product framework.</div>
+      <span class="grow-cat" style="color:#f0d060;border-color:#f0d060">Practice Accelerators</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Pulse</div>
+      <div class="grow-def">Accelerator for in-depth data estate analysis — asset inventory, migration planning, complexity scoring, and indicative cost modelling. Used in discovery and diagnostic phases to produce a defendable migration estimate and phasing recommendation for any data modernisation programme.</div>
+      <span class="grow-cat" style="color:#f0d060;border-color:#f0d060">Practice Accelerators</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">Value Realization Office</div>
+      <div class="grow-def">A programme governance structure that tracks actual delivered benefits against the original business case — quarterly reporting to CFO and ExCo. Maintains financial accountability for transformation programmes beyond go-live. The mechanism distinguishing programmes that deliver on their ROI commitment from those that deliver technically but fail commercially.</div>
+      <span class="grow-cat" style="color:#f0d060;border-color:#f0d060">Practice Accelerators</span>
+    </div>
+    <div class="grow">
+      <div class="grow-word">DevXOps</div>
+      <div class="grow-def">Enterprise DevOps approach: DevSecOps (security in CI/CD), DevDataOps (data pipeline CI/CD and quality automation), DevBizOps (business outcome tracking in delivery), DevAIOps (AI model deployment, monitoring, and retraining pipelines). The full operational discipline for data and AI programme delivery.</div>
+      <span class="grow-cat" style="color:#f0d060;border-color:#f0d060">Practice Accelerators</span>
+    </div></div>
+</div>
+
+</div><!-- shell -->
+
+<div class="footer">
+  <div class="footer-text">Microsoft Data &amp; AI Platform Reference · Field Edition · Data Architecture &amp; Agentic AI Practice · v1.0</div>
+</div>
+
+<script>
+const sections=['platform','agentic','genai','governance','analytics','devops','industry','decisions','glossary'];
+const navLinks=document.querySelectorAll('.toc-link');
+function onScroll(){
+  let cur='';
+  sections.forEach(id=>{
+    const el=document.getElementById(id);
+    if(el&&window.scrollY>=el.offsetTop-80) cur=id;
+  });
+  navLinks.forEach(l=>{l.classList.toggle('active',l.getAttribute('href')==='#'+cur);});
+}
+window.addEventListener('scroll',onScroll,{passive:true});
+
+/* ══ GLOSSARY DATA ══ */
+const GCATS=[
+  {id:'all',label:'All terms'},
+  {id:'platform',label:'Data Platform',col:'#5b6af0'},
+  {id:'agentic',label:'Agentic AI',col:'#f06060'},
+  {id:'ai',label:'AI / GenAI',col:'#4090f0'},
+  {id:'arch',label:'Data Architecture',col:'#00c8a0'},
+  {id:'gov',label:'Governance',col:'#f0b840'},
+  {id:'rai',label:'Responsible AI',col:'#60c060'},
+  {id:'fsi',label:'FSI & Regulatory',col:'#c060f0'},
+  {id:'acc',label:'Practice Accelerators',col:'#f0d060'},
+];
+const CNAME={platform:'Platform',agentic:'Agentic AI',ai:'AI / GenAI',arch:'Architecture',gov:'Governance',rai:'RAI',fsi:'FSI & Regulatory',acc:'Practice Accelerators'};
+const CCOL={platform:'#5b6af0',agentic:'#f06060',ai:'#4090f0',arch:'#00c8a0',gov:'#f0b840',rai:'#60c060',fsi:'#c060f0',acc:'#f0d060'};
+
+const TERMS=[
+  /* PLATFORM */
+  {w:'Microsoft Fabric',c:'platform',d:'Unified SaaS analytics platform built on <strong>OneLake</strong> — one logical storage layer shared by all workloads. Consolidates Data Engineering (Spark), Data Warehousing (SQL), Data Science (ML), Real-Time Intelligence (streaming), and Power BI into a single SaaS interface. Eliminates data movement and inter-tool synchronisation.'},
+  {w:'OneLake',c:'platform',d:'Single logical storage layer underpinning all of Microsoft Fabric. All workloads read from and write to OneLake without copying or moving data. Delta Lake open format ensures full interoperability with Databricks and external tools via shortcuts.'},
+  {w:'DirectLake',c:'platform',d:'Power BI Fabric connectivity mode that queries OneLake directly — no data import, no scheduled refresh cycle. Enables live, governed BI reporting at scale with sub-second query performance against the same data engineers and data scientists use.'},
+  {w:'Azure Data Lake Storage Gen2',c:'platform',d:'Hierarchical namespace object storage underpinning Fabric OneLake and standalone data lake architectures. Stores raw, Bronze, and Silver zone data in open formats (Parquet, Delta, JSON). RBAC and ACL security enforced at file and folder level.'},
+  {w:'Azure Event Hubs',c:'platform',d:'Fully managed, Kafka-compatible event streaming service. Handles millions of events per second. Up to 90-day retention. Supports AMQP, Kafka API, and HTTPS protocols. The real-time event ingestion backbone for agentic monitoring pipelines and IoT/telemetry architectures.'},
+  {w:'Azure Event Grid',c:'platform',d:'Serverless event router that bridges Azure services to subscribers (Event Hubs, Functions, Logic Apps, webhooks) with filtering and dead-letter handling — without polling. Enables zero-touch reactive architectures. Routes ADF pipeline events to the agent monitoring layer with no ADF code changes required.'},
+  {w:'Azure Cosmos DB',c:'platform',d:'Globally distributed multi-model NoSQL database (document, key-value, graph). Sub-10ms reads, 99.999% availability SLA. Native vector search capability for embedding storage alongside operational data. Used as agentic memory and state store — client entity graphs, KYC case history, agent working state.'},
+  {w:'Azure Databricks',c:'platform',d:'Apache Spark-based unified data and AI platform. MLflow for experiment tracking, Unity Catalog for data governance, Delta Lake for open-format storage (full Fabric interoperability via shortcuts), Mosaic AI for model serving and fine-tuning. Preferred for ML-heavy data engineering. Coexists with Fabric rather than competing with it.'},
+  {w:'Azure Data Factory',c:'platform',d:'Cloud-native ETL/ELT orchestration with 100+ source connectors. Manages pipeline scheduling, monitoring, and dependency management. Evolving toward Fabric Data Pipelines for Fabric-native environments; remains essential for hybrid (on-prem to cloud) ingestion scenarios.'},
+  {w:'Azure Synapse Analytics',c:'platform',d:'Predecessor architecture to Fabric — integrates SQL data warehouse, Spark processing, and data integration. Widely deployed in existing enterprise estates. For new programmes, Fabric is the recommended path. Migration: Synapse Dedicated SQL → Fabric Warehouse; Synapse Spark → Fabric notebooks.'},
+  /* AGENTIC */
+  {w:'Agentic AI',c:'agentic',d:'AI systems that autonomously plan, select tools, take multi-step actions, observe outcomes, and adjust — completing complex workflows beyond single-prompt Q&A. Five conditions for true agency: persistent identity, cyclical sense-decide-act loop, multiple possible actions, autonomy, and goal-directed behaviour.'},
+  {w:'LangGraph',c:'agentic',d:'Open-source graph-based state machine framework for building auditable, deterministic agentic workflows. Each agent is a node; edges are state transitions. Full, explicit control over the agent loop. No hidden behaviour. Preferred for regulated environments where every state transition must be traceable and auditable.'},
+  {w:'Semantic Kernel',c:'agentic',d:"Microsoft's open-source agentic orchestration SDK (Python, C#, Java). Native Azure OpenAI, Azure AI Search, and Microsoft Graph integration. Provides planners (task decomposition), plugins (tools agents invoke), and memory connectors. AutoInvoke enables automatic plugin selection. Strategic choice for Microsoft-first and .NET organisations."},
+  {w:'AutoGen',c:'agentic',d:'Microsoft Research multi-agent conversation framework. Agents communicate via natural language in a conversational loop. GroupChat with Manager supports hierarchical patterns. AutoGen Studio provides a no-code builder. Well-suited to research and rapid prototyping; less appropriate for regulated production deployments requiring explicit audit trails.'},
+  {w:'Azure AI Agent Service',c:'agentic',d:"Microsoft's managed agentic platform handling infrastructure, tool integration, state persistence (thread management for multi-turn conversations), and monitoring. Built-in tools: code interpreter, file search, Bing grounding, function calling. Best for operational simplicity where fine-grained control is not a priority."},
+  {w:'Copilot Studio',c:'agentic',d:'Microsoft low-code/no-code conversational agent builder (evolved from Power Virtual Agents). Drag-and-drop topic design, native M365 Copilot and Teams integration, Dataverse for data, Power Automate for actions. Best for business users building productivity, HR, IT helpdesk, and internal knowledge agents.'},
+  {w:'MCP (Model Context Protocol)',c:'agentic',d:'Open standard for how AI agents communicate with external tools, APIs, and data sources — standardised, auditable tool invocation without custom per-tool integration code. The "USB standard" for agentic tool integration. Microsoft is adopting MCP across Azure AI services. Design agentic tool layers to be MCP-compatible now for future-proofing.'},
+  {w:'ReAct Pattern',c:'agentic',d:'Reasoning + Acting — the cognitive loop in most agentic systems. Agent reasons about current state, selects an action (tool call or LLM inference), observes the result, reasons again. The explicit mechanism enabling autonomous multi-step task completion.'},
+  {w:'Human-in-the-Loop (HITL)',c:'agentic',d:'Design pattern where an agent produces a recommendation that a human reviews and approves before any consequential action. Mandatory for Execute-tier agentic deployments in regulated environments. Preserves human accountability at every decision point while automating the preparation and recommendation steps.'},
+  {w:'Hierarchical Multi-Agent',c:'agentic',d:'Orchestration pattern where a Supervisor/Orchestrator agent decomposes a task, delegates to specialist sub-agents, and synthesises results. Governable, auditable, clear accountability. The appropriate default for regulated FSI environments. Inherent risk: single point of failure at the orchestrator.'},
+  {w:'Deterministic-First Design',c:'agentic',d:'Agentic architectural principle: run rule-based deterministic checks before any LLM call. Invoke the LLM only where human-like contextual judgment cannot be replicated by rules. Keeps per-transaction LLM cost minimal (the $0.02/run pattern), reduces hallucination risk, and makes system behaviour auditable and predictable.'},
+  {w:'LiteLLM',c:'agentic',d:'Unified API gateway for multiple LLM providers enabling multi-model routing strategies — GPT-4o-mini for classification and routing, GPT-4o for complex reasoning — without vendor lock-in. Integrates natively with LangGraph to keep model provider choice independent of the orchestration framework.'},
+  {w:'Execute-tier (Agentic Risk)',c:'agentic',d:'RAI risk classification for agents taking autonomous actions — writing data, sending communications, triggering downstream workflows. Requires strictly bounded scope (what the agent can and cannot do), comprehensive audit logging of every action with triggering evidence, and RAI Review Board sign-off before production deployment.'},
+  {w:'Assist-tier (Agentic Risk)',c:'agentic',d:'RAI risk classification for agents that produce recommendations which a human reviews and approves before any consequential action. The appropriate initial tier for most FSI agentic deployments. Human accountability is explicit and preserved at every decision point.'},
+  /* AI / GENAI */
+  {w:'Azure OpenAI Service',c:'ai',d:"Microsoft's managed deployment of OpenAI models (GPT-4o, GPT-4o-mini, o1/o3, DALL-E, Whisper, text embeddings) within the customer's Azure compliance boundary. Data does not leave the tenant. Private endpoints, customer-managed keys, Azure AD authentication, enterprise SLAs. The only compliant option for regulated FSI, Healthcare, and Government workloads with data residency requirements."},
+  {w:'Azure AI Foundry',c:'ai',d:"Microsoft's unified hub for enterprise AI development. Model catalogue (1,600+ models: OpenAI, Meta Llama, Mistral, Phi, Cohere), prompt flow orchestration, model fine-tuning, evaluation frameworks, and production deployment. The organisational control tower for AI programme model strategy, evaluation, and governance."},
+  {w:'Azure AI Search',c:'ai',d:'Enterprise search combining keyword (BM25), vector (ANN), and semantic re-ranking in a single hybrid index. RBAC ensures users only retrieve content they are authorised to see. Integrated chunking and incremental indexing. Native Azure OpenAI embedding integration. The preferred retrieval layer for Enterprise Knowledge (RAG) workloads across regulated industries.'},
+  {w:'RAG (Retrieval-Augmented Generation)',c:'ai',d:'Architecture where a foundation model generates responses grounded in retrieved enterprise content rather than purely from training data. Reduces hallucination and enables domain-specific knowledge. Five layers: Ingest → Extract → Enrich & Embed → Index & Store → Retrieve & Synthesise. Quality of retrieval governs quality of generation.'},
+  {w:'Hybrid Retrieval',c:'ai',d:'RAG pattern combining vector similarity, keyword (BM25) matching, and semantic re-ranking in one pipeline. Most robust for enterprise content with precise terminology (regulatory text, legal contracts, clinical records) where pure vector search misses exact term matches. Azure AI Search implements all three in a single managed service.'},
+  {w:'Embedding Model',c:'ai',d:'A model that converts text or data into dense numerical vectors for semantic similarity search. Quality of embeddings determines quality of RAG retrieval. Azure OpenAI text-embedding-3-large provides highest quality. text-embedding-3-small offers a cost/performance trade-off for high-volume applications.'},
+  {w:'Knowledge Graph',c:'ai',d:'Structured representation of entities and their relationships enabling multi-hop reasoning — e.g. "who is the relationship manager for this customer\'s parent company\'s subsidiary?" Complements vector search for relationship-heavy domains: KYC entity resolution, healthcare patient networks, supply chain dependencies.'},
+  {w:'Azure Cognitive Services',c:'ai',d:'Pre-built AI capabilities: Document Intelligence (OCR, form extraction, contract analysis), Speech (speech-to-text, speaker ID), Computer Vision, Language (NLP, entity recognition, PII detection), Translator. Typically the first processing layer in document-centric agentic pipelines — extracts structured data before an agent reasons over it.'},
+  {w:'Microsoft Phi (Small LLMs)',c:'ai',d:'Microsoft Research family of small language models (Phi-3-mini 3.8B through Phi-3-vision multimodal). Near GPT-3.5 reasoning at a fraction of the cost. Available via Azure AI Foundry, Ollama (local), and ONNX Runtime (edge/mobile). Optimal for on-device or offline deployments in Manufacturing edge, clinical devices, and field scenarios.'},
+  {w:'Microsoft Copilot (M365)',c:'ai',d:'AI assistant embedded across Microsoft 365 (Word, Excel, PowerPoint, Outlook, Teams, SharePoint). Grounded in the user\'s Microsoft Graph data via Semantic Kernel and Azure OpenAI. Copilot Extensions connect custom data sources. Requires data security assessment (SharePoint oversharing), adoption strategy, value measurement (Viva Insights), and a governance model before enterprise rollout.'},
+  /* ARCHITECTURE */
+  {w:'Medallion Architecture',c:'arch',d:'Data platform zone pattern. <strong>Bronze</strong>: raw, immutable ingested data. <strong>Silver</strong>: cleansed, conformed, quality-checked. <strong>Gold</strong>: business-ready domain data products curated for consumption. Each zone carries defined quality SLAs, ownership, and access controls. AI applications consume from the Gold layer.'},
+  {w:'Data Mesh',c:'arch',d:'Organisational and operating model for data at scale. Four pillars: Data as a Product (domain teams own governed data outputs), Domain-Driven Ownership (accountability follows business domains not IT systems), Self-Serve Platform (central team enables domains without becoming a bottleneck), Federated Computational Governance (policies defined centrally, enforced at domain level via the platform).'},
+  {w:'Data Product',c:'arch',d:'A reusable, governed dataset with defined consumers, quality guarantees, SLAs, and a managed lifecycle. Six required characteristics: Discoverable, Addressable, Self-Describing, Trustworthy, Secure & Accessible, Interoperable. Three types: Source-Aligned (immutable from source system), Aggregated (cross-domain derived), Consumption-Aligned (purpose-built for a specific use case).'},
+  {w:'Hub & Spoke (Governance)',c:'arch',d:'Data governance operating model. The <strong>Hub</strong> holds governance standards, platform architecture, quality framework, and lineage tooling — "globally consistent." <strong>Spokes</strong> are domain teams owning data products within those standards — "locally applied." The most scalable model for multi-domain enterprises. Balances central control with domain agility and accountability.'},
+  {w:'CDC (Change Data Capture)',c:'arch',d:'Ingestion pattern that streams only changed rows from source systems (inserts, updates, deletes) — near-real-time replication without impacting source database performance. Preferred over full-table batch loads for high-volume transactional systems in FSI, Retail, and Telco.'},
+  {w:'Feature Store',c:'arch',d:'Centralised repository for ML features — derived data representations used in both model training and real-time inference. Ensures consistency between training and serving environments. Provides a governed catalogue of reusable features, preventing teams from independently recomputing the same transformations.'},
+  /* GOVERNANCE */
+  {w:'Microsoft Purview',c:'gov',d:'Unified data governance platform. Five capabilities: <strong>Data Map</strong> (automated discovery and classification across Azure, M365, on-prem, multi-cloud using 200+ classifiers), <strong>Data Catalog</strong> (searchable asset catalogue with business glossary, ownership, lineage), <strong>Data Lineage</strong> (auto-discovered from ADF, Fabric, Databricks, SQL), <strong>Data Policy</strong> (access enforcement across services), <strong>Compliance Manager</strong> (BCBS 239, Solvency II, HIPAA, GDPR assessment).'},
+  {w:'Data Lineage',c:'gov',d:'End-to-end tracing of data from origin through every transformation to final consumption. Answers the regulatory audit question: "where did this number come from?" Purview auto-discovers lineage from ADF run metadata, Fabric pipeline logs, and Databricks notebooks — eliminating manually maintained lineage graphs. Critical for BCBS 239, Solvency II, and Consumer Duty compliance.'},
+  {w:'Data Governance',c:'gov',d:'The formal system of policies, standards, roles, and processes defining who is accountable for data, what quality standards apply, and how decisions about data are made. Governance precedes and enables any technology investment — it cannot be retrofit into a data platform after the fact.'},
+  {w:'MDM (Master Data Management)',c:'gov',d:'Creating and maintaining a single authoritative record for key business entities — Customer, Product, Location, Counterparty, Legal Entity. Without MDM, every domain has a different definition of "Customer" and cross-domain analytics and AI applications produce inconsistent, untrustworthy results.'},
+  {w:'Data Steward',c:'gov',d:'Operational role responsible for day-to-day data quality within a domain — under the authority of the Business Data Owner. Bridges business domain expertise and technical data management. Configures quality rules, resolves data issues, reviews lineage, and approves data product publication. In a YAML SLA contract pattern, the steward edits contracts without touching code.'},
+  {w:'Azure Policy',c:'gov',d:'Governance-as-code service enforcing Azure resource configuration at scale. Built-in initiatives cover encryption, network isolation, Purview registration, and AI service configuration against ISO 27001, PCI-DSS, and Solvency II standards. Ensures every new AI component automatically meets governance requirements without relying on individual team compliance.'},
+  {w:'Azure Key Vault',c:'gov',d:'HSM-backed centralised secrets management for API keys, connection strings, certificates, and encryption keys. FIPS 140-2 validated. Accessed via Managed Identity — no credentials in code. Audit logs capture which agent or service accessed which secret and when. Minimum required configuration for any production agentic system in a regulated environment.'},
+  {w:'Microsoft Entra ID',c:'gov',d:'Microsoft\'s cloud identity platform (formerly Azure AD). OAuth 2.0/OIDC authentication, RBAC and ABAC authorisation, Managed Identities for Azure services (agents authenticate without stored credentials), Conditional Access policies, and Privileged Identity Management. The Zero Trust security foundation for all Azure workloads including agentic systems.'},
+  /* RAI */
+  {w:'Responsible AI (RAI)',c:'rai',d:'Governance framework ensuring AI systems are fair, transparent, explainable, accountable, and safe. In regulated FSI maps directly to: FCA Consumer Duty (explainability and fair customer outcomes), GDPR right to explanation, EU AI Act risk tier requirements, and PRA expectations for AI operational resilience.'},
+  {w:'EU AI Act',c:'rai',d:'EU regulation classifying AI by risk. <strong>Unacceptable</strong>: prohibited (social scoring, manipulative AI, real-time biometric ID in public spaces). <strong>High Risk</strong>: strict controls required — credit decisioning, KYC, employment screening, critical infrastructure. <strong>Limited Risk</strong>: transparency obligations. <strong>Minimal Risk</strong>: no specific requirements. In force from August 2024, full obligations phased to 2026.'},
+  {w:'Model Card',c:'rai',d:'Structured documentation for every AI model: purpose, training data characteristics, performance metrics, known limitations, out-of-scope uses, and bias evaluation across relevant demographic groups. FCA and PRA expect model cards for any AI system involved in customer-facing decisions. Azure ML Responsible AI Dashboard automates model card generation.'},
+  {w:'Red Teaming (AI)',c:'rai',d:'Adversarial testing — deliberately attempting to elicit harmful, biased, discriminatory, or unsafe outputs before production deployment. Mandatory for Execute-tier and Orchestrate-tier agentic deployments in regulated environments. Azure AI Foundry provides integrated red teaming and safety evaluation tooling.'},
+  {w:'Azure ML Responsible AI Dashboard',c:'rai',d:'Integrated Azure ML tooling for model interpretability, fairness assessment (demographic parity, equalised odds), error analysis, and causal analysis. Generates model cards automatically. Supports counterfactual explanations ("what would need to change for a different outcome?") — directly relevant for GDPR right to explanation and Consumer Duty compliance.'},
+  /* FSI REGULATORY */
+  {w:'BCBS 239',c:'fsi',d:'Basel Committee Principle 239 — requires banks to have strong risk data aggregation capabilities and accurate, timely risk reporting. Mandates end-to-end data lineage, data quality controls, and documented data definitions for all risk inputs. The primary regulatory driver for data governance and lineage investment in Tier 1 and Tier 2 banks.'},
+  {w:'DORA',c:'fsi',d:'Digital Operational Resilience Act (EU) — requires FSI firms to manage ICT and AI operational resilience. Data pipelines and AI systems must meet continuity, recovery, and incident reporting requirements. In force from January 2025. Operational resilience of agentic systems (fallbacks, offline capability, recovery procedures) is a direct DORA obligation.'},
+  {w:'Consumer Duty',c:'fsi',d:'FCA principle requiring financial services firms to deliver good retail customer outcomes — including fair value, clarity, and explainability of automated decisions. AI systems that make or materially influence customer decisions must be auditable and demonstrably free of bias. Model cards and pre-deployment bias testing are the baseline evidence requirement.'},
+  {w:'Solvency II',c:'fsi',d:'EU insurance regulation requiring capital proportionate to risk exposure. Demands high-quality risk data aggregation, end-to-end lineage for all capital model inputs, and documented data quality controls. The PRA Dear CEO letter on data lineage gaps is the active enforcement mechanism driving data platform and Purview investment in UK insurers.'},
+  {w:'Bernanke Report',c:'fsi',d:'2024 independent review of a major central bank\'s forecasting processes. Identified data quality and analytical capability gaps as material constraints on forecasting accuracy. A significant driver of enterprise data platform investment in the central banking sector — federated data platforms, self-service analytics, AI/ML products, and agentic AI capabilities under Hub & Spoke governance.'},
+  {w:'ISO/IEC 42001',c:'fsi',d:'International standard for AI management systems — the "ISO 27001 for AI." Provides governance, transparency, AI risk management, and continuous monitoring controls across the AI lifecycle. Certifiable standard demonstrating AI management maturity to regulators, institutional clients, and boards. Increasingly referenced by FCA and PRA in AI guidance.'},
+  /* PRACTICE ACCELERATORS */
+  {w:'SDTT (Smart Data Transition Toolkit)',c:'acc',d:'Data migration accelerator. 80–90% automation on schema conversion (SQL DDL translation across database platforms), 40–50% on data migration and validation. Significantly reduces migration cost and timeline versus manual conversion. Used in Azure migration business cases for quantified TCO reduction modelling.'},
+  {w:'myNav',c:'acc',d:'Cloud platform assessment and simulation tool. Inventories existing IT estate, maps workloads to cloud services, simulates Azure architectures, and produces indicative cost models. Used in pre-sales and discovery phases to build a credible Azure migration business case with evidence-based TCO projections.'},
+  {w:'IDF (Intelligent Data Foundation)',c:'acc',d:'Reusable framework accelerating data engineering pipeline build, deployment, and automation across Fabric, Synapse, and Databricks environments. Pre-built connectors, transformation patterns, and quality check libraries reduce pipeline build time materially versus bespoke development.'},
+  {w:'Data Beacon',c:'acc',d:'Framework for transparent, collaborative, and visual data management and consumption. Provides integrated data DNA-based asset search, collaborative data access workflows, and multiple consumption mode support (BI, API, data science). Addresses discoverability and self-serve dimensions of the data product framework.'},
+  {w:'Pulse',c:'acc',d:'Accelerator for in-depth data estate analysis — asset inventory, migration planning, complexity scoring, and indicative cost modelling. Used in discovery and diagnostic phases to produce a defendable migration estimate and phasing recommendation for any data modernisation programme.'},
+  {w:'Value Realization Office',c:'acc',d:'A programme governance structure that tracks actual delivered benefits against the original business case — quarterly reporting to CFO and ExCo. Maintains financial accountability for transformation programmes beyond go-live. The mechanism distinguishing programmes that deliver on their ROI commitment from those that deliver technically but fail commercially.'},
+  {w:'DevXOps',c:'acc',d:'Enterprise DevOps approach: DevSecOps (security in CI/CD), DevDataOps (data pipeline CI/CD and quality automation), DevBizOps (business outcome tracking in delivery), DevAIOps (AI model deployment, monitoring, and retraining pipelines). The full operational discipline for data and AI programme delivery.'},
+];
+
+let activeGCat='all';
+
+function buildGCats(){
+  const div=document.getElementById('gcats');
+  div.innerHTML=GCATS.map(c=>{
+    const activeStyle=c.id==='all'?'background:rgba(91,106,240,.12);color:var(--accent);border-color:rgba(91,106,240,.4)':'';
+    return `<button class="gcat-btn${c.id==='all'?' gcat-active':''}" onclick="setGCat('${c.id}',this)">${c.label}</button>`;
+  }).join('');
+}
+
+function setGCat(id,btn){
+  activeGCat=id;
+  document.querySelectorAll('.gcat-btn').forEach(b=>b.classList.remove('gcat-active'));
+  btn.classList.add('gcat-active');
+  renderGloss();
+}
+
+function renderGloss(){
+  const q=(document.getElementById('gsearch').value||'').toLowerCase();
+  const filtered=TERMS.filter(t=>{
+    const matchCat=activeGCat==='all'||t.c===activeGCat;
+    const matchQ=!q||t.w.toLowerCase().includes(q)||t.d.replace(/<[^>]+>/g,'').toLowerCase().includes(q);
+    return matchCat&&matchQ;
+  });
+  const list=document.getElementById('glist');
+  if(!filtered.length){
+    list.innerHTML='<div style="padding:20px 0;color:var(--text3);font-size:13px">No terms match.</div>';
+    return;
+  }
+  list.innerHTML=filtered.map(t=>`
+    <div class="grow">
+      <div class="grow-word">${t.w}</div>
+      <div class="grow-def">${t.d}</div>
+      <span class="grow-cat" style="color:${CCOL[t.c]};border-color:${CCOL[t.c]}">${CNAME[t.c]}</span>
+    </div>`).join('');
+}
+
+buildGCats();
+renderGloss();
+</script>
+
+
+
+</body></html>
