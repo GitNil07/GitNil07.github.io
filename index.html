@@ -1,96 +1,1094 @@
----
-layout: page
-title: Home
-permalink: /
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Obsessed — What's the thing you know too much about?</title>
+<meta name="description" content="A London curiosity archive. Submit the thing you know too much about. Nothing to do with your job.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<section style="max-width:980px;margin:70px auto 50px auto;text-align:center;padding:40px 20px;border-radius:24px;background:linear-gradient(135deg, rgba(90,124,255,0.10), rgba(156,92,255,0.08));box-shadow:0 10px 30px rgba(0,0,0,0.06);">
+  :root {
+    --ink: #0a0a0a;
+    --paper: #f5f2eb;
+    --muted: #6b6760;
+    --accent: #c8392b;
+    --border: #0a0a0a;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+    --font-body: 'IBM Plex Sans', sans-serif;
+  }
 
-<h1 style="font-size:48px;font-weight:800;line-height:1.1;margin-bottom:20px;">
-    Building Intelligent Systems with Long-Term Intent
-  </h1>
+  html { scroll-behavior: smooth; }
 
-  <p style="font-size:21px;color:#555;max-width:760px;margin:0 auto;line-height:1.7;">
-    I explore Artificial Intelligence, system design, and digital strategy —
-    turning ideas into scalable, meaningful impact.
-  </p>
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
 
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.4;
+  }
+
+  /* ── HEADER ── */
+  header {
+    border-bottom: 2px solid var(--border);
+    padding: 1.25rem 1.5rem 0.9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .masthead {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 9vw, 6.5rem);
+    font-style: italic;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+  }
+
+  .masthead span { color: var(--accent); }
+
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+    padding-bottom: 0.3rem;
+  }
+
+  .header-meta {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--muted);
+    text-align: right;
+    line-height: 1.9;
+  }
+
+  .social-links { display: flex; gap: 0.75rem; }
+
+  .social-link {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+    padding-bottom: 1px;
+  }
+
+  .social-link:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    overflow: hidden;
+    padding: 0.45rem 0;
+    background: var(--ink);
+    color: var(--paper);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .ticker {
+    display: flex;
+    gap: 3rem;
+    white-space: nowrap;
+    animation: ticker 40s linear infinite;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+  }
+
+  .ticker span::before { content: '✦  '; color: var(--accent); }
+
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ── HERO ── */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--border);
+    animation: fadeUp 0.5s 0.08s ease both;
+  }
+
+  .hero-left { padding: 2.5rem 1.5rem; border-right: 1px solid var(--border); }
+
+  .kicker {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .kicker::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  h1.hero-headline {
+    font-family: var(--font-display);
+    font-size: clamp(1.7rem, 4vw, 2.9rem);
+    font-style: italic;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-body {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.85;
+    max-width: 40ch;
+  }
+
+  .hero-body strong { color: var(--ink); font-weight: 500; }
+
+  .hero-right {
+    padding: 2.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .pull-quote {
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 2.2vw, 1.5rem);
+    font-style: italic;
+    line-height: 1.35;
+    border-left: 3px solid var(--accent);
+    padding-left: 1.1rem;
+  }
+
+  .questions-label {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+  }
+
+  .question-list { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
+
+  .question-list li {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--ink);
+    padding-left: 1rem;
+    position: relative;
+    line-height: 1.45;
+  }
+
+  .question-list li::before { content: '—'; position: absolute; left: 0; color: var(--accent); }
+
+  /* ── TODAY'S OBSESSION ── */
+  .todays-section {
+    border-bottom: 1px solid var(--border);
+    animation: fadeUp 0.5s 0.12s ease both;
+  }
+
+  .section-header {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .section-header-label {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .section-header-line { flex: 1; height: 1px; background: var(--border); opacity: 0.15; }
+
+  .todays-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+
+  .today-card { padding: 1.75rem 1.5rem; border-right: 1px solid var(--border); }
+  .today-card:last-child { border-right: none; }
+
+  .today-card-tag {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+
+  .today-card-title {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    line-height: 1.2;
+    margin-bottom: 0.6rem;
+  }
+
+  .today-card-body { font-size: 0.8rem; color: var(--muted); line-height: 1.7; }
+
+  .today-card-origin {
+    margin-top: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+
+  .today-card-origin span { color: var(--ink); }
+
+  /* ── WHAT HAPPENS NEXT ── */
+  .next-section {
+    border-bottom: 1px solid var(--border);
+    animation: fadeUp 0.5s 0.16s ease both;
+  }
+
+  .next-steps { display: grid; grid-template-columns: repeat(4, 1fr); }
+
+  .next-step { padding: 1.5rem; border-right: 1px solid var(--border); }
+  .next-step:last-child { border-right: none; }
+
+  .next-step-num {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-style: italic;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .next-step-title {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 0.35rem;
+  }
+
+  .next-step.active .next-step-title { color: var(--accent); }
+  .next-step-body { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
+
+  .status-dot {
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-right: 4px;
+    animation: pulse 2s infinite;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+  }
+
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+
+  /* ── FOUNDING BANNER ── */
+  .founding-banner {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 1.1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    animation: fadeUp 0.5s 0.2s ease both;
+  }
+
+  .founding-text {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(0.85rem, 1.8vw, 1.1rem);
+    line-height: 1.5;
+  }
+
+  .founding-text em { font-style: normal; color: var(--accent); }
+
+  .founding-cta {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--paper);
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 0.45rem 0.9rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color 0.15s, color 0.15s;
+  }
+
+  .founding-cta:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ── FORM ── */
+  .form-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--border);
+    animation: fadeUp 0.5s 0.24s ease both;
+  }
+
+  .form-col { padding: 2.5rem 1.5rem; border-right: 1px solid var(--border); }
+  .manifesto-col { padding: 2.5rem 1.5rem; display: flex; flex-direction: column; justify-content: space-between; gap: 2rem; }
+
+  .form-label-top {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.75rem;
+  }
+
+  /* honeypot — must be invisible to humans, visible to bots */
+  .hp-field {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .field { margin-bottom: 1.6rem; }
+
+  .field label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.35rem;
+  }
+
+  .field label .opt {
+    color: var(--accent);
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .char-count {
+    float: right;
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    color: var(--muted);
+    letter-spacing: 0;
+    text-transform: none;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .char-count.near  { color: #b07d00; }
+  .char-count.limit { color: var(--accent); }
+
+  .field input,
+  .field textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    padding: 0.45rem 0;
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    font-weight: 300;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+
+  .field input::placeholder,
+  .field textarea::placeholder { color: #bbb; font-style: italic; }
+
+  .field input:focus,
+  .field textarea:focus { border-bottom-color: var(--accent); }
+
+  .field textarea { resize: none; min-height: 90px; line-height: 1.7; }
+
+  /* consent */
+  .consent-field {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .consent-field input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    min-width: 14px;
+    border: 1px solid var(--border);
+    border-radius: 0;
+    background: transparent;
+    cursor: pointer;
+    margin-top: 3px;
+    accent-color: var(--ink);
+  }
+
+  .consent-field label {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    color: var(--muted);
+    line-height: 1.6;
+    cursor: pointer;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .submit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    padding: 0.85rem 1.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .submit-btn:hover:not(:disabled) { background: var(--accent); }
+  .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .submit-btn .arrow { transition: transform 0.2s; }
+  .submit-btn:hover:not(:disabled) .arrow { transform: translateX(4px); }
+
+  .privacy-note {
+    margin-top: 0.9rem;
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .success-msg { display: none; padding: 1.25rem 0 0.5rem; }
+
+  .success-headline {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+  }
+
+  .success-body {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  .error-msg {
+    display: none;
+    margin-top: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    color: var(--accent);
+    line-height: 1.6;
+  }
+
+  /* manifesto side */
+  .manifesto {
+    font-family: var(--font-display);
+    font-size: clamp(0.9rem, 1.9vw, 1.15rem);
+    font-style: italic;
+    line-height: 1.85;
+  }
+
+  .manifesto p { margin-bottom: 1rem; }
+  .manifesto p:last-child { margin-bottom: 0; }
+  .manifesto em { font-style: normal; color: var(--accent); }
+
+  .sidebar-note { border-top: 1px solid var(--border); padding-top: 1.25rem; }
+
+  .sidebar-note-label {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.45rem;
+  }
+
+  .sidebar-note-text { font-size: 0.78rem; color: var(--muted); line-height: 1.7; }
+  .sidebar-note-text a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+
+  /* ── MAP ── */
+  .map-section {
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    animation: fadeUp 0.5s 0.28s ease both;
+  }
+
+  .map-left { padding: 2.5rem 1.5rem; border-right: 1px solid var(--border); }
+
+  .map-right {
+    padding: 2.5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .map-placeholder {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1;
+    border: 1px dashed rgba(10,10,10,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 2rem;
+  }
+
+  .map-placeholder-label {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  .map-placeholder-dots {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 200px;
+  }
+
+  .map-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--muted); opacity: 0.2; }
+  .map-dot.lit { background: var(--accent); opacity: 0.6; }
+
+  .map-headline {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 3vw, 2.1rem);
+    font-style: italic;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+
+  .map-body { font-size: 0.85rem; color: var(--muted); line-height: 1.8; max-width: 38ch; }
+  .map-body strong { color: var(--ink); font-weight: 500; }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-brand { font-family: var(--font-display); font-style: italic; font-size: 1rem; }
+
+  .footer-right { display: flex; flex-direction: column; align-items: flex-end; gap: 0.35rem; }
+
+  .footer-social { display: flex; gap: 0.65rem; }
+
+  .footer-social a {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .footer-social a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
+  .footer-meta { font-family: var(--font-mono); font-size: 0.58rem; color: var(--muted); text-align: right; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ── MOBILE ── */
+  @media (max-width: 640px) {
+    header { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+    .header-right { align-items: flex-start; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { border-right: none; border-bottom: 1px solid var(--border); }
+    .todays-grid { grid-template-columns: 1fr; }
+    .today-card { border-right: none; border-bottom: 1px solid var(--border); }
+    .today-card:last-child { border-bottom: none; }
+    .next-steps { grid-template-columns: 1fr 1fr; }
+    .next-step:nth-child(2) { border-right: none; }
+    .next-step:nth-child(3), .next-step:nth-child(4) { border-top: 1px solid var(--border); }
+    .next-step:nth-child(4) { border-right: none; }
+    .founding-banner { flex-direction: column; align-items: flex-start; }
+    .form-wrapper { grid-template-columns: 1fr; }
+    .form-col { border-right: none; border-bottom: 1px solid var(--border); }
+    .map-section { grid-template-columns: 1fr; }
+    .map-left { border-right: none; border-bottom: 1px solid var(--border); }
+    .map-right { padding: 1.5rem; }
+    footer { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+    .footer-right { align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="masthead">OB<span>—</span>SESSED</div>
+  <div class="header-right">
+    <div class="header-meta">A London curiosity archive</div>
+    <div class="social-links">
+      <!-- Replace YOUR_HANDLE with your actual handles -->
+      <a href="https://www.instagram.com/the_obsessed_archive" class="social-link" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@digitaldreams08" class="social-link" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://open.spotify.com/show/033lRZaulw1KTdTFwX8NV6?si=ptHs6IxNRDytAhL2o1U99g" class="social-link" target="_blank" rel="noopener">Podcast</a>
+    </div>
+  </div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker">
+    <span>Ottoman Architecture</span><span>Cold War Cryptography</span>
+    <span>Competitive Dog Grooming</span><span>Ancient Roman Plumbing</span>
+    <span>Mongolian Throat Singing</span><span>The History of Salt</span>
+    <span>Antarctic Expedition Journals</span><span>Tulip Mania</span>
+    <span>Pigeon Racing</span><span>Brutalist Architecture</span>
+    <span>Medieval Siege Engines</span><span>Cassette Culture</span>
+    <span>The Colour Blue</span>
+    <span>Ottoman Architecture</span><span>Cold War Cryptography</span>
+    <span>Competitive Dog Grooming</span><span>Ancient Roman Plumbing</span>
+    <span>Mongolian Throat Singing</span><span>The History of Salt</span>
+    <span>Antarctic Expedition Journals</span><span>Tulip Mania</span>
+    <span>Pigeon Racing</span><span>Brutalist Architecture</span>
+    <span>Medieval Siege Engines</span><span>Cassette Culture</span>
+    <span>The Colour Blue</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="kicker">A project about humans</div>
+    <h1 class="hero-headline">Not what you do.<br>What you <em style="color:var(--accent)">can't stop</em><br>thinking about.</h1>
+    <p class="hero-body">
+      The software engineer who moonlights as an expert on <strong>Ottoman architecture</strong>. The nurse who knows more about <strong>Civil War cavalry tactics</strong> than any historian. The accountant deep in the rabbit hole of <strong>17th century tulip markets</strong>.
+      <br><br>
+      London's most interesting people. They just don't know it yet.
+    </p>
+  </div>
+  <div class="hero-right">
+    <blockquote class="pull-quote">
+      "What's the thing you know too much about?"
+    </blockquote>
+    <div>
+      <div class="questions-label">Other ways to ask it</div>
+      <ul class="question-list">
+        <li>What's one thing you know more about than anyone you've ever met?</li>
+        <li>What would you talk about for three hours if someone just asked?</li>
+        <li>What rabbit hole do you keep falling back into?</li>
+        <li>What did you spend last Tuesday at 2am reading about?</li>
+        <li>What do your friends roll their eyes at — but secretly want to know more about?</li>
+        <li>Open to anything. Absolutely anything.</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
-
-<h2 style="margin-bottom:30px;text-align:center;">Featured Work</h2>
-
-<div style="
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-  gap:20px;
-  max-width:900px;
-  margin:0 auto;
-">
-
-  <div style="
-    padding:20px;
-    border-radius:16px;
-    border:1px solid rgba(0,0,0,0.08);
-    background:rgba(255,255,255,0.6);
-    backdrop-filter: blur(10px);
-  ">
-    <h3>AI Job Search Toolkit</h3>
-    <p>Practical AI prompts for CV, outreach, and interviews.</p>
-    <a href="/toolkit/">View toolkit →</a>
+<!-- TODAY'S OBSESSION -->
+<section class="todays-section">
+  <div class="section-header">
+    <span class="section-header-label">Today's obsession</span>
+    <div class="section-header-line"></div>
+    <span class="section-header-label" style="color:var(--accent);">Placeholder examples</span>
   </div>
-
-  <div style="
-    padding:20px;
-    border-radius:16px;
-    border:1px solid rgba(0,0,0,0.08);
-    background:rgba(255,255,255,0.6);
-    backdrop-filter: blur(10px);
-  ">
-    <h3>AI Experiment Lab</h3>
-    <p>Applied AI experiments and system prototypes.</p>
+  <div class="todays-grid">
+    <div class="today-card">
+      <div class="today-card-tag">Obsession #001</div>
+      <div class="today-card-title">The acoustic properties of Victorian sewers</div>
+      <div class="today-card-body">Most people don't know that London's sewer network from the 1860s was engineered with accidental resonance chambers. Certain junctions produce notes. Bazalgette didn't intend it. I've mapped eleven of them.</div>
+      <div class="today-card-origin">Started: <span>a wrong turn during a drainage survey</span></div>
+    </div>
+    <div class="today-card">
+      <div class="today-card-tag">Obsession #002</div>
+      <div class="today-card-title">Why every Cold War bunker smells the same</div>
+      <div class="today-card-body">Concrete, rust, stale air, and something else — a specific plasticky chemical note I've traced back to the insulation used on 1950s electrical cabling. I've been in fourteen bunkers. The smell is identical.</div>
+      <div class="today-card-origin">Started: <span>a geography field trip in 1998</span></div>
+    </div>
+    <div class="today-card">
+      <div class="today-card-tag">Obsession #003</div>
+      <div class="today-card-title">The forgotten women of Ottoman cartography</div>
+      <div class="today-card-body">There are at least six maps held in Istanbul archives that scholars attribute to anonymous female illustrators. Nobody talks about this. The evidence is in the detail style — a particular way of rendering coastlines.</div>
+      <div class="today-card-origin">Started: <span>a mistranslated footnote</span></div>
+    </div>
   </div>
-
-  <div style="
-    padding:20px;
-    border-radius:16px;
-    border:1px solid rgba(0,0,0,0.08);
-    background:rgba(255,255,255,0.6);
-    backdrop-filter: blur(10px);
-  ">
-    <h3>Enterprise AI Copilot</h3>
-    <p>Executive simulation for AI strategy and adoption.</p>
-    <a href="/enterprise-ai-copilot/">View demo →</a>
-  </div>
-<div style="
-  padding:20px;
-  border-radius:16px;
-  border:1px solid rgba(0,0,0,0.08);
-  background:rgba(255,255,255,0.6);
-  backdrop-filter: blur(10px);
-">
-  <h3>BPO Collections Agent Demo</h3>
-  <p>Interactive demo simulating financial collections workflows using a Claude-native design.</p>
-  <a href="/bpo-collections-demo.html" target="_blank">Open demo →</a>
-</div>
-</div>
-
-<hr style="max-width:800px;margin:60px auto;opacity:0.2;">
-
-<div style="margin-bottom:30px;">
-  <h2 style="margin-bottom:20px;">Architecture</h2>
-
-  <h3>BPO AI Collections Agent (Claude-Native)</h3>
-  <p>
-    A lightweight AI system designed for financial collections workflows,
-    using Claude for safe, high-context customer interactions.
-  </p>
-
-  <a href="/architecture/bpo-ai-collections-agent-v1.md" target="_blank">
-    View architecture →
-  </a>
-</div>
 </section>
 
+<!-- WHAT HAPPENS NEXT -->
+<section class="next-section">
+  <div class="section-header">
+    <span class="section-header-label">What happens when you submit</span>
+    <div class="section-header-line"></div>
+  </div>
+  <div class="next-steps">
+    <div class="next-step active">
+      <div class="next-step-num">01.</div>
+      <div class="next-step-title"><span class="status-dot"></span>Now open</div>
+      <div class="next-step-body">Submit your obsession. Something is being built here — you're early.</div>
+    </div>
+    <div class="next-step">
+      <div class="next-step-num">02.</div>
+      <div class="next-step-title">The digest</div>
+      <div class="next-step-body">The best submissions go into a curated newsletter. If you leave contact details, you'll get it when it launches.</div>
+    </div>
+    <div class="next-step">
+      <div class="next-step-num">03.</div>
+      <div class="next-step-title">The podcast</div>
+      <div class="next-step-body">The most interesting obsessions get a short conversation. You might get a call.</div>
+    </div>
+    <div class="next-step">
+      <div class="next-step-num">04.</div>
+      <div class="next-step-title">The community</div>
+      <div class="next-step-body">Find the other obsessives. London's most curious people, in one place.</div>
+    </div>
+  </div>
+</section>
 
+<!-- FOUNDING BANNER -->
+<div class="founding-banner">
+  <div class="founding-text">
+    Do you want to be one of the <em>first founding members?</em><br>
+    The people who submit now shape what this becomes.
+  </div>
+  <a href="#obsession-form" class="founding-cta">Submit yours →</a>
+</div>
 
+<!-- FORM -->
+<section class="form-wrapper" id="obsession-form">
+  <div class="form-col">
+    <!--
+    ╔══════════════════════════════════════════════════════════╗
+    ║  GOOGLE APPS SCRIPT SETUP                                ║
+    ║                                                          ║
+    ║  1. Open your Google Sheet                               ║
+    ║  2. Extensions → Apps Script                             ║
+    ║  3. Paste the contents of apps-script.gs                 ║
+    ║  4. Deploy → New deployment → Web app                    ║
+    ║     Execute as: Me  |  Who has access: Anyone            ║
+    ║  5. Copy the Web App URL                                 ║
+    ║  6. Replace YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL below    ║
+    ╚══════════════════════════════════════════════════════════╝
+    -->
+    <noscript>
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:#6b6760;margin-bottom:1.25rem;line-height:1.7;">
+        This form needs JavaScript to submit. If it does not work, message me on
+        <a href="https://www.instagram.com/the_obsessed_archive" style="color:#0a0a0a;">Instagram</a>.
+      </p>
+    </noscript>
+    <form id="submission-form" novalidate>
+
+      <div class="form-label-top">Submit your obsession</div>
+
+      <!-- Honeypot: hidden from real users, bots will fill it -->
+      <div class="hp-field" aria-hidden="true">
+        <label for="hp-website">Leave this empty</label>
+        <input type="text" id="hp-website" name="website" tabindex="-1" autocomplete="off">
+      </div>
+
+      <!-- Hidden source tracker -->
+      <input type="hidden" name="source" value="website">
+
+      <div class="field">
+        <label for="name_or_pseudonym">
+          Name
+          <span class="opt">— or a pseudonym, totally fine</span>
+          <span class="char-count" id="cc-name">0 / 80</span>
+        </label>
+        <input type="text" id="name_or_pseudonym" name="name_or_pseudonym"
+          maxlength="80"
+          placeholder="Tim, The Fog Collector, Anonymous…"
+          required>
+      </div>
+
+      <div class="field">
+        <label for="obsession">
+          Your obsession
+          <span class="opt">— one line</span>
+          <span class="char-count" id="cc-obsession">0 / 140</span>
+        </label>
+        <input type="text" id="obsession" name="obsession"
+          maxlength="140"
+          placeholder="The acoustic properties of Victorian sewers"
+          required>
+      </div>
+
+      <div class="field">
+        <label for="unknown_fact">
+          What do you know that almost nobody else does?
+          <span class="char-count" id="cc-fact">0 / 700</span>
+        </label>
+        <textarea id="unknown_fact" name="unknown_fact"
+          maxlength="700"
+          placeholder="Tell us the thing. The specific, strange detail that you've never quite found the right moment to say out loud."
+          required></textarea>
+      </div>
+
+      <div class="field">
+        <label for="how_it_started">
+          How it started
+          <span class="opt">— one word or short phrase</span>
+          <span class="char-count" id="cc-origin">0 / 120</span>
+        </label>
+        <input type="text" id="how_it_started" name="how_it_started"
+          maxlength="120"
+          placeholder="accident / childhood / lockdown / a wrong turn…">
+      </div>
+
+      <div class="field">
+        <label for="contact_optional">
+          Contact
+          <span class="opt">— optional, only if you'd be up for a conversation</span>
+          <span class="char-count" id="cc-contact">0 / 160</span>
+        </label>
+        <input type="text" id="contact_optional" name="contact_optional"
+          maxlength="160"
+          placeholder="email, Instagram handle, whatever works for you">
+      </div>
+
+      <div class="consent-field">
+        <input type="checkbox" id="consent" name="consent" required>
+        <label for="consent">
+          I'm happy for this submission to be used in the Obsessed archive, newsletter, or podcast. I won't publish your contact details. I understand my contact details (if given) will only be used to follow up about Obsessed.
+        </label>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submit-btn">
+        Submit your obsession <span class="arrow">→</span>
+      </button>
+
+      <p class="privacy-note">
+        Your submission goes into a private sheet. I'll only use your contact details to follow up about Obsessed.
+      </p>
+
+      <p class="error-msg" id="error-msg" role="alert">
+        Something went wrong — please try again. If it keeps happening, something may be broken at this end.
+      </p>
+
+    </form>
+
+    <div class="success-msg" id="success-msg" role="status">
+      <div class="success-headline">Filed. You're one of us now.</div>
+      <div class="success-body">
+        You're a founding member.<br>
+        The digest launches when there are enough good rabbit holes.<br>
+        In the meantime: keep going down yours.
+      </div>
+    </div>
+  </div>
+
+  <div class="manifesto-col">
+    <div class="manifesto">
+      <p>LinkedIn will tell you what someone does.<br>This will tell you who they <em>actually</em> are.</p>
+      <p>No hustle. No career advice.<br>No thought leadership.</p>
+      <p>Just the <em>weird, wonderful thing</em> —<br>the rabbit hole you fell into at 2am<br>and never quite climbed out of.</p>
+      <p>Submit yours.<br>Or just <em>stay curious.</em></p>
+    </div>
+
+    <div class="sidebar-note">
+      <div class="sidebar-note-label">The idea behind this</div>
+      <div class="sidebar-note-text">
+        Kevin Kelly wrote that you don't need millions of followers. You need <a href="https://kk.org/thetechnium/1000-true-fans/" target="_blank" rel="noopener">true fans</a> — people who genuinely care. This is an attempt to find London's most curious people. One weird obsession at a time.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP OF OBSESSIONS -->
+<section class="map-section">
+  <div class="map-left">
+    <div class="kicker">Coming eventually</div>
+    <h2 class="map-headline">The Map of<br>Obsessions</h2>
+    <p class="map-body">
+      Some submissions may eventually carry a borough, postcode, café, or route — a trace of where the obsession lives in the city.
+      <br><br>
+      Over time, these might form something: a <strong>hidden map of London's rabbit holes</strong>. Not a directory. Not a social network. Something stranger — a record of what this city is quietly, privately fascinated by.
+      <br><br>
+      The map doesn't exist yet. But the submissions are already drawing it.
+    </p>
+  </div>
+  <div class="map-right" aria-hidden="true">
+    <div class="map-placeholder">
+      <div class="map-placeholder-label">Map not yet rendered<br>submissions are drawing it</div>
+      <div class="map-placeholder-dots" id="map-dots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Obsessed.</div>
+  <div class="footer-right">
+    <div class="footer-social">
+      <a href="https://www.instagram.com/the_obsessed_archive" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@digitaldreams08" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://open.spotify.com/show/033lRZaulw1KTdTFwX8NV6?si=ptHs6IxNRDytAhL2o1U99g" target="_blank" rel="noopener">Podcast</a>
+    </div>
+    <div class="footer-meta">All obsessions welcome · No job talk · London</div>
+  </div>
+</footer>
+
+<script>
+  /* ══════════════════════════════════════════════════════════════
+     REPLACE THIS URL with your deployed Google Apps Script URL.
+     See apps-script.gs for setup instructions.
+     Test from the final GitHub Pages URL, not only locally.
+  ══════════════════════════════════════════════════════════════ */
+  var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbweNtswy9Uu09kxEJJrIe_MGiNYyBGqa9NM2brrlx4G3Wwnfsbw5YaudkX-swK_yGoRIA/exec';
+
+  /* ── character counters ── */
+  var counters = [
+    { inputId: 'name_or_pseudonym', countId: 'cc-name',    max: 80  },
+    { inputId: 'obsession',         countId: 'cc-obsession',max: 140 },
+    { inputId: 'unknown_fact',      countId: 'cc-fact',    max: 700 },
+    { inputId: 'how_it_started',    countId: 'cc-origin',  max: 120 },
+    { inputId: 'contact_optional',  countId: 'cc-contact', max: 160 }
+  ];
+
+  counters.forEach(function(c) {
+    var el  = document.getElementById(c.inputId);
+    var out = document.getElementById(c.countId);
+    if (!el || !out) return;
+    function update() {
+      var len = el.value.length;
+      out.textContent = len + ' / ' + c.max;
+      out.className = 'char-count';
+      if (len >= c.max)           out.classList.add('limit');
+      else if (len >= c.max * 0.85) out.classList.add('near');
+    }
+    el.addEventListener('input', update);
+  });
+
+  /* ── form submission ── */
+  var form      = document.getElementById('submission-form');
+  var btn       = document.getElementById('submit-btn');
+  var successEl = document.getElementById('success-msg');
+  var errorEl   = document.getElementById('error-msg');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    errorEl.style.display = 'none';
+
+    /* client-side honeypot check — abort silently if bot filled it */
+    if (document.getElementById('hp-website').value !== '') return;
+
+    /* client-side required field check */
+    var obsession   = document.getElementById('obsession').value.trim();
+    var unknownFact = document.getElementById('unknown_fact').value.trim();
+    var consentBox  = document.getElementById('consent');
+
+    if (!obsession || !unknownFact || !consentBox.checked) {
+      form.reportValidity();
+      return;
+    }
+
+    /* prevent double-submit */
+    btn.disabled = true;
+    btn.innerHTML = 'Sending\u2026 <span class="arrow">\u2192</span>';
+
+    var payload = {
+      name_or_pseudonym : document.getElementById('name_or_pseudonym').value.trim(),
+      obsession         : obsession,
+      unknown_fact      : unknownFact,
+      how_it_started    : document.getElementById('how_it_started').value.trim(),
+      contact_optional  : document.getElementById('contact_optional').value.trim(),
+      consent           : 'yes',
+      source            : 'website',
+      website           : document.getElementById('hp-website').value, /* honeypot, sent for server-side check too */
+      submitted_at      : new Date().toISOString()
+    };
+
+    try {
+      /* no-cors is required for Apps Script cross-origin POST */
+      await fetch(APPS_SCRIPT_URL, {
+        method  : 'POST',
+        mode    : 'no-cors',
+        headers : { 'Content-Type': 'text/plain;charset=utf-8' },
+        body    : JSON.stringify(payload)
+      });
+
+      /* no-cors returns opaque response — assume success if fetch didn't throw */
+      form.style.display = 'none';
+      form.previousElementSibling && (form.previousElementSibling.style.display = 'none');
+      successEl.style.display = 'block';
+
+    } catch (err) {
+      btn.disabled = false;
+      btn.innerHTML = 'Submit your obsession <span class="arrow">\u2192</span>';
+      errorEl.style.display = 'block';
+    }
+  });
+
+  /* ── map dot animation ── */
+  (function buildDots() {
+    var container = document.getElementById('map-dots');
+    if (!container) return;
+    var total      = 48;
+    var litIndexes = [3,7,11,15,19,22,28,31,35,40,44];
+    for (var i = 0; i < total; i++) {
+      var d = document.createElement('div');
+      d.className = 'map-dot' + (litIndexes.indexOf(i) > -1 ? ' lit' : '');
+      container.appendChild(d);
+    }
+    setInterval(function() {
+      var dots = container.querySelectorAll('.map-dot');
+      var idx  = Math.floor(Math.random() * dots.length);
+      var pick = dots[idx];
+      pick.classList.add('lit');
+      setTimeout(function() {
+        if (litIndexes.indexOf(idx) === -1) pick.classList.remove('lit');
+      }, 1800);
+    }, 1200);
+  })();
+</script>
+
+</body>
+</html>
